@@ -2,7 +2,7 @@ RUN
  
 GLOBAL
   Big Elk Creek Hydrology
-  START       1995/10/01 00:00  END    2014/05/31 24:00
+  START       1995/10/01 00:00  END    2014/05/30 24:00
   RUN INTERP OUTPT LEVELS    3    0
   RESUME     0 RUN     1                          UNITS    1
 END GLOBAL
@@ -30,28 +30,27 @@ OPN SEQUENCE
       PERLND     322
       IMPLND     301
       IMPLND     302
-      RCHRES       1
-      RCHRES       2
-      RCHRES       3
-      RCHRES       4
-      RCHRES       5
-      RCHRES       6
-      RCHRES       7
-      RCHRES       8
-      RCHRES       9
-      RCHRES      10
-      RCHRES      11
-      RCHRES      12
-      RCHRES      13
-      RCHRES      14
-      RCHRES      15
-      RCHRES      16
-      RCHRES      17
-      RCHRES      18
-      COPY         1
+      RCHRES     001
+      RCHRES     002
+      RCHRES     003
+      RCHRES     004
+      RCHRES     005
+      RCHRES     006
+      RCHRES     007
+      RCHRES     008
+      RCHRES     009
+      RCHRES     010
+      RCHRES     011
+      RCHRES     012
+      RCHRES     013
+      RCHRES     014
+      RCHRES     015
+      RCHRES     016
+      RCHRES     017
+      RCHRES     018
     END INGRP
 END OPN SEQUENCE
- 
+
 PERLND
   ACTIVITY
 *** <PLS >               Active Sections                               ***
@@ -180,12 +179,6 @@ IMPLND
   END IWAT-STATE1
 END IMPLND
  
-COPY
-  TIMESERIES
-    #    #  NPT  NMN ***
-    1              4
-  END TIMESERIES
-END COPY
  
 RCHRES
   ACTIVITY
@@ -747,28 +740,7 @@ PERLND 312                         3.5     RCHRES  18      2
 PERLND 322                        21.5     RCHRES  18      2
 IMPLND 302                       154.0     RCHRES  18      1
 RCHRES  17                                 RCHRES  18      3
-*** Copy 1
-PERLND 111                         3.3     COPY     1      4
-PERLND 112                      3809.5     COPY     1      4
-PERLND 121                      9379.3     COPY     1      4
-PERLND 122                     37647.5     COPY     1      4
-PERLND 212                      1151.5     COPY     1      4
-PERLND 221                       125.4     COPY     1      4
-PERLND 222                      1551.8     COPY     1      4
-PERLND 312                        82.4     COPY     1      4
-PERLND 321                        81.8     COPY     1      4
-PERLND 322                       244.0     COPY     1      4
 END SCHEMATIC
- 
-EXT TARGETS
-<-Volume-> <-Grp> <-Member-><--Mult-->Tran <-Volume-> <Member> Tsys Aggr Amd ***
-<Name>   x        <Name> x x<-factor->strg <Name>   x <Name>qf  tem strg strg***
-RCHRES  18 HYDR   RO     1 1          AVER WDM1   102 FLOW   1 ENGL AGGR REPL
-COPY     1 OUTPUT MEAN   1 1          AVER WDM1   103 PERO   1 ENGL AGGR REPL
-COPY     1 OUTPUT MEAN   2 1          AVER WDM1   104 AGWO   1 ENGL AGGR REPL
-COPY     1 OUTPUT MEAN   3 1          AVER WDM1   105 IFWO   1 ENGL AGGR REPL
-COPY     1 OUTPUT MEAN   4 1          AVER WDM1   106 SURO   1 ENGL AGGR REPL
-END EXT TARGETS
  
 MASS-LINK
  
