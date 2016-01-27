@@ -1,5 +1,5 @@
 
-rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/HydroCal201506/R_Projs/construct_control",
+rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
                         chr.file = "beflhyd.out") {
   ## funtion that reads PLTGEN output file from HSPF simulations
   ## created 2016-01-27 by Kevin Brannan
@@ -26,7 +26,9 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/HydroCal201506/R_Projs/co
   ## get first line of data. the "-1.0000000E+30" is a flag for no data and 
   ## should only occur on the first day for a daily tiime step aggregation of
   ## hourly data. take min just in case
-  lng.str <- min(grep("^( ){1,}To.*-1.0000000E\\+30{1,}$", chr.pltgen) + 1)
+  lng.str <- min(min(grep("-1\\.0000000E\\+30{1,}", chr.pltgen)) + 1)
+  
+  
   
   ## get data only from orginal PLTGEN file
   str.data <- chr.pltgen[lng.str:length(chr.pltgen)]
@@ -34,11 +36,12 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/HydroCal201506/R_Projs/co
   
   ## get variable names from PLTGEN file
   ## get line where the variable name list starts
-  lng.name.str <- grep("^( ){1,}To( ){1,}Label( ){1,}LINTYP", 
+  lng.name.str <- grep("^.*Label( ){1,}LINTYP", 
                        chr.pltgen[1:lng.str]) + 1
   
   ## get line where the variable name list ends
-  lng.name.end <- min(grep("^( ){1,}To$", chr.pltgen[1:lng.str])) - 1
+  lng.name.end <- min(grep("^\\w{1,}$", chr.pltgen[lng.name.str:lng.str])) - 1
+  grep("^( ){1,}$", chr.pltgen[1:lng.str])
   
   ## get variable names
   str.var.names <- do.call(rbind,
