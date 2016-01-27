@@ -16,5 +16,10 @@ lng.implnd <- grep("IMPLND", chr.network.blk)
 chr.implnd <- do.call(rbind, strsplit(chr.network.blk[lng.implnd], 
                                       split = " {1,}"))
 
-paste0("total area of IMPLND is ", sum(as.numeric(chr.implnd[ , 3])), " ac")
+paste0("total area of IMPLND 301 is ", 
+       sum(as.numeric(chr.implnd[ chr.implnd[ , 2] == "301", 3])), " ac")
+
+paste0("total area of IMPLND 302 is ", 
+       sum(as.numeric(chr.implnd[ chr.implnd[ , 2] == "302", 3])), " ac")
+
 
