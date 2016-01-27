@@ -46,15 +46,19 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
         gsub(" Label.*$","",chr.pltgen[lng.name.str -1]),"$"), 
       chr.pltgen[lng.name.str:lng.str])) + lng.name.str - 2
   
-  chr.pltgen[lng.name.str:lng.name.end]
+  gsub(paste0(
+    chr.pltgen[lng.name.end + 1], " "), "", chr.pltgen[lng.name.str:lng.name.end])
   
   
   ## get variable names
   str.var.names <- do.call(rbind,
-                           lapply(chr.pltgen[lng.name.str:lng.name.end],
+                           lapply(gsub(paste0(
+                             chr.pltgen[lng.name.end + 1], " "), "", 
+                             chr.pltgen[lng.name.str:lng.name.end]),
                                   function(x){
                                     y <- gsub("( ){3,}.*","", 
-                                              gsub("^( ){1,}To( ){1,}" , "", x))
+                                              gsub("^( ){1,}To( ){1,}" ,
+                                                   "", x))
                                     z <- gsub(" ", ".", y)
                                     return(z)
                                   }
