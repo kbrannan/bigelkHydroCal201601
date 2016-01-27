@@ -40,8 +40,14 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
                        chr.pltgen[1:lng.str]) + 1
   
   ## get line where the variable name list ends
-  lng.name.end <- min(grep("^\\w{1,}$", chr.pltgen[lng.name.str:lng.str])) - 1
-  grep("^( ){1,}$", chr.pltgen[1:lng.str])
+  lng.name.end <- min(
+    grep(
+      paste0(
+        gsub(" Label.*$","",chr.pltgen[lng.name.str -1]),"$"), 
+      chr.pltgen[lng.name.str:lng.str])) + lng.name.str - 2
+  
+  chr.pltgen[lng.name.str:lng.name.end]
+  
   
   ## get variable names
   str.var.names <- do.call(rbind,
