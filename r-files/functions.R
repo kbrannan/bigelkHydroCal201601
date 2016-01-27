@@ -65,8 +65,15 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
                            )
   )
   
-  ## get data in dtat frame
+  ## get data in data frame
   ## fisrt get data as characters
+  ## get rid of leading characters
+  str.data <- gsub(paste0(chr.pltgen[lng.name.end + 1], 
+                          "( ){1, }"), "", str.data)
+  
+  str.data <- gsub("( ){1, }$", "", str.data)
+  
+  
   df.data.chr <- data.frame(do.call(rbind,
                                     strsplit(x = gsub("( ){1,}24( ){1,}0", " ",
                                                       gsub("^( ){1,}To( ){1,}", "",
