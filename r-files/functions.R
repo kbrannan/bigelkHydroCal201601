@@ -9,16 +9,6 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
   ## chr.dir is the path to the pltgen file
   ## chr.file is the name of the pltgen file to read
   
-  ## set the working directory
-  ##setwd("m:/models/bacteria/hspf/HydroCal201506/R_Projs/construct_control")
-  
-  
-  ## set path for the PLTGEN file
-  ##chr.dir <- paste0(getwd(), "/ODEQ_hspf/extended period/")
-  
-  ## set name for the PLTGEN file
-  ## chr.file <- "beflhyd.out"
-  
   ## read in the PLTGEN file
   chr.pltgen <- scan(file = paste0(chr.dir,"/", chr.file), sep = "\n", 
                      what = "character")
@@ -46,10 +36,6 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
         gsub(" Label.*$","",chr.pltgen[lng.name.str -1]),"$"), 
       chr.pltgen[lng.name.str:lng.str])) + lng.name.str - 2
   
-  gsub(paste0(
-    chr.pltgen[lng.name.end + 1], " "), "", chr.pltgen[lng.name.str:lng.name.end])
-  
-  
   ## get variable names
   str.var.names <- do.call(rbind,
                            lapply(gsub(paste0(
@@ -66,14 +52,15 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
   )
   
   ## get data in data frame
-  ## fisrt get data as characters
+
   ## get rid of leading characters
   str.data <- gsub(paste0(chr.pltgen[lng.name.end + 1], 
                           "( ){1, }"), "", str.data)
-  
+
+  ## get rid of trailing spaces
   str.data <- gsub("( ){1, }$", "", str.data)
-  
-  
+
+  ## extract data from character vector
   df.data.chr <- data.frame(do.call(rbind,
                                     strsplit(x = gsub("( ){1,}24( ){1,}0", " ",
                                                       gsub("^( ){1,}To( ){1,}", "",
@@ -95,6 +82,5 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
   ## create data.frame and return
   df.data <- cbind(tmp.date, tmp.flows)
   return(df.data)
-  
-  
+
 }
