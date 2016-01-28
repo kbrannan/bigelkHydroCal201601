@@ -28,7 +28,13 @@ mbaseind <- sum(df.hysep88.8$BaseQ)/sum(df.hysep88.8$Flow)
 ## clean up
 rm(df.hysep88.8)
 
+## convert stream flow from cu ft / sec to ac-ft / day for use in volumes
+## (1 cu ft / sec) * (86400 sec / day) * (1 ac-ft / 43559.9 cu ft)
+df.mod <- cbind(df.mod, 
+                flow.ac.ft =  86400 * (1 / 43559.9) * df.mod$Rch18.flow)
+
 ## mvol_ann
+
 ## mvol_smr
 ## mvol_wtr
 
