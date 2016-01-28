@@ -33,12 +33,55 @@ rm(df.hysep88.8)
 df.mod <- cbind(df.mod, 
                 flow.ac.ft =  86400 * (1 / 43559.9) * df.mod$Rch18.flow)
 
-## mvol_ann
+## need doBy package to sums for annual, summer and winter
+require(doBy)
 
-## mvol_smr
+## mvol_ann - annual volumes in ac-ft
+## create factor for year
+df.mod <- cbind(df.mod, 
+                fac.ann  = as.factor(
+                  strftime(df.mod$tmp.date, format = "%Y")))
+mvol_ann <- summaryBy(flow.ac.ft ~ fac.ann, data = df.mod, FUN = sum)
+
+## create factor for month used in mvol_smr and mvol_wtr calculations
+df.mod <- cbind(df.mod, 
+                fac.mon  = as.factor(
+                  strftime(df.mod$tmp.date, format = "%b")))
+
+## create factor for month used in mvol_smr and mvol_wtr calculations
+
+df.tmp <- data.frame(mon=as.character(df.mod$fac.mon), season = "none", 
+                     stringsAsFactors = FALSE)
+
+## summer season, summer is Jun, Jul and Aug
+lng.smr <- grep("Jun|Jul|Aug", df.tmp$mon)
+
+## winter season
+lng.wtr <- grep("Dec|Jan|Feb", df.tmp$mon)
+
+## assign summer and winter values to season. leave spring and fall as none
+df.tmp$season[lng.smr] <- "summer"
+df.tmp$season[lng.wtr] <- "winter"
+
+## add season as factor to df.mod 
+df.mod <- data.frame(df.mod, fac.season = as.factor(df.tmp$season))
+
+## clean up
+rm(df.tmp, lng.smr, lng.wtr)
+
+df.vol.seasons <- summaryBy(flow.ac.ft ~ fac.ann + fac.season , data = df.mod, FUN = sum)
+
+
+## mvol_smr - summer volumes in ac-ft
+mvol_smr <- df.vol.seasons[as.character(df.vol.seasons$fac.season) == "summer", 
+                           c("fac.ann", "flow.ac.ft.sum")]
+
 ## mvol_wtr
+mvol_wtr <- df.vol.seasons[as.character(df.vol.seasons$fac.season) == "winter", 
+                           c("fac.ann", "flow.ac.ft.sum")]
 
 ## mpeak
+
 ## mvol_stm
 
 ## mtime
