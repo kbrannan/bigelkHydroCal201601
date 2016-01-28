@@ -79,6 +79,17 @@ mvol_smr <- df.vol.seasons[as.character(df.vol.seasons$fac.season) == "summer",
 ## mvol_wtr
 mvol_wtr <- df.vol.seasons[as.character(df.vol.seasons$fac.season) == "winter", 
                            c("fac.ann", "flow.ac.ft.sum")]
+## storm information
+## get storm dates from text file Information in this file from 
+## Select_Storm_HydCal repo
+## column 2 is the begin date of storm and column 8 is the end date of storm
+
+
+df.strm.dates <- read.delim(file = paste0(chr.dir.r.files, "/dates_stm.dat"),
+                            header = FALSE, sep = " ", 
+                            stringsAsFactors = FALSE)[ , c(2, 8)]
+
+
 
 ## mpeak
 
