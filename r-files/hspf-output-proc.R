@@ -83,17 +83,34 @@ mvol_wtr <- df.vol.seasons[as.character(df.vol.seasons$fac.season) == "winter",
 ## get storm dates from text file Information in this file from 
 ## Select_Storm_HydCal repo
 ## column 2 is the begin date of storm and column 8 is the end date of storm
-
-
-df.strm.dates <- read.delim(file = paste0(chr.dir.r.files, "/dates_stm.dat"),
+df.strm.dates.raw <- read.delim(file = paste0(chr.dir.r.files, "/dates_stm.dat"),
                             header = FALSE, sep = " ", 
                             stringsAsFactors = FALSE)[ , c(2, 8)]
+## convert to POSIXct dates
+df.strm.dates <- data.frame(apply(df.strm.dates.raw, MARGIN = 2, strptime, 
+                                  format = "%m/%d/%Y"))
+## set names
+names(df.strm.dates) <- c("begin", "end")
 
-
+## clean up
+rm(df.strm.dates.raw)
 
 ## mpeak
+mpeak <- rep(-1, length(df.strm.dates$begin))
+
+for(ii in 1:length(mpeak)) {
+  mpeak[ii] <- max(df.mod[df.mod$tmp.date >= df.strm.dates$begin[ii] & 
+               df.mod$tmp.date <= df.strm.dates$end[ii], ]$Rch18.flow)
+}
+rm(ii)
 
 ## mvol_stm
+mvol_stm <- rep(-1, length(df.strm.dates$begin))
 
+for(ii in 1:length(mvol_stm)) {
+  mvol_stm[ii] <- sum(df.mod[df.mod$tmp.date >= df.strm.dates$begin[ii] & 
+                            df.mod$tmp.date <= 
+                              df.strm.dates$end[ii], ]$flow.ac.ft)
+}
 ## mtime
 
