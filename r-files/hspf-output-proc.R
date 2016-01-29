@@ -41,7 +41,8 @@ require(doBy)
 df.mod <- cbind(df.mod, 
                 fac.ann  = as.factor(
                   strftime(df.mod$tmp.date, format = "%Y")))
-mvol_ann <- summaryBy(flow.ac.ft ~ fac.ann, data = df.mod, FUN = sum)
+mvol_ann <- as.numeric(
+  summaryBy(flow.ac.ft ~ fac.ann, data = df.mod, FUN = sum)[ ,2])
 
 ## create factor for month used in mvol_smr and mvol_wtr calculations
 df.mod <- cbind(df.mod, 
@@ -73,12 +74,12 @@ df.vol.seasons <- summaryBy(flow.ac.ft ~ fac.ann + fac.season , data = df.mod, F
 
 
 ## mvol_smr - summer volumes in ac-ft
-mvol_smr <- df.vol.seasons[as.character(df.vol.seasons$fac.season) == "summer", 
-                           c("fac.ann", "flow.ac.ft.sum")]
+mvol_smr <- as.numeric(df.vol.seasons[as.character(df.vol.seasons$fac.season) == "summer", 
+                           "flow.ac.ft.sum"])
 
 ## mvol_wtr
-mvol_wtr <- df.vol.seasons[as.character(df.vol.seasons$fac.season) == "winter", 
-                           c("fac.ann", "flow.ac.ft.sum")]
+mvol_wtr <- as.numeric(df.vol.seasons[as.character(df.vol.seasons$fac.season) == "winter", 
+                           "flow.ac.ft.sum"])
 ## storm information
 ## get storm dates from text file Information in this file from 
 ## Select_Storm_HydCal repo
@@ -129,4 +130,24 @@ mtime <- as.numeric(quantile(x = df.mod$Rch18.flow, probs = tmp.per))
 
 ## clean up
 rm(tmp.per)
+
+
+# get observational groups names
+
+# get rows where the block names are
+chr.dir.pst <- "m:/models/bacteria/hspf/bigelkhydrocal201601/pest-files"
+str.control <- scan(paste0(chr.dir.pst,"/control.pst"), sep = "\n", 
+                    what = "character")
+tmp.blk.hd <- grep("\\*", str.control)
+str.obs.grp.names <- 
+  str.control[(tmp.blk.hd[grep("[Oo]bs.*[Gg]roups", 
+                               str.control[tmp.blk.hd])] + 1):
+                (tmp.blk.hd[grep("[Oo]bs.*[Gg]roups", 
+                                 str.control[tmp.blk.hd]) + 1] - 1)]
+tmp.blk.data <- do.call(c, mget(str.obs.grp.names))
+
+max(nchar(attr(tmp.blk.data, "names")))
+
+## save output tables
+image(mget(ls(pattern = "^m")), file = ) 
 
