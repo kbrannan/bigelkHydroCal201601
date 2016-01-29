@@ -95,6 +95,9 @@ names(df.strm.dates) <- c("begin", "end")
 ## clean up
 rm(df.strm.dates.raw)
 
+## storm durations in days
+df.strm.dur <- as.numeric(df.strm.dates$end - df.strm.dates$begin)
+
 ## mpeak
 mpeak <- rep(-1, length(df.strm.dates$begin))
 
@@ -104,13 +107,15 @@ for(ii in 1:length(mpeak)) {
 }
 rm(ii)
 
-## mvol_stm
+## mvol_stm in cu-ft for storm convert cu-ft/sec to cu-ft/day 
+## using 1 day = 86400 s
 mvol_stm <- rep(-1, length(df.strm.dates$begin))
 
 for(ii in 1:length(mvol_stm)) {
   mvol_stm[ii] <- sum(df.mod[df.mod$tmp.date >= df.strm.dates$begin[ii] & 
                             df.mod$tmp.date <= 
-                              df.strm.dates$end[ii], ]$flow.ac.ft)
+                              df.strm.dates$end[ii], ]$flow) * 
+    (df.strm.dur[ii] * 86400)
 }
 ## mtime
 
