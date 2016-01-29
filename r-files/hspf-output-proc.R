@@ -117,5 +117,16 @@ for(ii in 1:length(mvol_stm)) {
                               df.strm.dates$end[ii], ]$flow) * 
     (df.strm.dur[ii] * 86400)
 }
-## mtime
+## mtime - % exceedance for flow, using 1%, 5%, 10%, 25%, 50%, 75%, 95%, 99%
+## this is different than what Cadmus using in tsproc which is the fraction
+## of time the flow is above some value. I am not going to use tsproc when
+## doinmg the calculations. I will use R script
+
+## percents used
+tmp.per <- c(0.0001, 0.01, 0.05, 0.25, 0.50, 0.75, 0.95, 0.99)
+
+mtime <- as.numeric(quantile(x = df.mod$Rch18.flow, probs = tmp.per))
+
+## clean up
+rm(tmp.per)
 
