@@ -1,3 +1,7 @@
+## load packages
+library(DVstats) # USGS-HySep R version in DVstats
+library(doBy) # need doBy package to sums for annual, summer and winter
+
 chr.dir.r.files <- "m:/models/bacteria/hspf/bigelkhydrocal201601/r-files"
 source(file = paste0(chr.dir.r.files, "/functions.R"))
 
@@ -18,7 +22,6 @@ mflow <- df.mod$Rch18.flow
 
 ## mbaseind, base flow index 
 ## baseflow seperation using USGS-HySep R version in DVstats
-require(DVstats)
 df.hysep88.8 <- hysep(Flow = df.mod$Rch18.flow , 
                       Dates = as.Date(df.mod$tmp.date), da = da.be)
 
@@ -32,9 +35,6 @@ rm(df.hysep88.8)
 ## (1 cu ft / sec) * (86400 sec / day) * (1 ac-ft / 43559.9 cu ft)
 df.mod <- cbind(df.mod, 
                 flow.ac.ft =  86400 * (1 / 43559.9) * df.mod$Rch18.flow)
-
-## need doBy package to sums for annual, summer and winter
-require(doBy)
 
 ## mvol_ann - annual volumes in ac-ft
 ## create factor for year
