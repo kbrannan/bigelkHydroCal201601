@@ -146,7 +146,12 @@ str.obs.grp.names <-
                                  str.control[tmp.blk.hd]) + 1] - 1)]
 tmp.blk.data <- do.call(c, mget(str.obs.grp.names))
 
-max(nchar(attr(tmp.blk.data, "names")))
+chr.mod.output <- paste0(
+  sprintf(paste0("  %-", max(nchar(attr(tmp.blk.data, "names"))) + 5, "s"), 
+          names(tmp.blk.data)), sprintf("%.5E", tmp.blk.data))
+
+write(chr.mod.output, file = paste0(chr.dir.pst, "/model.out"), sep = "\n")
+
 
 ## save output tables
 image(mget(ls(pattern = "^m")), file = ) 
