@@ -180,6 +180,3 @@ write.table(data.frame(ins=chr.mod.ins),
             sep = "\n")
 
 
-## save output tables
-image(mget(ls(pattern = "^m")), file = ) 
-
