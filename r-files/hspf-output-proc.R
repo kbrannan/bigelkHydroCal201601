@@ -167,8 +167,17 @@ write.table(data.frame(out=chr.mod.output),
             sep = "\n")
 
 
+##
+## write model.ins file
+lng.var.val <- nchar(chr.mod.output[1])
 
-nchar(chr.mod.output[1]) - 2 ## 2 spaces at start of line
+chr.mod.ins <- c("pif $", paste0(
+  sprintf("l1  [%s]",names(tmp.blk.data)), lng.name, ":",lng.var.val + 1))
+
+write.table(data.frame(ins=chr.mod.ins), 
+            file = paste0(chr.dir.pst, "/model.ins"), 
+            quote = FALSE, col.names = FALSE, row.names = FALSE,
+            sep = "\n")
 
 
 ## save output tables
