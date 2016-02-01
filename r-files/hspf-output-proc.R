@@ -132,7 +132,7 @@ mtime <- as.numeric(quantile(x = df.mod$Rch18.flow, probs = tmp.per))
 rm(tmp.per)
 
 
-# get observational groups names
+## get observational groups names
 
 # get rows where the block names are
 chr.dir.pst <- "m:/models/bacteria/hspf/bigelkhydrocal201601/pest-files"
@@ -146,11 +146,29 @@ str.obs.grp.names <-
                                  str.control[tmp.blk.hd]) + 1] - 1)]
 tmp.blk.data <- do.call(c, mget(str.obs.grp.names))
 
+##
+## write output to filed format text file
+
+## get length of longest variable name and add 5
+lng.name <- max(nchar(attr(tmp.blk.data, "names"))) + 5
+
+## write output to chracater vector. the format is 2s, variable name left 
+## justified and width 5 plus length of longest variable name and value as 
+## 1.5E+00. 
+## total width of variable name and value is length of longest variable name + 5
+## + 11 = length of longest variable name + 16
 chr.mod.output <- paste0(
-  sprintf(paste0("  %-", max(nchar(attr(tmp.blk.data, "names"))) + 5, "s"), 
+  sprintf(paste0("  %-", lng.name, "s"), 
           names(tmp.blk.data)), sprintf("%.5E", tmp.blk.data))
 
-write(chr.mod.output, file = paste0(chr.dir.pst, "/model.out"), sep = "\n")
+write.table(data.frame(out=chr.mod.output), 
+            file = paste0(chr.dir.pst, "/model.out"), 
+            quote = FALSE, col.names = FALSE, row.names = FALSE,
+            sep = "\n")
+
+
+
+nchar(chr.mod.output[1]) - 2 ## 2 spaces at start of line
 
 
 ## save output tables
