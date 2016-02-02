@@ -144,7 +144,13 @@ str.obs.grp.names <-
                                str.control[tmp.blk.hd])] + 1):
                 (tmp.blk.hd[grep("[Oo]bs.*[Gg]roups", 
                                  str.control[tmp.blk.hd]) + 1] - 1)]
-tmp.blk.data <- do.call(c, mget(str.obs.grp.names))
+
+to.df.cur.data <- function(x) data.frame(
+  name = paste0(x, "_", 1:length(get(x))), 
+  val = get(x), stringsAsFactors = FALSE)
+
+tmp.blk.data <- do.call(rbind, lapply(str.obs.grp.names, FUN = to.df.cur.data))
+
 
 ##
 ## write output to filed format text file
@@ -159,7 +165,7 @@ lng.name <- max(nchar(attr(tmp.blk.data, "names"))) + 5
 ## + 11 = length of longest variable name + 16
 chr.mod.output <- paste0(
   sprintf(paste0("  %-", lng.name, "s"), 
-          names(tmp.blk.data)), sprintf("%.5E", tmp.blk.data))
+          names(tmp.blk.data)), "_", sprintf("%.5E", tmp.blk.data))
 
 write.table(data.frame(out=chr.mod.output), 
             file = paste0(chr.dir.pst, "/model.out"), 
