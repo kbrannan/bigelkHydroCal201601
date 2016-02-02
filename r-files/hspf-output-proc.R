@@ -144,13 +144,20 @@ str.obs.grp.names <-
                                str.control[tmp.blk.hd])] + 1):
                 (tmp.blk.hd[grep("[Oo]bs.*[Gg]roups", 
                                  str.control[tmp.blk.hd]) + 1] - 1)]
-tmp.blk.data <- do.call(c, mget(str.obs.grp.names))
+
+to.df.cur.data <- function(x) data.frame(
+  name = paste0(x, "_", 1:length(get(x))), 
+  val = get(x), stringsAsFactors = FALSE)
+
+tmp.blk.data <- do.call(rbind, lapply(str.obs.grp.names, FUN = to.df.cur.data))
+
 
 ##
 ## write output to filed format text file
 
 ## get length of longest variable name and add 5
-lng.name <- max(nchar(attr(tmp.blk.data, "names"))) + 5
+#lng.name <- max(nchar(attr(tmp.blk.data, "names"))) + 5
+lng.name <- max(nchar(tmp.blk.data$name)) + 5
 
 ## write output to chracater vector. the format is 2s, variable name left 
 ## justified and width 5 plus length of longest variable name and value as 
@@ -158,8 +165,8 @@ lng.name <- max(nchar(attr(tmp.blk.data, "names"))) + 5
 ## total width of variable name and value is length of longest variable name + 5
 ## + 11 = length of longest variable name + 16
 chr.mod.output <- paste0(
-  sprintf(paste0("  %-", lng.name, "s"), 
-          names(tmp.blk.data)), sprintf("%.5E", tmp.blk.data))
+  sprintf(paste0("  %-", lng.name, "s"), tmp.blk.data$name), 
+  sprintf("%.5E", tmp.blk.data$val))
 
 write.table(data.frame(out=chr.mod.output), 
             file = paste0(chr.dir.pst, "/model.out"), 
@@ -172,7 +179,7 @@ write.table(data.frame(out=chr.mod.output),
 lng.var.val <- nchar(chr.mod.output[1])
 
 chr.mod.ins <- c("pif $", paste0(
-  sprintf("l1  [%s]",names(tmp.blk.data)), lng.name, ":",lng.var.val + 1))
+  sprintf("l1  [%s]",tmp.blk.data$name), lng.name, ":",lng.var.val + 1))
 
 write.table(data.frame(ins=chr.mod.ins), 
             file = paste0(chr.dir.pst, "/model.ins"), 
