@@ -11,7 +11,7 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
   
   ## read in the PLTGEN file
   chr.pltgen <- scan(file = paste0(chr.dir,"/", chr.file), sep = "\n", 
-                     what = "character")
+                     what = "character", quiet = TRUE)
   
   ## get first line of data. the "-1.0000000E+30" is a flag for no data and 
   ## should only occur on the first day for a daily tiime step aggregation of

@@ -1,6 +1,6 @@
 ## load packages
-library(DVstats) # USGS-HySep R version in DVstats
-library(doBy) # need doBy package to sums for annual, summer and winter
+library(DVstats, quietly = TRUE) # USGS-HySep R version in DVstats
+library(doBy, quietly = TRUE) # need doBy package to sums for annual, summer and winter
 
 chr.dir.r.files <- "m:/models/bacteria/hspf/bigelkhydrocal201601/r-files"
 source(file = paste0(chr.dir.r.files, "/functions.R"))
@@ -137,7 +137,7 @@ rm(tmp.per)
 # get rows where the block names are
 chr.dir.pst <- "m:/models/bacteria/hspf/bigelkhydrocal201601/pest-files"
 str.control <- scan(paste0(chr.dir.pst,"/control.pst"), sep = "\n", 
-                    what = "character")
+                    what = "character", quiet = TRUE)
 tmp.blk.hd <- grep("\\*", str.control)
 str.obs.grp.names <- 
   str.control[(tmp.blk.hd[grep("[Oo]bs.*[Gg]roups", 
