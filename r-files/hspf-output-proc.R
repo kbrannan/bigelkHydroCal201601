@@ -8,6 +8,10 @@ source(file = paste0(chr.dir.r.files, "/functions.R"))
 chr.dir.hspf <- "m:/models/bacteria/hspf/bigelkhydrocal201601/hspf-files"
 chr.file.hspf.out <- "behydcal.out"
 
+<<<<<<< HEAD
+## path to storm dates file
+=======
+>>>>>>> master
 chr.dir.stm.dates <- "m:/models/bacteria/hspf/HydroCal201506/R_projs/Select_Storm_HydCal"
 
 ## drainage area in sqr mi for Big Elk Creek at outlet
@@ -86,7 +90,7 @@ mvol_wtr <- as.numeric(df.vol.seasons[as.character(df.vol.seasons$fac.season) ==
 ## get storm dates from text file Information in this file from 
 ## Select_Storm_HydCal repo
 ## column 2 is the begin date of storm and column 8 is the end date of storm
-df.strm.dates.raw <- read.delim(file = paste0(chr.dir.r.files, "/dates_stm.dat"),
+df.strm.dates.raw <- read.delim(file = paste0(chr.dir.stm.dates, "/dates_stm.dat"),
                             header = FALSE, sep = " ", 
                             stringsAsFactors = FALSE)[ , c(2, 8)]
 ## convert to POSIXct dates
