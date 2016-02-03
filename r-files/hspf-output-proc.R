@@ -8,6 +8,8 @@ source(file = paste0(chr.dir.r.files, "/functions.R"))
 chr.dir.hspf <- "m:/models/bacteria/hspf/bigelkhydrocal201601/hspf-files"
 chr.file.hspf.out <- "behydcal.out"
 
+chr.dir.stm.dates <- "m:/models/bacteria/hspf/HydroCal201506/R_projs/Select_Storm_HydCal"
+
 ## drainage area in sqr mi for Big Elk Creek at outlet
 da.be <- 88.8
 
