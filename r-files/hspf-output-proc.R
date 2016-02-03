@@ -19,7 +19,7 @@ df.mod <- rpltgen(chr.dir = chr.dir.hspf, chr.file = chr.file.hspf.out)
 ## calculate model groups
 ## mlog log base 10 of stream flow
 mlog <- log10(df.mod$Rch18.flow)
-mlog[is.finite(mlog) == FALSE] <- -6
+mlog[mlog == -Inf] <- -6
 
 ## mflow stream flow
 mflow <- df.mod$Rch18.flow
