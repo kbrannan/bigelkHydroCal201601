@@ -145,9 +145,19 @@ str.obs.grp.names <-
                 (tmp.blk.hd[grep("[Oo]bs.*[Gg]roups", 
                                  str.control[tmp.blk.hd]) + 1] - 1)]
 
-to.df.cur.data <- function(x) data.frame(
-  name = paste0(x, "_", 1:length(get(x))), 
-  val = get(x), stringsAsFactors = FALSE)
+lng.0.pd <- nchar(as.character(max(sapply(mget(str.obs.grp.names), length))))
+
+lng.0.pd <- nchar(as.character(sapply(mget(str.obs.grp.names), length)))
+
+to.df.cur.data <- function(x) {
+  n.pad <- nchar(as.character(length(get(x))))
+  y <- data.frame(
+    name = paste0(x, "_", 
+                  sprintf(fmt = paste0("%0", n.pad, "d"), 
+                          1:length(get(x)))), 
+    val = get(x), stringsAsFactors = FALSE)
+  return(y)
+} 
 
 tmp.blk.data <- do.call(rbind, lapply(str.obs.grp.names, FUN = to.df.cur.data))
 
@@ -158,6 +168,8 @@ tmp.blk.data <- do.call(rbind, lapply(str.obs.grp.names, FUN = to.df.cur.data))
 ## get length of longest variable name and add 5
 #lng.name <- max(nchar(attr(tmp.blk.data, "names"))) + 5
 lng.name <- max(nchar(tmp.blk.data$name)) + 5
+
+
 
 ## write output to chracater vector. the format is 2s, variable name left 
 ## justified and width 5 plus length of longest variable name and value as 
