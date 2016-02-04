@@ -21,30 +21,30 @@ irc          relative     1.0000E-02  1.0000E-03  switch      2.000      parabol
 cepsc        relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
 lzetp        relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
 * parameter data
-lzsn000      log    factor       14.0000        2.0000        15.000      lzsn           1.000       0.000        1
-infilt110    log    factor       5.00000E-02   1.00000E-03   0.50000      infilt         1.000       0.000        1
-infilt120    log    factor       5.00000E-02   1.00000E-03   0.50000      infilt         1.000       0.000        1
-infilt210    log    factor       5.00000E-02   1.00000E-03   0.50000      infilt         1.000       0.000        1
-infilt220    log    factor       5.00000E-02   1.00000E-03   0.50000      infilt         1.000       0.000        1
-infilt310    log    factor       5.00000E-02   1.00000E-03   0.50000      infilt         1.000       0.000        1
-infilt320    log    factor       5.00000E-02   1.00000E-03   0.50000      infilt         1.000       0.000        1
-agwrc000     log    factor       0.99000       8.50000E-02   0.99900      agwrc          1.000       0.000        1
-deepfr000    log    factor       1.00000E-03   1.00000E-05   0.50000      deepfr         1.000       0.000        1
-basetp000    log    factor       3.00000E-02   1.00000E-03   0.20000      basetp         1.000       0.000        1
-agwetp000    log    factor       5.00000E-02   1.00000E-03   0.20000      agwetp         1.000       0.000        1
-uzsn100      log    factor       0.50000       5.00000E-02    2.0000      uzsn           1.000       0.000        1
-uzsn200      log    factor       0.50000       5.00000E-02    2.0000      uzsn           1.000       0.000        1
-uzsn300      log    factor       0.50000       5.00000E-02    2.0000      uzsn           1.000       0.000        1
-intfw100     log    factor        10.000        1.0000        10.000      intfw          1.000       0.000        1
-intfw200     log    factor        1.0000        1.0000        10.000      intfw          1.000       0.000        1
-intfw300     log    factor        1.0000        1.0000        10.000      intfw          1.000       0.000        1
-irc000       log    factor       0.50000       0.30000       0.85000      irc            1.000       0.000        1
-cepsc100     log    factor       0.20000       0.10000       0.40000      cepsc          1.000       0.000        1
-cepsc200     log    factor       0.10000       1.00000E-02   0.20000      cepsc          1.000       0.000        1
-cepsc300     log    factor       0.10000       1.00000E-02   0.20000      cepsc          1.000       0.000        1
-lzetp100     log    factor       0.80000       0.40000       0.80000      lzetp          1.000       0.000        1
-lzetp200     log    factor       0.60000       0.10000       0.80000      lzetp          1.000       0.000        1
-lzetp300     log    factor       0.60000       0.10000       0.80000      lzetp          1.000       0.000        1
+lzsn000       log    factor   2.269631000000000         2.0000        15.000      lzsn           1.000       0.000        1
+infilt110     log    factor   6.3867513000000000E-02   1.00000E-03   0.50000      infilt         1.000       0.000        1
+infilt120     log    factor   0.1178505000000000       1.00000E-03   0.50000      infilt         1.000       0.000        1
+infilt210     log    factor   0.2379845000000000       1.00000E-03   0.50000      infilt         1.000       0.000        1
+infilt220     log    factor   0.5000000000000000       1.00000E-03   0.50000      infilt         1.000       0.000        1
+infilt310     log    factor   6.6622413000000008E-02   1.00000E-03   0.50000      infilt         1.000       0.000        1
+infilt320     log    factor   0.1468971000000000       1.00000E-03   0.50000      infilt         1.000       0.000        1
+agwrc000      log    factor  0.9790137000000000        8.50000E-02   0.99900      agwrc          1.000       0.000        1
+deepfr000     log    factor   2.0635569000000000E-04   1.00000E-05   0.50000      deepfr         1.000       0.000        1
+basetp000     log    factor   4.7517792000000000E-02   1.00000E-03   0.20000      basetp         1.000       0.000        1
+agwetp000     log    factor   1.0000000000000000E-03   1.00000E-03   0.20000      agwetp         1.000       0.000        1
+uzsn100       log    factor  2.000000000000000         5.00000E-02    2.0000      uzsn           1.000       0.000        1
+uzsn200       log    factor  1.882279000000000         5.00000E-02    2.0000      uzsn           1.000       0.000        1
+uzsn300       log    factor  2.000000000000000         5.00000E-02    2.0000      uzsn           1.000       0.000        1
+intfw100      log    factor   10.00000000000000         1.0000        10.000      intfw          1.000       0.000        1
+intfw200      log    factor   10.00000000000000         1.0000        10.000      intfw          1.000       0.000        1
+intfw300      log    factor   2.092486000000000         1.0000        10.000      intfw          1.000       0.000        1
+irc000        log    factor  0.4433022000000000        0.30000       0.85000      irc            1.000       0.000        1
+cepsc100      log    factor  0.4000000000000000        0.10000       0.40000      cepsc          1.000       0.000        1
+cepsc200      log    factor  3.2349641000000000E-02    1.00000E-02   0.20000      cepsc          1.000       0.000        1
+cepsc300      log    factor  0.2000000000000000        1.00000E-02   0.20000      cepsc          1.000       0.000        1
+lzetp100      log    factor  0.4509261000000000        0.40000       0.80000      lzetp          1.000       0.000        1
+lzetp200      log    factor  0.2675414000000000        0.10000       0.80000      lzetp          1.000       0.000        1
+lzetp300      log    factor  0.6782096000000000        0.10000       0.80000      lzetp          1.000       0.000        1
 * observation groups
 mlog
 mflow
