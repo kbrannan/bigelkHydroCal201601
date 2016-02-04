@@ -19,6 +19,9 @@ tmp.file <- "Final_Deliverables_EPA_July2012/PEST_end/calib.par"
 str.par <- scan(unz(paste0(tmp.dir,"/", tmp.zip),
                     tmp.file)
                 , sep = "\n", what = character())
+
+str.par <- gsub("^( ){1,}","",str.par)
+
 str.par
 
 # get current control file
@@ -38,7 +41,7 @@ str.new.pst <- c(str.cur.pst[1:lng.cur.st],
                      str.par[2:length(str.par)],
                      str.cur.pst[lng.cur.ed:length(str.cur.pst)])
 
-str.new.pst[lng.cur.st:lng.cur.ed]
+
 
 write.table(str.new.pst, file = paste0(tmp.pst.dir,"/control-cadmus.pst"), 
             row.names = FALSE, col.names = FALSE, quote = FALSE)
