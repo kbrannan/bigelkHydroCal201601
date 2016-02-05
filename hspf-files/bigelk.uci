@@ -175,7 +175,7 @@ IMPLND
   IWAT-PARM2
 *** <ILS >      LSUR     SLSUR      NSUR     RETSC
 *** x -  x      (ft)                          (in)
-  301  302       100     0.05       0.05       0.1
+  301  302       100     0.05       0.05       0.1 ~21~
   END IWAT-PARM2
   IWAT-PARM3
 *** <ILS >    PETMAX    PETMIN
