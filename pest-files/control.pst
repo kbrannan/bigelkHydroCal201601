@@ -6,7 +6,7 @@ restart estimation
 5.0   2.0    0.3    0.03    10  999
 5.0   5.0   1.0e-3
 0.1   aui
-   0  .005  4   4  .005   4
+   5  .005  4   4  .005   4
 1    1    1
 * parameter groups
 lzsn         relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
@@ -30,9 +30,9 @@ infilt220     log    factor   0.5000000000000000        1.00000E-03   0.50000   
 infilt310     log    factor   6.6622413000000008E-02    1.00000E-03   0.50000      infilt         1.000       0.000        1
 infilt320     log    factor   0.1468971000000000        1.00000E-03   0.50000      infilt         1.000       0.000        1
 agwrctr000    log    factor   46.650133658624912        9.30000E-01   9.990E+2     agwrc          1.000       0.000        1
-deepfr000     log    factor   2.0635569000000000E-04    1.00000E-05   0.50000      deepfr         1.000       0.000        1
-basetp000     log    factor   4.7517792000000000E-02    1.00000E-03   0.20000      basetp         1.000       0.000        1
-agwetp000     log    factor   1.0000000000000000E-03    1.00000E-03   0.20000      agwetp         1.000       0.000        1
+deepfr000     log    factor   2.0635569000000000E-04    1.00000E-06   0.50000      deepfr         1.000       0.000        1
+basetp000     log    factor   4.7517792000000000E-02    1.00000E-06   0.20000      basetp         1.000       0.000        1
+agwetp000     log    factor   1.0000000000000000E-03    1.00000E-06   0.20000      agwetp         1.000       0.000        1
 uzsn100       log    factor   2.000000000000000         5.00000E-02    2.0000      uzsn           1.000       0.000        1
 uzsn200       log    factor   1.882279000000000         5.00000E-02    2.0000      uzsn           1.000       0.000        1
 uzsn300       log    factor   2.000000000000000         5.00000E-02    2.0000      uzsn           1.000       0.000        1
