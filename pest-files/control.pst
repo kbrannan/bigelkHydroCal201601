@@ -43,7 +43,7 @@ uzsn300       log    factor    2.000000      5.00000e-02    2.0000      uzsn    
 intfw100      log    factor    4.705384      1.0000        10.000       intfw          1.000       0.000        1
 intfw200      log    factor    10.00000      1.0000        10.000       intfw          1.000       0.000        1
 intfw300      log    factor    3.530759      1.0000        10.000       intfw          1.000       0.000        1
-irctr000      log    factor    1.363231      0.428571429   5.66667      irc            1.000       0.000        1
+irctr000      log    factor    1.363231      0.428571429   2.33333      irc            1.000       0.000        1
 cepsc100      log    factor   0.4000000      0.10000       0.40000      cepsc          1.000       0.000        1
 cepsc200      log    factor   2.3964879E-02  1.00000e-02   0.20000      cepsc          1.000       0.000        1
 cepsc300      log    factor   0.2000000      1.00000e-02   0.20000      cepsc          1.000       0.000        1
