@@ -13941,14 +13941,14 @@ mtime
  mvol_stm_91          6.2860300E+08   8.690970E-11  mvol_stm
  mvol_stm_92          1.2726200E+09   8.690970E-11  mvol_stm
  mvol_stm_93          4.0690900E+08   8.690970E-11  mvol_stm
- mtime_1               1.900000       3.024214E-01  mtime
+ mtime_1               1.900000       3.024214E+01  mtime
  mtime_2               6.000000       3.024214E-02  mtime
  mtime_3               10.80000       3.024214E-02  mtime
  mtime_4               37.00000       3.024214E-02  mtime
  mtime_5               152.3000       3.024214E-02  mtime
  mtime_6               439.9000       3.024214E-02  mtime
  mtime_7               1466.400       3.024214E-02  mtime
- mtime_8               2819.000       3.024214E+01  mtime
+ mtime_8               2819.000       3.024214E-02  mtime
 * model command line
 model.bat
 * model input/output
