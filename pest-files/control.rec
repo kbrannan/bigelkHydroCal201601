@@ -79,31 +79,31 @@
 
  Name         Trans-            Change       Initial        Lower          Upper
               formation         limit        value          bound          bound
- lzsn000      log               factor      2.26963        2.00000        15.0000    
- infilt110    log               factor     6.386751E-02   1.000000E-03   0.500000    
- infilt120    log               factor     0.117850       1.000000E-03   0.500000    
- infilt210    log               factor     0.237984       1.000000E-03   0.500000    
+ lzsn000      log               factor      3.04907        2.00000        15.0000    
+ infilt110    log               factor     7.311070E-02   1.000000E-03   0.500000    
+ infilt120    log               factor     8.988491E-02   1.000000E-03   0.500000    
+ infilt210    log               factor     0.490906       1.000000E-03   0.500000    
  infilt220    log               factor     0.500000       1.000000E-03   0.500000    
- infilt310    log               factor     6.662241E-02   1.000000E-03   0.500000    
- infilt320    log               factor     0.146897       1.000000E-03   0.500000    
- agwrctr000   log               factor      46.6501       0.930000        999.000    
- deepfr000    log               factor     2.063557E-04   1.000000E-06   0.500000    
- basetp000    log               factor     4.751779E-02   1.000000E-06   0.200000    
- agwetp000    log               factor     1.000000E-03   1.000000E-06   0.200000    
- uzsn100      log               factor      2.00000       5.000000E-02    2.00000    
- uzsn200      log               factor      1.88228       5.000000E-02    2.00000    
+ infilt310    log               factor     7.660059E-02   1.000000E-03   0.500000    
+ infilt320    log               factor     0.155283       1.000000E-03   0.500000    
+ agwrctr000   log               factor      39.8761       0.930000        999.000    
+ deepfr000    log               factor     2.085495E-04   1.000000E-06   0.500000    
+ basetp000    log               factor     1.343457E-03   1.000000E-06   0.200000    
+ agwetp000    log               factor     7.269337E-04   1.000000E-06   0.200000    
+ uzsn100      log               factor     0.569272       5.000000E-02    2.00000    
+ uzsn200      log               factor      2.00000       5.000000E-02    2.00000    
  uzsn300      log               factor      2.00000       5.000000E-02    2.00000    
- intfw100     log               factor      10.0000        1.00000        10.0000    
+ intfw100     log               factor      4.70538        1.00000        10.0000    
  intfw200     log               factor      10.0000        1.00000        10.0000    
- intfw300     log               factor      2.09249        1.00000        10.0000    
- irctr000     log               factor     0.785714       0.428571        5.66667    
+ intfw300     log               factor      3.53076        1.00000        10.0000    
+ irctr000     log               factor      1.36323       0.428571        5.66667    
  cepsc100     log               factor     0.400000       0.100000       0.400000    
- cepsc200     log               factor     3.234964E-02   1.000000E-02   0.200000    
+ cepsc200     log               factor     2.396488E-02   1.000000E-02   0.200000    
  cepsc300     log               factor     0.200000       1.000000E-02   0.200000    
- lzetp100     log               factor     0.450926       0.400000       0.800000    
- lzetp200     log               factor     0.267541       0.100000       0.800000    
- lzetp300     log               factor     0.678210       0.100000       0.800000    
- retsc        log               factor     0.100000       1.000000E-02    1.00000    
+ lzetp100     log               factor     0.800000       0.400000       0.800000    
+ lzetp200     log               factor     0.244276       0.100000       0.800000    
+ lzetp300     log               factor     0.646397       0.100000       0.800000    
+ retsc        log               factor     8.393607E-02   1.000000E-02    1.00000    
 
  Name         Group          Scale         Offset        Model command number
  lzsn000      lzsn          1.00000        0.00000            1
@@ -14020,7 +14020,7 @@
   mvol_stm_91            6.286030E+08     8.6910E-11   mvol_stm    
   mvol_stm_92            1.272620E+09     8.6910E-11   mvol_stm    
   mvol_stm_93            4.069090E+08     8.6910E-11   mvol_stm    
-  mtime_1                 1.90000         3.0242E-02   mtime       
+  mtime_1                 1.90000         0.3024       mtime       
   mtime_2                 6.00000         3.0242E-02   mtime       
   mtime_3                 10.8000         3.0242E-02   mtime       
   mtime_4                 37.0000         3.0242E-02   mtime       
@@ -14081,563 +14081,48 @@
 
 
  INITIAL CONDITIONS: 
-    Sum of squared weighted residuals (ie phi)               =   206.43    
-    Contribution to phi from observation group "mlog"        =   1.0000    
-    Contribution to phi from observation group "mflow"       =   1.0000    
-    Contribution to phi from observation group "mbaseind"    =   99.428    
-    Contribution to phi from observation group "mpeak"       =   1.0000    
-    Contribution to phi from observation group "mvol_ann"    =   1.0000    
-    Contribution to phi from observation group "mvol_smr"    =   1.0000    
-    Contribution to phi from observation group "mvol_wtr"    =   1.0000    
-    Contribution to phi from observation group "mvol_stm"    =   1.0000    
-    Contribution to phi from observation group "mtime"       =   100.00    
+    Sum of squared weighted residuals (ie phi)               =   98.484    
+    Contribution to phi from observation group "mlog"        =  0.87305    
+    Contribution to phi from observation group "mflow"       =  0.87612    
+    Contribution to phi from observation group "mbaseind"    =   14.420    
+    Contribution to phi from observation group "mpeak"       =  0.75054    
+    Contribution to phi from observation group "mvol_ann"    =  0.90099    
+    Contribution to phi from observation group "mvol_smr"    =  0.81331    
+    Contribution to phi from observation group "mvol_wtr"    =  0.85768    
+    Contribution to phi from observation group "mvol_stm"    =  0.91161    
+    Contribution to phi from observation group "mtime"       =   78.080    
  
        Current parameter values
-       lzsn000          2.26963    
-       infilt110       6.386751E-02
-       infilt120       0.117850    
-       infilt210       0.237984    
+       lzsn000          3.04907    
+       infilt110       7.311070E-02
+       infilt120       8.988491E-02
+       infilt210       0.490906    
        infilt220       0.500000    
-       infilt310       6.662241E-02
-       infilt320       0.146897    
-       agwrctr000       46.6501    
-       deepfr000       2.063557E-04
-       basetp000       4.751779E-02
-       agwetp000       1.000000E-03
-       uzsn100          2.00000    
-       uzsn200          1.88228    
+       infilt310       7.660059E-02
+       infilt320       0.155283    
+       agwrctr000       39.8761    
+       deepfr000       2.085495E-04
+       basetp000       1.343457E-03
+       agwetp000       7.269337E-04
+       uzsn100         0.569272    
+       uzsn200          2.00000    
        uzsn300          2.00000    
-       intfw100         10.0000    
+       intfw100         4.70538    
        intfw200         10.0000    
-       intfw300         2.09249    
-       irctr000        0.785714    
+       intfw300         3.53076    
+       irctr000         1.36323    
        cepsc100        0.400000    
-       cepsc200        3.234964E-02
+       cepsc200        2.396488E-02
        cepsc300        0.200000    
-       lzetp100        0.450926    
-       lzetp200        0.267541    
-       lzetp300        0.678210    
-       retsc           0.100000    
+       lzetp100        0.800000    
+       lzetp200        0.244276    
+       lzetp300        0.646397    
+       retsc           8.393607E-02
 
 
  OPTIMISATION ITERATION NO.        : 1
     Model calls so far             : 1
-    Starting phi for this iteration                          :   206.43    
-    Contribution to phi from observation group "mlog"        :   1.0000    
-    Contribution to phi from observation group "mflow"       :   1.0000    
-    Contribution to phi from observation group "mbaseind"    :   99.428    
-    Contribution to phi from observation group "mpeak"       :   1.0000    
-    Contribution to phi from observation group "mvol_ann"    :   1.0000    
-    Contribution to phi from observation group "mvol_smr"    :   1.0000    
-    Contribution to phi from observation group "mvol_wtr"    :   1.0000    
-    Contribution to phi from observation group "mvol_stm"    :   1.0000    
-    Contribution to phi from observation group "mtime"       :   100.00    
-        param "infilt220" frozen: gradient and update vectors out of bounds
-        param "cepsc300" frozen: gradient and update vectors out of bounds
-        param "intfw100" frozen: - update vector out of bounds
-        param "intfw200" frozen: - update vector out of bounds
-        param "cepsc100" frozen: - update vector out of bounds
-
-        Lambda =   5.0000     ----->
-           Phi =   269.95      (  1.308 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =   2.5000     ----->
-           Phi =   189.31      (  0.917 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "uzsn300" frozen: gradient and update vectors out of bounds
-
-        Lambda =   1.2500     ----->
-           Phi =   160.05      (  0.775 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  0.62500     ----->
-           Phi =   209.36      (  1.014 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =   2.5000     ----->
-           Phi =   192.87      (  0.934 of starting phi)
-
-    No more lambdas: phi rising
-    Lowest phi this iteration:   160.05    
-
-       Current parameter values                 Previous parameter values
-       lzsn000          4.79857                 lzsn000           2.26963    
-       infilt110       0.187384                 infilt110        6.386751E-02
-       infilt120       5.741102E-02             infilt120        0.117850    
-       infilt210       0.284223                 infilt210        0.237984    
-       infilt220       0.500000                 infilt220        0.500000    
-       infilt310       6.929220E-02             infilt310        6.662241E-02
-       infilt320       0.157205                 infilt320        0.146897    
-       agwrctr000       43.2710                 agwrctr000        46.6501    
-       deepfr000       2.053220E-04             deepfr000        2.063557E-04
-       basetp000       9.503558E-03             basetp000        4.751779E-02
-       agwetp000       9.387783E-04             agwetp000        1.000000E-03
-       uzsn100         0.658447                 uzsn100           2.00000    
-       uzsn200          2.00000                 uzsn200           1.88228    
-       uzsn300          2.00000                 uzsn300           2.00000    
-       intfw100         10.0000                 intfw100          10.0000    
-       intfw200         10.0000                 intfw200          10.0000    
-       intfw300         2.09958                 intfw300          2.09249    
-       irctr000         1.35022                 irctr000         0.785714    
-       cepsc100        0.400000                 cepsc100         0.400000    
-       cepsc200        2.924280E-02             cepsc200         3.234964E-02
-       cepsc300        0.200000                 cepsc300         0.200000    
-       lzetp100        0.528013                 lzetp100         0.450926    
-       lzetp200        0.115469                 lzetp200         0.267541    
-       lzetp300        0.685427                 lzetp300         0.678210    
-       retsc           0.131524                 retsc            0.100000    
-    Maximum   factor change:  5.000     ["basetp000"]
-    Maximum relative change:  1.934     ["infilt110"]
-
-
- OPTIMISATION ITERATION NO.        : 2
-    Model calls so far             : 31
-    Starting phi for this iteration                          :   160.05    
-    Contribution to phi from observation group "mlog"        :  0.86345    
-    Contribution to phi from observation group "mflow"       :  0.87274    
-    Contribution to phi from observation group "mbaseind"    :   32.664    
-    Contribution to phi from observation group "mpeak"       :  0.62978    
-    Contribution to phi from observation group "mvol_ann"    :  0.92534    
-    Contribution to phi from observation group "mvol_smr"    :  0.84891    
-    Contribution to phi from observation group "mvol_wtr"    :   1.0028    
-    Contribution to phi from observation group "mvol_stm"    :  0.80341    
-    Contribution to phi from observation group "mtime"       :   121.44    
-    All frozen parameters freed.
-        param "infilt220" frozen: gradient and update vectors out of bounds
-        param "uzsn200" frozen: - update vector out of bounds
-        param "intfw200" frozen: - update vector out of bounds
-        param "cepsc100" frozen: - update vector out of bounds
-
-        Lambda =   1.2500     ----->
-           Phi =   145.09      (  0.906 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  0.62500     ----->
-           Phi =   150.09      (  0.938 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "uzsn300" frozen: - update vector out of bounds
-
-        Lambda =   2.5000     ----->
-           Phi =   111.12      (  0.694 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =   1.2500     ----->
-           Phi =   132.18      (  0.826 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =   5.0000     ----->
-           Phi =   118.92      (  0.743 of starting phi)
-
-    No more lambdas: phi rising
-    Lowest phi this iteration:   111.12    
-
-       Current parameter values                 Previous parameter values
-       lzsn000          2.78773                 lzsn000           4.79857    
-       infilt110       0.199911                 infilt110        0.187384    
-       infilt120       6.856465E-02             infilt120        5.741102E-02
-       infilt210       0.450856                 infilt210        0.284223    
-       infilt220       0.500000                 infilt220        0.500000    
-       infilt310       6.839243E-02             infilt310        6.929220E-02
-       infilt320       0.158660                 infilt320        0.157205    
-       agwrctr000       41.2305                 agwrctr000        43.2710    
-       deepfr000       2.049850E-04             deepfr000        2.053220E-04
-       basetp000       1.900712E-03             basetp000        9.503558E-03
-       agwetp000       8.185296E-04             agwetp000        9.387783E-04
-       uzsn100         0.788350                 uzsn100          0.658447    
-       uzsn200          2.00000                 uzsn200           2.00000    
-       uzsn300          2.00000                 uzsn300           2.00000    
-       intfw100         7.57816                 intfw100          10.0000    
-       intfw200         10.0000                 intfw200          10.0000    
-       intfw300         1.95008                 intfw300          2.09958    
-       irctr000         1.35268                 irctr000          1.35022    
-       cepsc100        0.400000                 cepsc100         0.400000    
-       cepsc200        2.405380E-02             cepsc200         2.924280E-02
-       cepsc300        0.194297                 cepsc300         0.200000    
-       lzetp100        0.661107                 lzetp100         0.528013    
-       lzetp200        0.253915                 lzetp200         0.115469    
-       lzetp300        0.680281                 lzetp300         0.685427    
-       retsc           0.133876                 retsc            0.131524    
-    Maximum   factor change:  5.000     ["basetp000"]
-    Maximum relative change:  1.199     ["lzetp200"]
-
-
- OPTIMISATION ITERATION NO.        : 3
-    Model calls so far             : 61
-    Starting phi for this iteration                          :   111.12    
-    Contribution to phi from observation group "mlog"        :  0.88478    
-    Contribution to phi from observation group "mflow"       :  0.87342    
-    Contribution to phi from observation group "mbaseind"    :   30.192    
-    Contribution to phi from observation group "mpeak"       :  0.73440    
-    Contribution to phi from observation group "mvol_ann"    :  0.88928    
-    Contribution to phi from observation group "mvol_smr"    :  0.88873    
-    Contribution to phi from observation group "mvol_wtr"    :  0.83988    
-    Contribution to phi from observation group "mvol_stm"    :  0.89141    
-    Contribution to phi from observation group "mtime"       :   74.922    
-    All frozen parameters freed.
-        param "infilt220" frozen: gradient and update vectors out of bounds
-        param "cepsc100" frozen: - update vector out of bounds
-
-        Lambda =   2.5000     ----->
-           Phi =   134.23      (  1.208 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "uzsn300" frozen: gradient and update vectors out of bounds
-        param "intfw200" frozen: gradient and update vectors out of bounds
-
-        Lambda =   1.2500     ----->
-           Phi =   112.55      (  1.013 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "uzsn200" frozen: gradient and update vectors out of bounds
-
-        Lambda =  0.62500     ----->
-           Phi =   134.18      (  1.208 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  0.31250     ----->
-           Phi =   120.02      (  1.080 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  0.15625     ----->
-           Phi =   147.97      (  1.332 times starting phi)
-
-    No more lambdas: phi rising
-    Lowest phi this iteration:   112.55    
-    Relative phi reduction between optimisation iterations less than 0.1000
-    Switch to central derivatives calculation
-    (restart from best parameters so far - these achieved at iteration    2)
-
-       Current parameter values
-       lzsn000          2.78773    
-       infilt110       0.199911    
-       infilt120       6.856465E-02
-       infilt210       0.450856    
-       infilt220       0.500000    
-       infilt310       6.839243E-02
-       infilt320       0.158660    
-       agwrctr000       41.2305    
-       deepfr000       2.049850E-04
-       basetp000       1.900712E-03
-       agwetp000       8.185296E-04
-       uzsn100         0.788350    
-       uzsn200          2.00000    
-       uzsn300          2.00000    
-       intfw100         7.57816    
-       intfw200         10.0000    
-       intfw300         1.95008    
-       irctr000         1.35268    
-       cepsc100        0.400000    
-       cepsc200        2.405380E-02
-       cepsc300        0.194297    
-       lzetp100        0.661107    
-       lzetp200        0.253915    
-       lzetp300        0.680281    
-       retsc           0.133876    
-
-
- OPTIMISATION ITERATION NO.        : 4
-    Model calls so far             : 91
-    Starting phi for this iteration                          :   111.12    
-    Contribution to phi from observation group "mlog"        :  0.88478    
-    Contribution to phi from observation group "mflow"       :  0.87342    
-    Contribution to phi from observation group "mbaseind"    :   30.192    
-    Contribution to phi from observation group "mpeak"       :  0.73440    
-    Contribution to phi from observation group "mvol_ann"    :  0.88928    
-    Contribution to phi from observation group "mvol_smr"    :  0.88873    
-    Contribution to phi from observation group "mvol_wtr"    :  0.83988    
-    Contribution to phi from observation group "mvol_stm"    :  0.89141    
-    Contribution to phi from observation group "mtime"       :   74.922    
-    All frozen parameters freed.
-        param "infilt220" frozen: gradient and update vectors out of bounds
-        param "uzsn300" frozen: gradient and update vectors out of bounds
-        param "intfw200" frozen: gradient and update vectors out of bounds
-        param "uzsn200" frozen: - update vector out of bounds
-        param "cepsc100" frozen: - update vector out of bounds
-
-        Lambda =   2.5000     ----->
-           Phi =   138.91      (  1.250 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =   1.2500     ----->
-           Phi =   119.06      (  1.072 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  0.62500     ----->
-           Phi =   109.07      (  0.982 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  0.31250     ----->
-           Phi =   121.84      (  1.097 times starting phi)
-
-    No more lambdas: phi rising
-    Lowest phi this iteration:   109.07    
-
-       Current parameter values                 Previous parameter values
-       lzsn000          2.95481                 lzsn000           2.78773    
-       infilt110       3.998224E-02             infilt110        0.199911    
-       infilt120       8.618819E-02             infilt120        6.856465E-02
-       infilt210       0.500000                 infilt210        0.450856    
-       infilt220       0.500000                 infilt220        0.500000    
-       infilt310       7.663085E-02             infilt310        6.839243E-02
-       infilt320       0.164325                 infilt320        0.158660    
-       agwrctr000       40.8454                 agwrctr000        41.2305    
-       deepfr000       2.078078E-04             deepfr000        2.049850E-04
-       basetp000       1.440120E-03             basetp000        1.900712E-03
-       agwetp000       7.635239E-04             agwetp000        8.185296E-04
-       uzsn100         0.689508                 uzsn100          0.788350    
-       uzsn200          2.00000                 uzsn200           2.00000    
-       uzsn300          2.00000                 uzsn300           2.00000    
-       intfw100         5.52662                 intfw100          7.57816    
-       intfw200         10.0000                 intfw200          10.0000    
-       intfw300         3.51492                 intfw300          1.95008    
-       irctr000         1.36257                 irctr000          1.35268    
-       cepsc100        0.400000                 cepsc100         0.400000    
-       cepsc200        2.404194E-02             cepsc200         2.405380E-02
-       cepsc300        0.200000                 cepsc300         0.194297    
-       lzetp100        0.600659                 lzetp100         0.661107    
-       lzetp200        0.309983                 lzetp200         0.253915    
-       lzetp300        0.637657                 lzetp300         0.680281    
-       retsc           0.132671                 retsc            0.133876    
-    Maximum   factor change:  5.000     ["infilt110"]
-    Maximum relative change: 0.8025     ["intfw300"]
-
-
- OPTIMISATION ITERATION NO.        : 5
-    Model calls so far             : 145
-    Starting phi for this iteration                          :   109.07    
-    Contribution to phi from observation group "mlog"        :  0.87059    
-    Contribution to phi from observation group "mflow"       :  0.87437    
-    Contribution to phi from observation group "mbaseind"    :   19.297    
-    Contribution to phi from observation group "mpeak"       :  0.75370    
-    Contribution to phi from observation group "mvol_ann"    :  0.89197    
-    Contribution to phi from observation group "mvol_smr"    :  0.83358    
-    Contribution to phi from observation group "mvol_wtr"    :  0.85165    
-    Contribution to phi from observation group "mvol_stm"    :  0.90599    
-    Contribution to phi from observation group "mtime"       :   83.793    
-    All frozen parameters freed.
-        param "infilt220" frozen: gradient and update vectors out of bounds
-
-        Lambda =  0.31250     ----->
-           Phi =   116.14      (  1.065 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "uzsn300" frozen: gradient and update vectors out of bounds
-        param "intfw200" frozen: gradient and update vectors out of bounds
-        param "cepsc300" frozen: gradient and update vectors out of bounds
-        param "uzsn200" frozen: - update vector out of bounds
-
-        Lambda =  0.15625     ----->
-           Phi =   107.28      (  0.984 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "infilt210" frozen: - update vector out of bounds
-
-        Lambda =  7.81250E-02 ----->
-           Phi =   202.04      (  1.852 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  3.90625E-02 ----->
-           Phi =   536.24      (  4.916 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  0.15625     ----->
-           Phi =   236.37      (  2.167 times starting phi)
-
-    No more lambdas: phi rising
-    Lowest phi this iteration:   107.28    
-
-       Current parameter values                 Previous parameter values
-       lzsn000          3.05738                 lzsn000           2.95481    
-       infilt110       8.940302E-02             infilt110        3.998224E-02
-       infilt120       8.745111E-02             infilt120        8.618819E-02
-       infilt210       0.480572                 infilt210        0.500000    
-       infilt220       0.500000                 infilt220        0.500000    
-       infilt310       7.686945E-02             infilt310        7.663085E-02
-       infilt320       0.157493                 infilt320        0.164325    
-       agwrctr000       39.7384                 agwrctr000        40.8454    
-       deepfr000       2.082450E-04             deepfr000        2.078078E-04
-       basetp000       1.420149E-03             basetp000        1.440120E-03
-       agwetp000       7.560898E-04             agwetp000        7.635239E-04
-       uzsn100         0.577955                 uzsn100          0.689508    
-       uzsn200          2.00000                 uzsn200           2.00000    
-       uzsn300          2.00000                 uzsn300           2.00000    
-       intfw100         4.49133                 intfw100          5.52662    
-       intfw200         10.0000                 intfw200          10.0000    
-       intfw300         3.62712                 intfw300          3.51492    
-       irctr000         1.35113                 irctr000          1.36257    
-       cepsc100        0.397937                 cepsc100         0.400000    
-       cepsc200        2.422836E-02             cepsc200         2.404194E-02
-       cepsc300        0.200000                 cepsc300         0.200000    
-       lzetp100        0.800000                 lzetp100         0.600659    
-       lzetp200        0.229241                 lzetp200         0.309983    
-       lzetp300        0.636784                 lzetp300         0.637657    
-       retsc           8.847455E-02             retsc            0.132671    
-    Maximum   factor change:  2.236     ["infilt110"]
-    Maximum relative change:  1.236     ["infilt110"]
-
-
- OPTIMISATION ITERATION NO.        : 6
-    Model calls so far             : 200
-    Starting phi for this iteration                          :   107.28    
-    Contribution to phi from observation group "mlog"        :  0.87733    
-    Contribution to phi from observation group "mflow"       :  0.88169    
-    Contribution to phi from observation group "mbaseind"    :   17.190    
-    Contribution to phi from observation group "mpeak"       :  0.76385    
-    Contribution to phi from observation group "mvol_ann"    :  0.90161    
-    Contribution to phi from observation group "mvol_smr"    :  0.81486    
-    Contribution to phi from observation group "mvol_wtr"    :  0.85755    
-    Contribution to phi from observation group "mvol_stm"    :  0.90605    
-    Contribution to phi from observation group "mtime"       :   84.084    
-    All frozen parameters freed.
-        param "cepsc300" frozen: gradient and update vectors out of bounds
-        param "lzetp100" frozen: gradient and update vectors out of bounds
-        param "infilt220" frozen: - update vector out of bounds
-        param "uzsn300" frozen: - update vector out of bounds
-
-        Lambda =  0.15625     ----->
-           Phi =   110.39      (  1.029 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "uzsn200" frozen: gradient and update vectors out of bounds
-        param "intfw200" frozen: gradient and update vectors out of bounds
-
-        Lambda =  7.81250E-02 ----->
-           Phi =   116.72      (  1.088 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  3.90625E-02 ----->
-           Phi =   107.32      (  1.000 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  1.95312E-02 ----->
-           Phi =   107.36      (  1.001 times starting phi)
-
-    No more lambdas: phi rising
-    Lowest phi this iteration:   107.32    
-
-       Current parameter values                 Previous parameter values
-       lzsn000          3.05115                 lzsn000           3.05738    
-       infilt110       5.978740E-02             infilt110        8.940302E-02
-       infilt120       9.158118E-02             infilt120        8.745111E-02
-       infilt210       0.475014                 infilt210        0.480572    
-       infilt220       0.500000                 infilt220        0.500000    
-       infilt310       7.631096E-02             infilt310        7.686945E-02
-       infilt320       0.150140                 infilt320        0.157493    
-       agwrctr000       39.7590                 agwrctr000        39.7384    
-       deepfr000       2.083972E-04             deepfr000        2.082450E-04
-       basetp000       1.340464E-03             basetp000        1.420149E-03
-       agwetp000       7.276475E-04             agwetp000        7.560898E-04
-       uzsn100         0.575340                 uzsn100          0.577955    
-       uzsn200          2.00000                 uzsn200           2.00000    
-       uzsn300          2.00000                 uzsn300           2.00000    
-       intfw100         4.51154                 intfw100          4.49133    
-       intfw200         10.0000                 intfw200          10.0000    
-       intfw300         3.48993                 intfw300          3.62712    
-       irctr000         1.35081                 irctr000          1.35113    
-       cepsc100        0.400000                 cepsc100         0.397937    
-       cepsc200        2.416597E-02             cepsc200         2.422836E-02
-       cepsc300        0.200000                 cepsc300         0.200000    
-       lzetp100        0.800000                 lzetp100         0.800000    
-       lzetp200        0.223585                 lzetp200         0.229241    
-       lzetp300        0.645804                 lzetp300         0.636784    
-       retsc           8.528022E-02             retsc            8.847455E-02
-    Maximum   factor change:  1.495     ["infilt110"]
-    Maximum relative change: 0.3313     ["infilt110"]
-
-
- OPTIMISATION ITERATION NO.        : 7
-    Model calls so far             : 254
-    Starting phi for this iteration                          :   107.32    
-    Contribution to phi from observation group "mlog"        :  0.87490    
-    Contribution to phi from observation group "mflow"       :  0.87972    
-    Contribution to phi from observation group "mbaseind"    :   15.673    
-    Contribution to phi from observation group "mpeak"       :  0.76226    
-    Contribution to phi from observation group "mvol_ann"    :  0.90259    
-    Contribution to phi from observation group "mvol_smr"    :  0.81413    
-    Contribution to phi from observation group "mvol_wtr"    :  0.85887    
-    Contribution to phi from observation group "mvol_stm"    :  0.91136    
-    Contribution to phi from observation group "mtime"       :   85.646    
-    All frozen parameters freed.
-        param "intfw200" frozen: gradient and update vectors out of bounds
-        param "cepsc300" frozen: gradient and update vectors out of bounds
-        param "uzsn200" frozen: - update vector out of bounds
-        param "uzsn300" frozen: - update vector out of bounds
-        param "cepsc100" frozen: - update vector out of bounds
-
-        Lambda =  1.95312E-02 ----->
-           Phi =   215.62      (  2.009 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "infilt220" frozen: gradient and update vectors out of bounds
-        param "lzetp100" frozen: gradient and update vectors out of bounds
-
-        Lambda =  9.76562E-03 ----->
-           Phi =   99.471      (  0.927 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  4.88281E-03 ----->
-           Phi =   130.12      (  1.212 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  1.95312E-02 ----->
-           Phi =   98.187      (  0.915 of starting phi)
-
-    No more lambdas: relative phi reduction between lambdas less than 0.0300
-    Lowest phi this iteration:   98.187    
-
-       Current parameter values                 Previous parameter values
-       lzsn000          3.04906                 lzsn000           3.05115    
-       infilt110       7.311070E-02             infilt110        5.978740E-02
-       infilt120       8.988491E-02             infilt120        9.158118E-02
-       infilt210       0.490906                 infilt210        0.475014    
-       infilt220       0.500000                 infilt220        0.500000    
-       infilt310       7.660059E-02             infilt310        7.631096E-02
-       infilt320       0.155283                 infilt320        0.150140    
-       agwrctr000       39.8761                 agwrctr000        39.7590    
-       deepfr000       2.085495E-04             deepfr000        2.083972E-04
-       basetp000       1.343457E-03             basetp000        1.340464E-03
-       agwetp000       7.269337E-04             agwetp000        7.276475E-04
-       uzsn100         0.569272                 uzsn100          0.575340    
-       uzsn200          2.00000                 uzsn200           2.00000    
-       uzsn300          2.00000                 uzsn300           2.00000    
-       intfw100         4.70538                 intfw100          4.51154    
-       intfw200         10.0000                 intfw200          10.0000    
-       intfw300         3.53076                 intfw300          3.48993    
-       irctr000         1.36323                 irctr000          1.35081    
-       cepsc100        0.400000                 cepsc100         0.400000    
-       cepsc200        2.396488E-02             cepsc200         2.416597E-02
-       cepsc300        0.200000                 cepsc300         0.200000    
-       lzetp100        0.800000                 lzetp100         0.800000    
-       lzetp200        0.244276                 lzetp200         0.223585    
-       lzetp300        0.646398                 lzetp300         0.645804    
-       retsc           8.393607E-02             retsc            8.528022E-02
-    Maximum   factor change:  1.223     ["infilt110"]
-    Maximum relative change: 0.2228     ["infilt110"]
-
-
- OPTIMISATION ITERATION NO.        : 8
-    Model calls so far             : 308
-    Starting phi for this iteration                          :   98.187    
+    Starting phi for this iteration                          :   98.484    
     Contribution to phi from observation group "mlog"        :  0.87305    
     Contribution to phi from observation group "mflow"       :  0.87612    
     Contribution to phi from observation group "mbaseind"    :   14.420    
@@ -14646,294 +14131,318 @@
     Contribution to phi from observation group "mvol_smr"    :  0.81331    
     Contribution to phi from observation group "mvol_wtr"    :  0.85768    
     Contribution to phi from observation group "mvol_stm"    :  0.91161    
-    Contribution to phi from observation group "mtime"       :   77.783    
+    Contribution to phi from observation group "mtime"       :   78.080    
+        param "infilt220" frozen: gradient and update vectors out of bounds
+        param "intfw200" frozen: gradient and update vectors out of bounds
+        param "uzsn300" frozen: - update vector out of bounds
+
+        Lambda =   5.0000     ----->
+           Phi =   165.17      (  1.677 times starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+        param "cepsc100" frozen: gradient and update vectors out of bounds
+        param "cepsc300" frozen: gradient and update vectors out of bounds
+        param "lzetp100" frozen: - update vector out of bounds
+
+        Lambda =   2.5000     ----->
+           Phi =   126.89      (  1.288 times starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+        param "uzsn200" frozen: gradient and update vectors out of bounds
+
+        Lambda =   1.2500     ----->
+           Phi =   123.44      (  1.253 times starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+
+        Lambda =  0.62500     ----->
+           Phi =   123.46      (  1.254 times starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+
+        Lambda =   2.5000     ----->
+           Phi =   119.15      (  1.210 times starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+
+        Lambda =   5.0000     ----->
+           Phi =   103.74      (  1.053 times starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+
+        Lambda =   10.000     ----->
+           Phi =   118.42      (  1.202 times starting phi)
+
+    No more lambdas: phi rising
+    Lowest phi this iteration:   103.74    
+    Relative phi reduction between optimisation iterations less than 0.1000
+    Switch to central derivatives calculation
+    (restart from best parameters so far - these achieved at iteration    0)
+
+       Current parameter values
+       lzsn000          3.04907    
+       infilt110       7.311070E-02
+       infilt120       8.988491E-02
+       infilt210       0.490906    
+       infilt220       0.500000    
+       infilt310       7.660059E-02
+       infilt320       0.155283    
+       agwrctr000       39.8761    
+       deepfr000       2.085495E-04
+       basetp000       1.343457E-03
+       agwetp000       7.269337E-04
+       uzsn100         0.569272    
+       uzsn200          2.00000    
+       uzsn300          2.00000    
+       intfw100         4.70538    
+       intfw200         10.0000    
+       intfw300         3.53076    
+       irctr000         1.36323    
+       cepsc100        0.400000    
+       cepsc200        2.396488E-02
+       cepsc300        0.200000    
+       lzetp100        0.800000    
+       lzetp200        0.244276    
+       lzetp300        0.646397    
+       retsc           8.393607E-02
+
+
+ OPTIMISATION ITERATION NO.        : 2
+    Model calls so far             : 33
+    Starting phi for this iteration                          :   98.484    
+    Contribution to phi from observation group "mlog"        :  0.87305    
+    Contribution to phi from observation group "mflow"       :  0.87612    
+    Contribution to phi from observation group "mbaseind"    :   14.420    
+    Contribution to phi from observation group "mpeak"       :  0.75054    
+    Contribution to phi from observation group "mvol_ann"    :  0.90099    
+    Contribution to phi from observation group "mvol_smr"    :  0.81331    
+    Contribution to phi from observation group "mvol_wtr"    :  0.85768    
+    Contribution to phi from observation group "mvol_stm"    :  0.91161    
+    Contribution to phi from observation group "mtime"       :   78.080    
     All frozen parameters freed.
         param "infilt220" frozen: gradient and update vectors out of bounds
         param "intfw200" frozen: gradient and update vectors out of bounds
         param "cepsc300" frozen: gradient and update vectors out of bounds
         param "uzsn300" frozen: - update vector out of bounds
+        param "cepsc100" frozen: - update vector out of bounds
         param "lzetp100" frozen: - update vector out of bounds
 
-        Lambda =  1.95312E-02 ----->
-           Phi =   184.88      (  1.883 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  9.76562E-03 ----->
-           Phi =   130.56      (  1.330 times starting phi)
+        Lambda =   5.0000     ----->
+           Phi =   115.58      (  1.174 times starting phi)
 
         Broyden's update of Jacobian matrix undertaken.
         param "uzsn200" frozen: gradient and update vectors out of bounds
 
-        Lambda =  4.88281E-03 ----->
-           Phi =   135.94      (  1.385 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "cepsc100" frozen: - update vector out of bounds
-
-        Lambda =  2.44141E-03 ----->
-           Phi =   99.738      (  1.016 times starting phi)
+        Lambda =   2.5000     ----->
+           Phi =   109.65      (  1.113 times starting phi)
 
         Broyden's update of Jacobian matrix undertaken.
 
-        Lambda =  1.22070E-03 ----->
-           Phi =   109.11      (  1.111 times starting phi)
+        Lambda =   1.2500     ----->
+           Phi =   115.38      (  1.172 times starting phi)
 
         Broyden's update of Jacobian matrix undertaken.
 
-        Lambda =  4.88281E-03 ----->
-           Phi =   126.40      (  1.287 times starting phi)
+        Lambda =   5.0000     ----->
+           Phi =   110.18      (  1.119 times starting phi)
 
     No more lambdas: phi rising
-    Lowest phi this iteration:   99.738    
+    Lowest phi this iteration:   109.65    
 
        Current parameter values                 Previous parameter values
-       lzsn000          3.06005                 lzsn000           3.04906    
-       infilt110       6.611428E-02             infilt110        7.311070E-02
-       infilt120       9.057584E-02             infilt120        8.988491E-02
+       lzsn000          3.22743                 lzsn000           3.04907    
+       infilt110       0.100658                 infilt110        7.311070E-02
+       infilt120       7.963118E-02             infilt120        8.988491E-02
        infilt210       0.500000                 infilt210        0.490906    
        infilt220       0.500000                 infilt220        0.500000    
-       infilt310       7.649472E-02             infilt310        7.660059E-02
-       infilt320       0.155087                 infilt320        0.155283    
-       agwrctr000       39.8229                 agwrctr000        39.8761    
-       deepfr000       2.084826E-04             deepfr000        2.085495E-04
-       basetp000       1.357947E-03             basetp000        1.343457E-03
-       agwetp000       7.350893E-04             agwetp000        7.269337E-04
-       uzsn100         0.569240                 uzsn100          0.569272    
+       infilt310       7.816719E-02             infilt310        7.660059E-02
+       infilt320       0.197832                 infilt320        0.155283    
+       agwrctr000       39.4824                 agwrctr000        39.8761    
+       deepfr000       2.075238E-04             deepfr000        2.085495E-04
+       basetp000       1.820011E-03             basetp000        1.343457E-03
+       agwetp000       7.441364E-04             agwetp000        7.269337E-04
+       uzsn100         0.451171                 uzsn100          0.569272    
        uzsn200          2.00000                 uzsn200           2.00000    
        uzsn300          2.00000                 uzsn300           2.00000    
-       intfw100         4.69649                 intfw100          4.70538    
+       intfw100         4.14165                 intfw100          4.70538    
        intfw200         10.0000                 intfw200          10.0000    
-       intfw300         3.51813                 intfw300          3.53076    
-       irctr000         1.36199                 irctr000          1.36323    
+       intfw300         3.35524                 intfw300          3.53076    
+       irctr000         1.48541                 irctr000          1.36323    
        cepsc100        0.400000                 cepsc100         0.400000    
-       cepsc200        2.415297E-02             cepsc200         2.396488E-02
+       cepsc200        2.247411E-02             cepsc200         2.396488E-02
        cepsc300        0.200000                 cepsc300         0.200000    
        lzetp100        0.800000                 lzetp100         0.800000    
-       lzetp200        0.255684                 lzetp200         0.244276    
-       lzetp300        0.650461                 lzetp300         0.646398    
-       retsc           8.360843E-02             retsc            8.393607E-02
-    Maximum   factor change:  1.106     ["infilt110"]
-    Maximum relative change: 9.5696E-02 ["infilt110"]
+       lzetp200        0.276219                 lzetp200         0.244276    
+       lzetp300        0.677987                 lzetp300         0.646397    
+       retsc           8.701647E-02             retsc            8.393607E-02
+    Maximum   factor change:  1.377     ["infilt110"]
+    Maximum relative change: 0.3768     ["infilt110"]
 
 
- OPTIMISATION ITERATION NO.        : 9
-    Model calls so far             : 364
-    Starting phi for this iteration                          :   99.738    
-    Contribution to phi from observation group "mlog"        :  0.87295    
-    Contribution to phi from observation group "mflow"       :  0.87598    
-    Contribution to phi from observation group "mbaseind"    :   14.269    
-    Contribution to phi from observation group "mpeak"       :  0.75099    
-    Contribution to phi from observation group "mvol_ann"    :  0.90059    
-    Contribution to phi from observation group "mvol_smr"    :  0.81292    
-    Contribution to phi from observation group "mvol_wtr"    :  0.85875    
-    Contribution to phi from observation group "mvol_stm"    :  0.91107    
-    Contribution to phi from observation group "mtime"       :   79.486    
+ OPTIMISATION ITERATION NO.        : 3
+    Model calls so far             : 87
+    Starting phi for this iteration                          :   109.65    
+    Contribution to phi from observation group "mlog"        :  0.88863    
+    Contribution to phi from observation group "mflow"       :  0.88681    
+    Contribution to phi from observation group "mbaseind"    :   14.603    
+    Contribution to phi from observation group "mpeak"       :  0.74152    
+    Contribution to phi from observation group "mvol_ann"    :  0.89392    
+    Contribution to phi from observation group "mvol_smr"    :  0.80139    
+    Contribution to phi from observation group "mvol_wtr"    :  0.85653    
+    Contribution to phi from observation group "mvol_stm"    :  0.87890    
+    Contribution to phi from observation group "mtime"       :   89.102    
     All frozen parameters freed.
-        param "infilt220" frozen: gradient and update vectors out of bounds
-        param "intfw200" frozen: gradient and update vectors out of bounds
-        param "cepsc300" frozen: gradient and update vectors out of bounds
-        param "lzetp100" frozen: - update vector out of bounds
+        param "infilt210" frozen: - update vector out of bounds
+        param "infilt220" frozen: - update vector out of bounds
+        param "intfw200" frozen: - update vector out of bounds
 
-        Lambda =  2.44141E-03 ----->
-           Phi =   100.53      (  1.008 times starting phi)
+        Lambda =   2.5000     ----->
+           Phi =   400.01      (  3.648 times starting phi)
 
         Broyden's update of Jacobian matrix undertaken.
         param "uzsn200" frozen: gradient and update vectors out of bounds
+        param "cepsc100" frozen: gradient and update vectors out of bounds
+        param "cepsc300" frozen: gradient and update vectors out of bounds
         param "uzsn300" frozen: - update vector out of bounds
 
-        Lambda =  1.22070E-03 ----->
-           Phi =   151.60      (  1.520 times starting phi)
+        Lambda =   1.2500     ----->
+           Phi =   145.28      (  1.325 times starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+        param "lzetp100" frozen: gradient and update vectors out of bounds
+
+        Lambda =  0.62500     ----->
+           Phi =   116.46      (  1.062 times starting phi)
 
         Broyden's update of Jacobian matrix undertaken.
 
-        Lambda =  6.10352E-04 ----->
-           Phi =   144.71      (  1.451 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "infilt210" frozen: gradient and update vectors out of bounds
-
-        Lambda =  3.05176E-04 ----->
-           Phi =   129.17      (  1.295 times starting phi)
+        Lambda =  0.31250     ----->
+           Phi =   123.30      (  1.124 times starting phi)
 
         Broyden's update of Jacobian matrix undertaken.
 
-        Lambda =  1.52588E-04 ----->
-           Phi =   118.12      (  1.184 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  7.62939E-05 ----->
-           Phi =   115.02      (  1.153 times starting phi)
-
-    No more lambdas: relative phi reduction between lambdas less than 0.0300
-    Lowest phi this iteration:   100.53    
-
-       Current parameter values                 Previous parameter values
-       lzsn000          3.06915                 lzsn000           3.06005    
-       infilt110       6.952454E-02             infilt110        6.611428E-02
-       infilt120       8.979000E-02             infilt120        9.057584E-02
-       infilt210       0.498872                 infilt210        0.500000    
-       infilt220       0.500000                 infilt220        0.500000    
-       infilt310       7.658078E-02             infilt310        7.649472E-02
-       infilt320       0.155464                 infilt320        0.155087    
-       agwrctr000       39.8480                 agwrctr000        39.8229    
-       deepfr000       2.084578E-04             deepfr000        2.084826E-04
-       basetp000       1.357022E-03             basetp000        1.357947E-03
-       agwetp000       7.345482E-04             agwetp000        7.350893E-04
-       uzsn100         0.563221                 uzsn100          0.569240    
-       uzsn200          1.98417                 uzsn200           2.00000    
-       uzsn300          1.99935                 uzsn300           2.00000    
-       intfw100         4.69111                 intfw100          4.69649    
-       intfw200         10.0000                 intfw200          10.0000    
-       intfw300         3.52551                 intfw300          3.51813    
-       irctr000         1.36954                 irctr000          1.36199    
-       cepsc100        0.399559                 cepsc100         0.400000    
-       cepsc200        2.412143E-02             cepsc200         2.415297E-02
-       cepsc300        0.200000                 cepsc300         0.200000    
-       lzetp100        0.800000                 lzetp100         0.800000    
-       lzetp200        0.255547                 lzetp200         0.255684    
-       lzetp300        0.650268                 lzetp300         0.650461    
-       retsc           8.355369E-02             retsc            8.360843E-02
-    Maximum   factor change:  1.052     ["infilt110"]
-    Maximum relative change: 5.1581E-02 ["infilt110"]
-
-
- OPTIMISATION ITERATION NO.        : 10
-    Model calls so far             : 420
-    Starting phi for this iteration                          :   100.53    
-    Contribution to phi from observation group "mlog"        :  0.87265    
-    Contribution to phi from observation group "mflow"       :  0.87574    
-    Contribution to phi from observation group "mbaseind"    :   14.058    
-    Contribution to phi from observation group "mpeak"       :  0.74909    
-    Contribution to phi from observation group "mvol_ann"    :  0.90022    
-    Contribution to phi from observation group "mvol_smr"    :  0.81204    
-    Contribution to phi from observation group "mvol_wtr"    :  0.85851    
-    Contribution to phi from observation group "mvol_stm"    :  0.90964    
-    Contribution to phi from observation group "mtime"       :   80.498    
-    All frozen parameters freed.
-        param "infilt220" frozen: gradient and update vectors out of bounds
-        param "intfw200" frozen: gradient and update vectors out of bounds
-        param "cepsc300" frozen: gradient and update vectors out of bounds
-        param "lzetp100" frozen: - update vector out of bounds
-
-        Lambda =  1.22070E-03 ----->
-           Phi =   116.89      (  1.163 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  6.10352E-04 ----->
-           Phi =   99.761      (  0.992 of starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-
-        Lambda =  3.05176E-04 ----->
-           Phi =   123.09      (  1.224 times starting phi)
+        Lambda =   1.2500     ----->
+           Phi =   134.68      (  1.228 times starting phi)
 
     No more lambdas: phi rising
-    Lowest phi this iteration:   99.761    
+    Lowest phi this iteration:   116.46    
 
        Current parameter values                 Previous parameter values
-       lzsn000          3.07280                 lzsn000           3.06915    
-       infilt110       6.779797E-02             infilt110        6.952454E-02
-       infilt120       9.013802E-02             infilt120        8.979000E-02
-       infilt210       0.497757                 infilt210        0.498872    
+       lzsn000          3.31843                 lzsn000           3.22743    
+       infilt110       0.500000                 infilt110        0.100658    
+       infilt120       7.225378E-02             infilt120        7.963118E-02
+       infilt210       0.500000                 infilt210        0.500000    
        infilt220       0.500000                 infilt220        0.500000    
-       infilt310       7.653775E-02             infilt310        7.658078E-02
-       infilt320       0.155385                 infilt320        0.155464    
-       agwrctr000       39.8345                 agwrctr000        39.8480    
-       deepfr000       2.084635E-04             deepfr000        2.084578E-04
-       basetp000       1.356032E-03             basetp000        1.357022E-03
-       agwetp000       7.343454E-04             agwetp000        7.345482E-04
-       uzsn100         0.561446                 uzsn100          0.563221    
-       uzsn200          1.98489                 uzsn200           1.98417    
-       uzsn300          1.99947                 uzsn300           1.99935    
-       intfw100         4.70813                 intfw100          4.69111    
+       infilt310       7.959280E-02             infilt310        7.816719E-02
+       infilt320       0.220780                 infilt320        0.197832    
+       agwrctr000       38.2432                 agwrctr000        39.4824    
+       deepfr000       2.066881E-04             deepfr000        2.075238E-04
+       basetp000       1.522153E-03             basetp000        1.820011E-03
+       agwetp000       7.052114E-04             agwetp000        7.441364E-04
+       uzsn100         0.388157                 uzsn100          0.451171    
+       uzsn200          2.00000                 uzsn200           2.00000    
+       uzsn300          2.00000                 uzsn300           2.00000    
+       intfw100         4.15851                 intfw100          4.14165    
        intfw200         10.0000                 intfw200          10.0000    
-       intfw300         3.52198                 intfw300          3.52551    
-       irctr000         1.36873                 irctr000          1.36954    
-       cepsc100        0.399782                 cepsc100         0.399559    
-       cepsc200        2.410583E-02             cepsc200         2.412143E-02
+       intfw300         3.28518                 intfw300          3.35524    
+       irctr000         1.52724                 irctr000          1.48541    
+       cepsc100        0.400000                 cepsc100         0.400000    
+       cepsc200        2.041016E-02             cepsc200         2.247411E-02
        cepsc300        0.200000                 cepsc300         0.200000    
        lzetp100        0.800000                 lzetp100         0.800000    
-       lzetp200        0.254049                 lzetp200         0.255547    
-       lzetp300        0.650370                 lzetp300         0.650268    
-       retsc           8.447234E-02             retsc            8.355369E-02
-    Maximum   factor change:  1.025     ["infilt110"]
-    Maximum relative change: 2.4834E-02 ["infilt110"]
+       lzetp200        0.218362                 lzetp200         0.276219    
+       lzetp300        0.700671                 lzetp300         0.677987    
+       retsc           9.314935E-02             retsc            8.701647E-02
+    Maximum   factor change:  4.967     ["infilt110"]
+    Maximum relative change:  3.967     ["infilt110"]
 
 
- OPTIMISATION ITERATION NO.        : 11
-    Model calls so far             : 473
-    Starting phi for this iteration                          :   99.761    
-    Contribution to phi from observation group "mlog"        :  0.87221    
-    Contribution to phi from observation group "mflow"       :  0.87542    
-    Contribution to phi from observation group "mbaseind"    :   13.955    
-    Contribution to phi from observation group "mpeak"       :  0.74783    
-    Contribution to phi from observation group "mvol_ann"    :  0.90020    
-    Contribution to phi from observation group "mvol_smr"    :  0.81184    
-    Contribution to phi from observation group "mvol_wtr"    :  0.85880    
-    Contribution to phi from observation group "mvol_stm"    :  0.90983    
-    Contribution to phi from observation group "mtime"       :   79.830    
+ OPTIMISATION ITERATION NO.        : 4
+    Model calls so far             : 142
+    Starting phi for this iteration                          :   116.46    
+    Contribution to phi from observation group "mlog"        :  0.90110    
+    Contribution to phi from observation group "mflow"       :  0.89470    
+    Contribution to phi from observation group "mbaseind"    :   7.6989    
+    Contribution to phi from observation group "mpeak"       :  0.74696    
+    Contribution to phi from observation group "mvol_ann"    :  0.89090    
+    Contribution to phi from observation group "mvol_smr"    :  0.79246    
+    Contribution to phi from observation group "mvol_wtr"    :  0.87113    
+    Contribution to phi from observation group "mvol_stm"    :  0.88933    
+    Contribution to phi from observation group "mtime"       :   102.78    
     All frozen parameters freed.
-        param "infilt220" frozen: gradient and update vectors out of bounds
         param "intfw200" frozen: gradient and update vectors out of bounds
+        param "uzsn300" frozen: - update vector out of bounds
+        param "cepsc100" frozen: - update vector out of bounds
         param "lzetp100" frozen: - update vector out of bounds
+        param "infilt220" frozen: - update vector out of bounds
+        param "cepsc300" frozen: - update vector out of bounds
 
-        Lambda =  3.05176E-04 ----->
-           Phi =   100.51      (  1.008 times starting phi)
-
-        Broyden's update of Jacobian matrix undertaken.
-        param "cepsc300" frozen: gradient and update vectors out of bounds
-
-        Lambda =  1.52588E-04 ----->
-           Phi =   858.63      (  8.607 times starting phi)
+        Lambda =  0.62500     ----->
+           Phi =   119.20      (  1.024 times starting phi)
 
         Broyden's update of Jacobian matrix undertaken.
+        param "uzsn200" frozen: gradient and update vectors out of bounds
 
-        Lambda =  7.62939E-05 ----->
-           Phi =   189.20      (  1.897 times starting phi)
+        Lambda =  0.31250     ----->
+           Phi =   116.01      (  0.996 of starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+        param "infilt110" frozen: - update vector out of bounds
+        param "infilt210" frozen: - update vector out of bounds
+
+        Lambda =  0.15625     ----->
+           Phi =   132.68      (  1.139 times starting phi)
 
         Broyden's update of Jacobian matrix undertaken.
 
-        Lambda =  3.81470E-05 ----->
-           Phi =   286.67      (  2.874 times starting phi)
+        Lambda =  7.81250E-02 ----->
+           Phi =   140.95      (  1.210 times starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+
+        Lambda =  0.31250     ----->
+           Phi =   127.68      (  1.096 times starting phi)
+
+        Broyden's update of Jacobian matrix undertaken.
+
+        Lambda =  0.62500     ----->
+           Phi =   128.77      (  1.106 times starting phi)
 
     No more lambdas: phi rising
-    Lowest phi this iteration:   100.51    
+    Lowest phi this iteration:   116.01    
 
        Current parameter values                 Previous parameter values
-       lzsn000          3.07633                 lzsn000           3.07280    
-       infilt110       6.865583E-02             infilt110        6.779797E-02
-       infilt120       8.982649E-02             infilt120        9.013802E-02
-       infilt210       0.498312                 infilt210        0.497757    
+       lzsn000          3.29879                 lzsn000           3.31843    
+       infilt110       0.223607                 infilt110        0.500000    
+       infilt120       7.713723E-02             infilt120        7.225378E-02
+       infilt210       0.426126                 infilt210        0.500000    
        infilt220       0.500000                 infilt220        0.500000    
-       infilt310       7.655756E-02             infilt310        7.653775E-02
-       infilt320       0.155482                 infilt320        0.155385    
-       agwrctr000       39.8476                 agwrctr000        39.8345    
-       deepfr000       2.084631E-04             deepfr000        2.084635E-04
-       basetp000       1.355889E-03             basetp000        1.356032E-03
-       agwetp000       7.343752E-04             agwetp000        7.343454E-04
-       uzsn100         0.560087                 uzsn100          0.561446    
-       uzsn200          1.98312                 uzsn200           1.98489    
-       uzsn300          1.99889                 uzsn300           1.99947    
-       intfw100         4.70000                 intfw100          4.70813    
+       infilt310       8.045507E-02             infilt310        7.959280E-02
+       infilt320       0.215963                 infilt320        0.220780    
+       agwrctr000       38.6949                 agwrctr000        38.2432    
+       deepfr000       2.069878E-04             deepfr000        2.066881E-04
+       basetp000       1.440193E-03             basetp000        1.522153E-03
+       agwetp000       6.709753E-04             agwetp000        7.052114E-04
+       uzsn100         0.356318                 uzsn100          0.388157    
+       uzsn200          2.00000                 uzsn200           2.00000    
+       uzsn300          2.00000                 uzsn300           2.00000    
+       intfw100         4.20893                 intfw100          4.15851    
        intfw200         10.0000                 intfw200          10.0000    
-       intfw300         3.52481                 intfw300          3.52198    
-       irctr000         1.37164                 irctr000          1.36873    
-       cepsc100        0.399542                 cepsc100         0.399782    
-       cepsc200        2.411102E-02             cepsc200         2.410583E-02
-       cepsc300        0.199985                 cepsc300         0.200000    
+       intfw300         3.39843                 intfw300          3.28518    
+       irctr000         1.57058                 irctr000          1.52724    
+       cepsc100        0.400000                 cepsc100         0.400000    
+       cepsc200        2.014493E-02             cepsc200         2.041016E-02
+       cepsc300        0.200000                 cepsc300         0.200000    
        lzetp100        0.800000                 lzetp100         0.800000    
-       lzetp200        0.255040                 lzetp200         0.254049    
-       lzetp300        0.650396                 lzetp300         0.650370    
-       retsc           8.431463E-02             retsc            8.447234E-02
-    Maximum   factor change:  1.013     ["infilt110"]
-    Maximum relative change: 1.2653E-02 ["infilt110"]
+       lzetp200        0.156728                 lzetp200         0.218362    
+       lzetp300        0.687943                 lzetp300         0.700671    
+       retsc           9.519878E-02             retsc            9.314935E-02
+    Maximum   factor change:  1.393     ["lzetp200"]
+    Maximum relative change: 0.2823     ["lzetp200"]
 
     Optimisation complete:   4 optimisation iterations have elapsed since lowest
                            phi was achieved.
-    Total model calls:    527
+    Total model calls:    198
 
     The model has been run one final time using best parameters. 
     Thus all model input files contain best parameter values, and model 
@@ -14951,7 +14460,7 @@
  Parameters ----->
 
  Parameter      Estimated value
-  lzsn000         3.04906    
+  lzsn000         3.04907    
   infilt110      7.311070E-02
   infilt120      8.988491E-02
   infilt210      0.490906    
@@ -14974,7 +14483,7 @@
   cepsc300       0.200000    
   lzetp100       0.800000    
   lzetp200       0.244276    
-  lzetp300       0.646398    
+  lzetp300       0.646397    
   retsc          8.393607E-02
 
  See file control.sen for parameter sensitivities.
@@ -15411,7 +14920,7 @@
  mlog_0425              3.02963        3.10571      -7.608000E-02   6.1597E-02  mlog        
  mlog_0426              3.07251        2.96232       0.110190       6.1597E-02  mlog        
  mlog_0427              2.98659        2.96307       2.352000E-02   6.1597E-02  mlog        
- mlog_0428              3.01017        3.03415      -2.398000E-02   6.1597E-02  mlog        
+ mlog_0428              3.01017        3.03414      -2.397000E-02   6.1597E-02  mlog        
  mlog_0429              3.05434        3.10078      -4.644000E-02   6.1597E-02  mlog        
  mlog_0430              3.16625        3.22951      -6.326000E-02   6.1597E-02  mlog        
  mlog_0431              3.24334        3.25316      -9.820000E-03   6.1597E-02  mlog        
@@ -16003,7 +15512,7 @@
  mlog_1017              1.63043        1.61971       1.072000E-02   6.1597E-02  mlog        
  mlog_1018              1.60097        1.60802      -7.050000E-03   6.1597E-02  mlog        
  mlog_1019              1.60097        1.59610       4.870000E-03   6.1597E-02  mlog        
- mlog_1020              1.58433        1.58354       7.900000E-04   6.1597E-02  mlog        
+ mlog_1020              1.58433        1.58353       8.000000E-04   6.1597E-02  mlog        
  mlog_1021              1.58433        1.57039       1.394000E-02   6.1597E-02  mlog        
  mlog_1022              1.56820        1.55800       1.020000E-02   6.1597E-02  mlog        
  mlog_1023              1.56820        1.56672       1.480000E-03   6.1597E-02  mlog        
@@ -16109,7 +15618,7 @@
  mlog_1123              1.56820        1.63494      -6.674000E-02   6.1597E-02  mlog        
  mlog_1124              1.68485        1.66429       2.056000E-02   6.1597E-02  mlog        
  mlog_1125              1.68485        1.54717       0.137680       6.1597E-02  mlog        
- mlog_1126              1.61595        1.50401       0.111940       6.1597E-02  mlog        
+ mlog_1126              1.61595        1.50400       0.111950       6.1597E-02  mlog        
  mlog_1127              1.60097        1.69982      -9.885000E-02   6.1597E-02  mlog        
  mlog_1128              1.69723        1.61197       8.526000E-02   6.1597E-02  mlog        
  mlog_1129              1.75511        1.60124       0.153870       6.1597E-02  mlog        
@@ -17184,7 +16693,7 @@
  mlog_2198             0.832515       0.885255      -5.274000E-02   6.1597E-02  mlog        
  mlog_2199             0.851264       0.876098      -2.483400E-02   6.1597E-02  mlog        
  mlog_2200             0.954247       0.906135       4.811200E-02   6.1597E-02  mlog        
- mlog_2201              1.02119       0.891108       0.130082       6.1597E-02  mlog        
+ mlog_2201              1.02119       0.891107       0.130083       6.1597E-02  mlog        
  mlog_2202              1.15229        1.46100      -0.308710       6.1597E-02  mlog        
  mlog_2203              1.60097        1.57457       2.640000E-02   6.1597E-02  mlog        
  mlog_2204              1.45485        2.00114      -0.546290       6.1597E-02  mlog        
@@ -17194,7 +16703,7 @@
  mlog_2208              1.23300       0.928645       0.304355       6.1597E-02  mlog        
  mlog_2209              1.14922       0.915361       0.233859       6.1597E-02  mlog        
  mlog_2210              1.10721       0.905460       0.201750       6.1597E-02  mlog        
- mlog_2211              1.05691       0.892757       0.164153       6.1597E-02  mlog        
+ mlog_2211              1.05691       0.892756       0.164154       6.1597E-02  mlog        
  mlog_2212              1.04140       0.877256       0.164144       6.1597E-02  mlog        
  mlog_2213              1.06070       0.982414       7.828600E-02   6.1597E-02  mlog        
  mlog_2214              1.63043        2.31385      -0.683420       6.1597E-02  mlog        
@@ -17555,7 +17064,7 @@
  mlog_2569              1.03343       0.814507       0.218923       6.1597E-02  mlog        
  mlog_2570              1.01704       0.802026       0.215014       6.1597E-02  mlog        
  mlog_2571              1.02119       0.785941       0.235249       6.1597E-02  mlog        
- mlog_2572              1.01284       0.772127       0.240713       6.1597E-02  mlog        
+ mlog_2572              1.01284       0.772128       0.240712       6.1597E-02  mlog        
  mlog_2573             0.977728       0.755492       0.222236       6.1597E-02  mlog        
  mlog_2574             0.968488       0.736377       0.232111       6.1597E-02  mlog        
  mlog_2575             0.924284       0.722251       0.202033       6.1597E-02  mlog        
@@ -17566,7 +17075,7 @@
  mlog_2580             0.959046       0.679505       0.279541       6.1597E-02  mlog        
  mlog_2581             0.954247       0.671390       0.282857       6.1597E-02  mlog        
  mlog_2582             0.944488       0.663157       0.281331       6.1597E-02  mlog        
- mlog_2583             0.944488       0.655606       0.288882       6.1597E-02  mlog        
+ mlog_2583             0.944488       0.655607       0.288881       6.1597E-02  mlog        
  mlog_2584             0.929424       0.769936       0.159488       6.1597E-02  mlog        
  mlog_2585             0.944488       0.788319       0.156169       6.1597E-02  mlog        
  mlog_2586              1.00000       0.670860       0.329140       6.1597E-02  mlog        
@@ -17575,7 +17084,7 @@
  mlog_2589             0.903095       0.625673       0.277422       6.1597E-02  mlog        
  mlog_2590             0.886496       0.611985       0.274511       6.1597E-02  mlog        
  mlog_2591             0.869238       0.599856       0.269382       6.1597E-02  mlog        
- mlog_2592             0.875067       0.586083       0.288984       6.1597E-02  mlog        
+ mlog_2592             0.875067       0.586084       0.288983       6.1597E-02  mlog        
  mlog_2593             0.908490       0.569378       0.339112       6.1597E-02  mlog        
  mlog_2594             0.954247       0.776436       0.177811       6.1597E-02  mlog        
  mlog_2595              1.11727        1.91770      -0.800430       6.1597E-02  mlog        
@@ -17688,7 +17197,7 @@
  mlog_2702              2.71809        2.84255      -0.124460       6.1597E-02  mlog        
  mlog_2703              2.71925        2.70912       1.013000E-02   6.1597E-02  mlog        
  mlog_2704              2.66398        2.59847       6.551000E-02   6.1597E-02  mlog        
- mlog_2705              2.58961        2.51601       7.360000E-02   6.1597E-02  mlog        
+ mlog_2705              2.58961        2.51600       7.361000E-02   6.1597E-02  mlog        
  mlog_2706              2.52634        2.45675       6.959000E-02   6.1597E-02  mlog        
  mlog_2707              2.46731        2.41492       5.239000E-02   6.1597E-02  mlog        
  mlog_2708              2.41581        2.39405       2.176000E-02   6.1597E-02  mlog        
@@ -19181,7 +18690,7 @@
  mlog_4195              2.52815        2.71852      -0.190370       6.1597E-02  mlog        
  mlog_4196              2.51322        2.75339      -0.240170       6.1597E-02  mlog        
  mlog_4197              2.45439        2.60948      -0.155090       6.1597E-02  mlog        
- mlog_4198              2.41830        2.49345      -7.515000E-02   6.1597E-02  mlog        
+ mlog_4198              2.41830        2.49346      -7.516000E-02   6.1597E-02  mlog        
  mlog_4199              2.39393        2.40607      -1.214000E-02   6.1597E-02  mlog        
  mlog_4200              2.37088        2.35220       1.868000E-02   6.1597E-02  mlog        
  mlog_4201              2.32960        2.30276       2.684000E-02   6.1597E-02  mlog        
@@ -19225,7 +18734,7 @@
  mlog_4239              2.01662        2.07788      -6.126000E-02   6.1597E-02  mlog        
  mlog_4240              1.99211        2.05722      -6.511000E-02   6.1597E-02  mlog        
  mlog_4241              1.96614        2.04132      -7.518000E-02   6.1597E-02  mlog        
- mlog_4242              1.96614        2.02674      -6.060000E-02   6.1597E-02  mlog        
+ mlog_4242              1.96614        2.02673      -6.059000E-02   6.1597E-02  mlog        
  mlog_4243              1.95952        2.01468      -5.516000E-02   6.1597E-02  mlog        
  mlog_4244              1.93146        2.01412      -8.266000E-02   6.1597E-02  mlog        
  mlog_4245              1.92428        1.99341      -6.913000E-02   6.1597E-02  mlog        
@@ -19248,7 +18757,7 @@
  mlog_4262              1.71012        1.80517      -9.505000E-02   6.1597E-02  mlog        
  mlog_4263              1.67210        1.79367      -0.121570       6.1597E-02  mlog        
  mlog_4264              1.67210        1.78216      -0.110060       6.1597E-02  mlog        
- mlog_4265              1.67210        1.77037      -9.827000E-02   6.1597E-02  mlog        
+ mlog_4265              1.67210        1.77036      -9.826000E-02   6.1597E-02  mlog        
  mlog_4266              1.72181        1.80730      -8.549000E-02   6.1597E-02  mlog        
  mlog_4267              1.76641        1.83359      -6.718000E-02   6.1597E-02  mlog        
  mlog_4268              1.69723        1.75304      -5.581000E-02   6.1597E-02  mlog        
@@ -19790,7 +19299,7 @@
  mlog_4804              2.17056        2.30864      -0.138080       6.1597E-02  mlog        
  mlog_4805              2.15776        2.27756      -0.119800       6.1597E-02  mlog        
  mlog_4806              2.13130        2.24068      -0.109380       6.1597E-02  mlog        
- mlog_4807              2.10755        2.21430      -0.106750       6.1597E-02  mlog        
+ mlog_4807              2.10755        2.21431      -0.106760       6.1597E-02  mlog        
  mlog_4808              2.08778        2.19443      -0.106650       6.1597E-02  mlog        
  mlog_4809              2.06183        2.17834      -0.116510       6.1597E-02  mlog        
  mlog_4810              2.04571        2.16480      -0.119090       6.1597E-02  mlog        
@@ -20150,7 +19659,7 @@
  mlog_5164              2.70851        2.79801      -8.950000E-02   6.1597E-02  mlog        
  mlog_5165              2.70243        2.87144      -0.169010       6.1597E-02  mlog        
  mlog_5166              2.77670        2.87596      -9.926000E-02   6.1597E-02  mlog        
- mlog_5167              2.87852        3.04386      -0.165340       6.1597E-02  mlog        
+ mlog_5167              2.87852        3.04387      -0.165350       6.1597E-02  mlog        
  mlog_5168              2.92205        2.91325       8.800000E-03   6.1597E-02  mlog        
  mlog_5169              2.79789        2.74964       4.825000E-02   6.1597E-02  mlog        
  mlog_5170              2.67979        2.61623       6.356000E-02   6.1597E-02  mlog        
@@ -20898,7 +20407,7 @@
  mlog_5912              2.09795        2.26475      -0.166800       6.1597E-02  mlog        
  mlog_5913              2.05652        2.25011      -0.193590       6.1597E-02  mlog        
  mlog_5914              2.02857        2.23740      -0.208830       6.1597E-02  mlog        
- mlog_5915              2.00475        2.22586      -0.221110       6.1597E-02  mlog        
+ mlog_5915              2.00475        2.22587      -0.221120       6.1597E-02  mlog        
  mlog_5916              1.97313        2.21491      -0.241780       6.1597E-02  mlog        
  mlog_5917              1.93852        2.20421      -0.265690       6.1597E-02  mlog        
  mlog_5918              1.90956        2.19391      -0.284350       6.1597E-02  mlog        
@@ -21204,7 +20713,7 @@
  mlog_6218             0.986776       0.792050       0.194726       6.1597E-02  mlog        
  mlog_6219             0.986776       0.782914       0.203862       6.1597E-02  mlog        
  mlog_6220              1.00000       0.774519       0.225481       6.1597E-02  mlog        
- mlog_6221              1.01284       0.761806       0.251034       6.1597E-02  mlog        
+ mlog_6221              1.01284       0.761807       0.251033       6.1597E-02  mlog        
  mlog_6222              1.10721        1.77887      -0.671660       6.1597E-02  mlog        
  mlog_6223              1.45485        1.90406      -0.449210       6.1597E-02  mlog        
  mlog_6224              1.29886        1.53334      -0.234480       6.1597E-02  mlog        
@@ -21237,7 +20746,7 @@
  mlog_6251              2.36286        2.19362       0.169240       6.1597E-02  mlog        
  mlog_6252              2.32077        2.18964       0.131130       6.1597E-02  mlog        
  mlog_6253              2.44342        2.53916      -9.574000E-02   6.1597E-02  mlog        
- mlog_6254              2.52075        2.61556      -9.481000E-02   6.1597E-02  mlog        
+ mlog_6254              2.52075        2.61557      -9.482000E-02   6.1597E-02  mlog        
  mlog_6255              2.47770        2.57512      -9.742000E-02   6.1597E-02  mlog        
  mlog_6256              2.43680        2.44817      -1.137000E-02   6.1597E-02  mlog        
  mlog_6257              2.39898        2.34830       5.068000E-02   6.1597E-02  mlog        
@@ -21369,7 +20878,7 @@
  mlog_6383              2.63769        2.80595      -0.168260       6.1597E-02  mlog        
  mlog_6384              2.61732        2.66479      -4.747000E-02   6.1597E-02  mlog        
  mlog_6385              2.58320        2.51226       7.094000E-02   6.1597E-02  mlog        
- mlog_6386              2.53719        2.38942       0.147770       6.1597E-02  mlog        
+ mlog_6386              2.53719        2.38943       0.147760       6.1597E-02  mlog        
  mlog_6387              2.49192        2.29593       0.195990       6.1597E-02  mlog        
  mlog_6388              2.45667        2.25520       0.201470       6.1597E-02  mlog        
  mlog_6389              2.42292        2.21405       0.208870       6.1597E-02  mlog        
@@ -21415,7 +20924,7 @@
  mlog_6429              2.01662        1.91891       9.771000E-02   6.1597E-02  mlog        
  mlog_6430              1.99870        1.90902       8.968000E-02   6.1597E-02  mlog        
  mlog_6431              1.97955        1.89837       8.118000E-02   6.1597E-02  mlog        
- mlog_6432              1.95952        1.88554       7.398000E-02   6.1597E-02  mlog        
+ mlog_6432              1.95952        1.88553       7.399000E-02   6.1597E-02  mlog        
  mlog_6433              1.94596        1.87442       7.154000E-02   6.1597E-02  mlog        
  mlog_6434              1.92428        1.86183       6.245000E-02   6.1597E-02  mlog        
  mlog_6435              1.91698        1.85366       6.332000E-02   6.1597E-02  mlog        
@@ -21836,7 +21345,7 @@
  mflow_0033             92.5000        70.2971        22.2029       4.3992E-05  mflow       
  mflow_0034             84.0000        67.8436        16.1564       4.3992E-05  mflow       
  mflow_0035             79.7000        76.9726        2.72740       4.3992E-05  mflow       
- mflow_0036             88.3000        93.2559       -4.95590       4.3992E-05  mflow       
+ mflow_0036             88.3000        93.2558       -4.95580       4.3992E-05  mflow       
  mflow_0037             122.400        165.177       -42.7770       4.3992E-05  mflow       
  mflow_0038             210.700        196.894        13.8060       4.3992E-05  mflow       
  mflow_0039             568.100        567.171       0.929000       4.3992E-05  mflow       
@@ -21943,7 +21452,7 @@
  mflow_0140             491.200        1187.53       -696.330       4.3992E-05  mflow       
  mflow_0141             949.600        1934.17       -984.570       4.3992E-05  mflow       
  mflow_0142             1418.00        1776.92       -358.920       4.3992E-05  mflow       
- mflow_0143             1260.00        1725.58       -465.580       4.3992E-05  mflow       
+ mflow_0143             1260.00        1725.57       -465.570       4.3992E-05  mflow       
  mflow_0144             1551.90        1652.02       -100.120       4.3992E-05  mflow       
  mflow_0145             1438.00        1525.53       -87.5300       4.3992E-05  mflow       
  mflow_0146             2434.60        2680.71       -246.110       4.3992E-05  mflow       
@@ -22254,11 +21763,11 @@
  mflow_0451             922.600        1693.65       -771.050       4.3992E-05  mflow       
  mflow_0452             2662.40        2988.39       -325.990       4.3992E-05  mflow       
  mflow_0453             6050.80        4030.81        2019.99       4.3992E-05  mflow       
- mflow_0454             4057.60        3722.65        334.950       4.3992E-05  mflow       
+ mflow_0454             4057.60        3722.64        334.960       4.3992E-05  mflow       
  mflow_0455             2406.10        2852.38       -446.280       4.3992E-05  mflow       
  mflow_0456             2918.60        3294.69       -376.090       4.3992E-05  mflow       
  mflow_0457             3146.40        3310.46       -164.060       4.3992E-05  mflow       
- mflow_0458             2747.80        3857.85       -1110.05       4.3992E-05  mflow       
+ mflow_0458             2747.80        3857.84       -1110.04       4.3992E-05  mflow       
  mflow_0459             3502.40        4371.25       -868.850       4.3992E-05  mflow       
  mflow_0460             2548.50        4193.73       -1645.23       4.3992E-05  mflow       
  mflow_0461             2092.90        3090.51       -997.610       4.3992E-05  mflow       
@@ -22335,7 +21844,7 @@
  mflow_0532             911.200        776.409        134.791       4.3992E-05  mflow       
  mflow_0533             915.500        1039.72       -124.220       4.3992E-05  mflow       
  mflow_0534             1124.70        903.785        220.915       4.3992E-05  mflow       
- mflow_0535             1027.90        694.413        333.487       4.3992E-05  mflow       
+ mflow_0535             1027.90        694.412        333.488       4.3992E-05  mflow       
  mflow_0536             857.100        667.840        189.260       4.3992E-05  mflow       
  mflow_0537             812.900        614.549        198.351       4.3992E-05  mflow       
  mflow_0538             719.000        462.844        256.156       4.3992E-05  mflow       
@@ -22520,7 +22029,7 @@
  mflow_0717             99.7000        69.2123        30.4877       4.3992E-05  mflow       
  mflow_0718             199.300        170.831        28.4690       4.3992E-05  mflow       
  mflow_0719             128.100        104.337        23.7630       4.3992E-05  mflow       
- mflow_0720             85.4000        57.3099        28.0901       4.3992E-05  mflow       
+ mflow_0720             85.4000        57.3100        28.0900       4.3992E-05  mflow       
  mflow_0721             56.9000        51.9645        4.93550       4.3992E-05  mflow       
  mflow_0722             42.7000        45.9437       -3.24370       4.3992E-05  mflow       
  mflow_0723             37.0000        42.6432       -5.64320       4.3992E-05  mflow       
@@ -22991,7 +22500,7 @@
  mflow_1188             2078.60        2072.82        5.78000       4.3992E-05  mflow       
  mflow_1189             1551.90        1382.27        169.630       4.3992E-05  mflow       
  mflow_1190             1200.20        944.534        255.666       4.3992E-05  mflow       
- mflow_1191             916.900        688.793        228.107       4.3992E-05  mflow       
+ mflow_1191             916.900        688.792        228.108       4.3992E-05  mflow       
  mflow_1192             706.200        538.006        168.194       4.3992E-05  mflow       
  mflow_1193             568.100        447.887        120.213       4.3992E-05  mflow       
  mflow_1194             476.900        402.517        74.3830       4.3992E-05  mflow       
@@ -23272,7 +22781,7 @@
  mflow_1469             19.9000        9.51245        10.3875       4.3992E-05  mflow       
  mflow_1470             21.4000        14.3537        7.04630       4.3992E-05  mflow       
  mflow_1471             21.4000        8.01927        13.3807       4.3992E-05  mflow       
- mflow_1472             17.1000        6.16064        10.9394       4.3992E-05  mflow       
+ mflow_1472             17.1000        6.16065        10.9394       4.3992E-05  mflow       
  mflow_1473             15.7000        5.84889        9.85111       4.3992E-05  mflow       
  mflow_1474             14.2000        5.62843        8.57157       4.3992E-05  mflow       
  mflow_1475             13.4000        5.45251        7.94749       4.3992E-05  mflow       
@@ -23390,11 +22899,11 @@
  mflow_1587             1077.80        856.793        221.007       4.3992E-05  mflow       
  mflow_1588             815.800        626.986        188.814       4.3992E-05  mflow       
  mflow_1589             647.800        532.212        115.588       4.3992E-05  mflow       
- mflow_1590             531.100        520.227        10.8730       4.3992E-05  mflow       
+ mflow_1590             531.100        520.226        10.8740       4.3992E-05  mflow       
  mflow_1591             449.900        488.538       -38.6380       4.3992E-05  mflow       
  mflow_1592             555.300        1338.53       -783.230       4.3992E-05  mflow       
  mflow_1593             713.300        1018.49       -305.190       4.3992E-05  mflow       
- mflow_1594             623.600        721.558       -97.9580       4.3992E-05  mflow       
+ mflow_1594             623.600        721.559       -97.9590       4.3992E-05  mflow       
  mflow_1595             548.100        631.237       -83.1370       4.3992E-05  mflow       
  mflow_1596             598.000        1026.59       -428.590       4.3992E-05  mflow       
  mflow_1597             649.200        1118.02       -468.820       4.3992E-05  mflow       
@@ -23428,7 +22937,7 @@
  mflow_1625             277.600        526.388       -248.788       4.3992E-05  mflow       
  mflow_1626             271.900        474.468       -202.568       4.3992E-05  mflow       
  mflow_1627             492.600        621.144       -128.544       4.3992E-05  mflow       
- mflow_1628             498.300        633.480       -135.180       4.3992E-05  mflow       
+ mflow_1628             498.300        633.481       -135.181       4.3992E-05  mflow       
  mflow_1629             512.500        565.549       -53.0490       4.3992E-05  mflow       
  mflow_1630             481.200        523.181       -41.9810       4.3992E-05  mflow       
  mflow_1631             475.500        483.744       -8.24400       4.3992E-05  mflow       
@@ -23445,7 +22954,7 @@
  mflow_1642             270.500        218.013        52.4870       4.3992E-05  mflow       
  mflow_1643             239.200        200.705        38.4950       4.3992E-05  mflow       
  mflow_1644             219.300        190.247        29.0530       4.3992E-05  mflow       
- mflow_1645             207.900        182.427        25.4730       4.3992E-05  mflow       
+ mflow_1645             207.900        182.428        25.4720       4.3992E-05  mflow       
  mflow_1646             195.100        176.336        18.7640       4.3992E-05  mflow       
  mflow_1647             187.900        171.122        16.7780       4.3992E-05  mflow       
  mflow_1648             182.200        170.583        11.6170       4.3992E-05  mflow       
@@ -23697,7 +23206,7 @@
  mflow_1894             75.5000        95.3897       -19.8897       4.3992E-05  mflow       
  mflow_1895             69.8000        89.9727       -20.1727       4.3992E-05  mflow       
  mflow_1896             65.5000        88.1177       -22.6177       4.3992E-05  mflow       
- mflow_1897             62.6000        85.1131       -22.5131       4.3992E-05  mflow       
+ mflow_1897             62.6000        85.1130       -22.5130       4.3992E-05  mflow       
  mflow_1898             61.2000        94.5721       -33.3721       4.3992E-05  mflow       
  mflow_1899             64.1000        153.878       -89.7780       4.3992E-05  mflow       
  mflow_1900             78.3000        168.866       -90.5660       4.3992E-05  mflow       
@@ -23705,8 +23214,8 @@
  mflow_1902             233.500        532.112       -298.612       4.3992E-05  mflow       
  mflow_1903             516.800        810.345       -293.545       4.3992E-05  mflow       
  mflow_1904             489.800        702.054       -212.254       4.3992E-05  mflow       
- mflow_1905             533.900        890.114       -356.214       4.3992E-05  mflow       
- mflow_1906             458.400        581.513       -123.113       4.3992E-05  mflow       
+ mflow_1905             533.900        890.113       -356.213       4.3992E-05  mflow       
+ mflow_1906             458.400        581.512       -123.112       4.3992E-05  mflow       
  mflow_1907             365.900        418.460       -52.5600       4.3992E-05  mflow       
  mflow_1908             289.000        353.354       -64.3540       4.3992E-05  mflow       
  mflow_1909             253.400        954.773       -701.373       4.3992E-05  mflow       
@@ -23867,8 +23376,8 @@
  mflow_2064             102.500        92.9597        9.54030       4.3992E-05  mflow       
  mflow_2065             96.8000        89.6004        7.19960       4.3992E-05  mflow       
  mflow_2066             92.5000        86.7388        5.76120       4.3992E-05  mflow       
- mflow_2067             94.0000        97.3526       -3.35260       4.3992E-05  mflow       
- mflow_2068             92.5000        94.0088       -1.50880       4.3992E-05  mflow       
+ mflow_2067             94.0000        97.3527       -3.35270       4.3992E-05  mflow       
+ mflow_2068             92.5000        94.0089       -1.50890       4.3992E-05  mflow       
  mflow_2069             82.6000        81.8097       0.790300       4.3992E-05  mflow       
  mflow_2070             76.9000        78.8466       -1.94660       4.3992E-05  mflow       
  mflow_2071             74.0000        78.3858       -4.38580       4.3992E-05  mflow       
@@ -24086,7 +23595,7 @@
  mflow_2283             240.600        462.029       -221.429       4.3992E-05  mflow       
  mflow_2284             271.900        605.622       -333.722       4.3992E-05  mflow       
  mflow_2285             283.300        576.945       -293.645       4.3992E-05  mflow       
- mflow_2286             303.300        629.418       -326.118       4.3992E-05  mflow       
+ mflow_2286             303.300        629.417       -326.117       4.3992E-05  mflow       
  mflow_2287             313.200        561.232       -248.032       4.3992E-05  mflow       
  mflow_2288             311.800        547.592       -235.792       4.3992E-05  mflow       
  mflow_2289             316.100        1023.25       -707.150       4.3992E-05  mflow       
@@ -24227,7 +23736,7 @@
  mflow_2424             85.4000        116.390       -30.9900       4.3992E-05  mflow       
  mflow_2425             81.2000        93.7094       -12.5094       4.3992E-05  mflow       
  mflow_2426             78.3000        90.3174       -12.0174       4.3992E-05  mflow       
- mflow_2427             75.5000        84.8395       -9.33950       4.3992E-05  mflow       
+ mflow_2427             75.5000        84.8396       -9.33960       4.3992E-05  mflow       
  mflow_2428             72.6000        81.5106       -8.91060       4.3992E-05  mflow       
  mflow_2429             71.2000        78.4952       -7.29520       4.3992E-05  mflow       
  mflow_2430             68.3000        75.9737       -7.67370       4.3992E-05  mflow       
@@ -24296,7 +23805,7 @@
  mflow_2493             25.6000        24.5865        1.01350       4.3992E-05  mflow       
  mflow_2494             24.2000        23.5757       0.624300       4.3992E-05  mflow       
  mflow_2495             22.8000        22.6879       0.112100       4.3992E-05  mflow       
- mflow_2496             21.4000        22.2691      -0.869100       4.3992E-05  mflow       
+ mflow_2496             21.4000        22.2692      -0.869200       4.3992E-05  mflow       
  mflow_2497             21.4000        21.9932      -0.593200       4.3992E-05  mflow       
  mflow_2498             19.9000        21.4366       -1.53660       4.3992E-05  mflow       
  mflow_2499             19.9000        20.8493      -0.949300       4.3992E-05  mflow       
@@ -24352,7 +23861,7 @@
  mflow_2549             11.1000        6.92117        4.17883       4.3992E-05  mflow       
  mflow_2550             9.70000        6.63044        3.06956       4.3992E-05  mflow       
  mflow_2551             8.80000        6.35332        2.44668       4.3992E-05  mflow       
- mflow_2552             8.80000        6.18800        2.61200       4.3992E-05  mflow       
+ mflow_2552             8.80000        6.18801        2.61199       4.3992E-05  mflow       
  mflow_2553             9.40000        6.04185        3.35815       4.3992E-05  mflow       
  mflow_2554             8.80000        5.88528        2.91472       4.3992E-05  mflow       
  mflow_2555             8.70000        5.80063        2.89937       4.3992E-05  mflow       
@@ -24377,11 +23886,11 @@
  mflow_2574             9.30000        5.44975        3.85025       4.3992E-05  mflow       
  mflow_2575             8.40000        5.27535        3.12465       4.3992E-05  mflow       
  mflow_2576             8.30000        5.20810        3.09190       4.3992E-05  mflow       
- mflow_2577             8.50000        5.10380        3.39620       4.3992E-05  mflow       
+ mflow_2577             8.50000        5.10381        3.39619       4.3992E-05  mflow       
  mflow_2578             9.10000        4.94813        4.15187       4.3992E-05  mflow       
  mflow_2579             9.30000        4.85882        4.44118       4.3992E-05  mflow       
  mflow_2580             9.10000        4.78085        4.31915       4.3992E-05  mflow       
- mflow_2581             9.00000        4.69234        4.30766       4.3992E-05  mflow       
+ mflow_2581             9.00000        4.69235        4.30765       4.3992E-05  mflow       
  mflow_2582             8.80000        4.60423        4.19577       4.3992E-05  mflow       
  mflow_2583             8.80000        4.52487        4.27513       4.3992E-05  mflow       
  mflow_2584             8.50000        5.88756        2.61244       4.3992E-05  mflow       
@@ -24392,7 +23901,7 @@
  mflow_2589             8.00000        4.22351        3.77649       4.3992E-05  mflow       
  mflow_2590             7.70000        4.09246        3.60754       4.3992E-05  mflow       
  mflow_2591             7.40000        3.97975        3.42025       4.3992E-05  mflow       
- mflow_2592             7.50000        3.85552        3.64448       4.3992E-05  mflow       
+ mflow_2592             7.50000        3.85553        3.64447       4.3992E-05  mflow       
  mflow_2593             8.10000        3.71003        4.38997       4.3992E-05  mflow       
  mflow_2594             9.00000        5.97635        3.02365       4.3992E-05  mflow       
  mflow_2595             13.1000        82.7372       -69.6372       4.3992E-05  mflow       
@@ -24405,7 +23914,7 @@
  mflow_2602             72.6000        83.7673       -11.1673       4.3992E-05  mflow       
  mflow_2603             55.5000        63.0016       -7.50160       4.3992E-05  mflow       
  mflow_2604             44.1000        114.577       -70.4770       4.3992E-05  mflow       
- mflow_2605             54.1000        86.4585       -32.3585       4.3992E-05  mflow       
+ mflow_2605             54.1000        86.4584       -32.3584       4.3992E-05  mflow       
  mflow_2606             56.9000        94.7470       -37.8470       4.3992E-05  mflow       
  mflow_2607             106.800        143.062       -36.2620       4.3992E-05  mflow       
  mflow_2608             82.6000        91.2006       -8.60060       4.3992E-05  mflow       
@@ -24499,7 +24008,7 @@
  mflow_2696             197.900        638.779       -440.879       4.3992E-05  mflow       
  mflow_2697             286.200        1085.00       -798.800       4.3992E-05  mflow       
  mflow_2698             549.600        1246.41       -696.810       4.3992E-05  mflow       
- mflow_2699             475.500        871.923       -396.423       4.3992E-05  mflow       
+ mflow_2699             475.500        871.924       -396.424       4.3992E-05  mflow       
  mflow_2700             421.400        811.532       -390.132       4.3992E-05  mflow       
  mflow_2701             439.900        764.893       -324.993       4.3992E-05  mflow       
  mflow_2702             522.500        695.902       -173.402       4.3992E-05  mflow       
@@ -24549,7 +24058,7 @@
  mflow_2746             1287.10        1085.22        201.880       4.3992E-05  mflow       
  mflow_2747             943.900        787.303        156.597       4.3992E-05  mflow       
  mflow_2748             728.900        663.714        65.1860       4.3992E-05  mflow       
- mflow_2749             576.600        520.098        56.5020       4.3992E-05  mflow       
+ mflow_2749             576.600        520.097        56.5030       4.3992E-05  mflow       
  mflow_2750             484.100        415.225        68.8750       4.3992E-05  mflow       
  mflow_2751             430.000        615.425       -185.425       4.3992E-05  mflow       
  mflow_2752             439.900        775.104       -335.204       4.3992E-05  mflow       
@@ -24721,7 +24230,7 @@
  mflow_2918             5.80000        7.80036       -2.00036       4.3992E-05  mflow       
  mflow_2919             5.80000        7.50755       -1.70755       4.3992E-05  mflow       
  mflow_2920             5.70000        7.20366       -1.50366       4.3992E-05  mflow       
- mflow_2921             5.30000        7.83968       -2.53968       4.3992E-05  mflow       
+ mflow_2921             5.30000        7.83969       -2.53969       4.3992E-05  mflow       
  mflow_2922             5.70000        8.26185       -2.56185       4.3992E-05  mflow       
  mflow_2923             5.80000        7.49035       -1.69035       4.3992E-05  mflow       
  mflow_2924             6.40000        7.12254      -0.722540       4.3992E-05  mflow       
@@ -24846,7 +24355,7 @@
  mflow_3043             3473.90        819.505        2654.39       4.3992E-05  mflow       
  mflow_3044             3360.00        660.086        2699.91       4.3992E-05  mflow       
  mflow_3045             2306.40        514.101        1792.30       4.3992E-05  mflow       
- mflow_3046             1680.00        451.565        1228.43       4.3992E-05  mflow       
+ mflow_3046             1680.00        451.564        1228.44       4.3992E-05  mflow       
  mflow_3047             1271.40        350.558        920.842       4.3992E-05  mflow       
  mflow_3048             959.600        287.932        671.668       4.3992E-05  mflow       
  mflow_3049             758.800        271.214        487.586       4.3992E-05  mflow       
@@ -24870,7 +24379,7 @@
  mflow_3067             501.200        263.225        237.975       4.3992E-05  mflow       
  mflow_3068             437.100        265.525        171.575       4.3992E-05  mflow       
  mflow_3069             430.000        536.066       -106.066       4.3992E-05  mflow       
- mflow_3070             445.600        559.128       -113.528       4.3992E-05  mflow       
+ mflow_3070             445.600        559.127       -113.527       4.3992E-05  mflow       
  mflow_3071             489.800        630.644       -140.844       4.3992E-05  mflow       
  mflow_3072             932.500        749.362        183.138       4.3992E-05  mflow       
  mflow_3073             1271.40        591.928        679.472       4.3992E-05  mflow       
@@ -25053,7 +24562,7 @@
  mflow_3250             49.8000        57.8317       -8.03170       4.3992E-05  mflow       
  mflow_3251             66.9000        58.3023        8.59770       4.3992E-05  mflow       
  mflow_3252             76.9000        107.561       -30.6610       4.3992E-05  mflow       
- mflow_3253             68.3000        47.3367        20.9633       4.3992E-05  mflow       
+ mflow_3253             68.3000        47.3368        20.9632       4.3992E-05  mflow       
  mflow_3254             56.9000        27.8431        29.0569       4.3992E-05  mflow       
  mflow_3255             41.3000        22.1624        19.1376       4.3992E-05  mflow       
  mflow_3256             27.1000        20.8484        6.25160       4.3992E-05  mflow       
@@ -25144,7 +24653,7 @@
  mflow_3341             81.2000        102.876       -21.6760       4.3992E-05  mflow       
  mflow_3342             79.7000        106.707       -27.0070       4.3992E-05  mflow       
  mflow_3343             95.4000        173.711       -78.3110       4.3992E-05  mflow       
- mflow_3344             169.400        288.624       -119.224       4.3992E-05  mflow       
+ mflow_3344             169.400        288.625       -119.225       4.3992E-05  mflow       
  mflow_3345             213.600        317.759       -104.159       4.3992E-05  mflow       
  mflow_3346             187.900        269.629       -81.7290       4.3992E-05  mflow       
  mflow_3347             163.700        199.328       -35.6280       4.3992E-05  mflow       
@@ -25175,7 +24684,7 @@
  mflow_3372             199.300        163.649        35.6510       4.3992E-05  mflow       
  mflow_3373             185.100        158.323        26.7770       4.3992E-05  mflow       
  mflow_3374             182.200        196.831       -14.6310       4.3992E-05  mflow       
- mflow_3375             215.000        328.930       -113.930       4.3992E-05  mflow       
+ mflow_3375             215.000        328.929       -113.929       4.3992E-05  mflow       
  mflow_3376             190.800        275.203       -84.4030       4.3992E-05  mflow       
  mflow_3377             179.400        228.222       -48.8220       4.3992E-05  mflow       
  mflow_3378             178.000        246.478       -68.4780       4.3992E-05  mflow       
@@ -25275,7 +24784,7 @@
  mflow_3472             522.500        480.656        41.8440       4.3992E-05  mflow       
  mflow_3473             474.100        360.864        113.236       4.3992E-05  mflow       
  mflow_3474             454.200        337.338        116.862       4.3992E-05  mflow       
- mflow_3475             417.200        275.340        141.860       4.3992E-05  mflow       
+ mflow_3475             417.200        275.339        141.861       4.3992E-05  mflow       
  mflow_3476             377.300        227.617        149.683       4.3992E-05  mflow       
  mflow_3477             390.100        401.798       -11.6980       4.3992E-05  mflow       
  mflow_3478             412.900        456.878       -43.9780       4.3992E-05  mflow       
@@ -25354,11 +24863,11 @@
  mflow_3551             138.100        113.714        24.3860       4.3992E-05  mflow       
  mflow_3552             126.700        106.812        19.8880       4.3992E-05  mflow       
  mflow_3553             122.400        102.242        20.1580       4.3992E-05  mflow       
- mflow_3554             112.500        98.2949        14.2051       4.3992E-05  mflow       
+ mflow_3554             112.500        98.2950        14.2050       4.3992E-05  mflow       
  mflow_3555             105.400        95.1486        10.2514       4.3992E-05  mflow       
  mflow_3556             99.7000        92.1455        7.55450       4.3992E-05  mflow       
  mflow_3557             95.4000        89.7250        5.67500       4.3992E-05  mflow       
- mflow_3558             96.8000        90.7256        6.07440       4.3992E-05  mflow       
+ mflow_3558             96.8000        90.7257        6.07430       4.3992E-05  mflow       
  mflow_3559             94.0000        86.0169        7.98310       4.3992E-05  mflow       
  mflow_3560             85.4000        83.6075        1.79250       4.3992E-05  mflow       
  mflow_3561             79.7000        80.8559       -1.15590       4.3992E-05  mflow       
@@ -25369,7 +24878,7 @@
  mflow_3566             65.5000        71.1197       -5.61970       4.3992E-05  mflow       
  mflow_3567             68.3000        80.2585       -11.9585       4.3992E-05  mflow       
  mflow_3568             68.3000        68.6036      -0.303600       4.3992E-05  mflow       
- mflow_3569             65.5000        66.9802       -1.48020       4.3992E-05  mflow       
+ mflow_3569             65.5000        66.9803       -1.48030       4.3992E-05  mflow       
  mflow_3570             69.8000        68.9699       0.830100       4.3992E-05  mflow       
  mflow_3571             65.5000        66.0088      -0.508800       4.3992E-05  mflow       
  mflow_3572             68.3000        67.8821       0.417900       4.3992E-05  mflow       
@@ -25520,7 +25029,7 @@
  mflow_3717             1032.20        1154.43       -122.230       4.3992E-05  mflow       
  mflow_3718             925.400        820.166        105.234       4.3992E-05  mflow       
  mflow_3719             741.800        564.311        177.489       4.3992E-05  mflow       
- mflow_3720             569.500        415.558        153.942       4.3992E-05  mflow       
+ mflow_3720             569.500        415.559        153.941       4.3992E-05  mflow       
  mflow_3721             469.800        327.865        141.935       4.3992E-05  mflow       
  mflow_3722             384.400        275.399        109.001       4.3992E-05  mflow       
  mflow_3723             320.300        243.261        77.0390       4.3992E-05  mflow       
@@ -25621,7 +25130,7 @@
  mflow_3818             570.900        409.591        161.309       4.3992E-05  mflow       
  mflow_3819             508.300        362.102        146.198       4.3992E-05  mflow       
  mflow_3820             504.000        582.065       -78.0650       4.3992E-05  mflow       
- mflow_3821             566.600        999.370       -432.770       4.3992E-05  mflow       
+ mflow_3821             566.600        999.369       -432.769       4.3992E-05  mflow       
  mflow_3822             644.900        855.462       -210.562       4.3992E-05  mflow       
  mflow_3823             623.600        616.405        7.19500       4.3992E-05  mflow       
  mflow_3824             562.400        448.551        113.849       4.3992E-05  mflow       
@@ -25653,7 +25162,7 @@
  mflow_3850             237.800        719.755       -481.955       4.3992E-05  mflow       
  mflow_3851             316.100        943.611       -627.511       4.3992E-05  mflow       
  mflow_3852             384.400        729.431       -345.031       4.3992E-05  mflow       
- mflow_3853             375.900        550.416       -174.516       4.3992E-05  mflow       
+ mflow_3853             375.900        550.415       -174.515       4.3992E-05  mflow       
  mflow_3854             324.600        384.786       -60.1860       4.3992E-05  mflow       
  mflow_3855             287.600        287.712      -0.112000       4.3992E-05  mflow       
  mflow_3856             264.800        230.429        34.3710       4.3992E-05  mflow       
@@ -25977,7 +25486,7 @@
  mflow_4174             989.500        592.814        396.686       4.3992E-05  mflow       
  mflow_4175             754.600        451.330        303.270       4.3992E-05  mflow       
  mflow_4176             619.300        393.972        225.328       4.3992E-05  mflow       
- mflow_4177             516.800        345.880        170.920       4.3992E-05  mflow       
+ mflow_4177             516.800        345.881        170.919       4.3992E-05  mflow       
  mflow_4178             465.600        452.289        13.3110       4.3992E-05  mflow       
  mflow_4179             422.800        465.479       -42.6790       4.3992E-05  mflow       
  mflow_4180             405.800        382.522        23.2780       4.3992E-05  mflow       
@@ -26162,7 +25671,7 @@
  mflow_4359             6.80000        7.66334      -0.863340       4.3992E-05  mflow       
  mflow_4360             6.70000        7.07017      -0.370170       4.3992E-05  mflow       
  mflow_4361             6.50000        6.86269      -0.362690       4.3992E-05  mflow       
- mflow_4362             6.30000        6.55723      -0.257230       4.3992E-05  mflow       
+ mflow_4362             6.30000        6.55724      -0.257240       4.3992E-05  mflow       
  mflow_4363             5.80000        6.25937      -0.459370       4.3992E-05  mflow       
  mflow_4364             5.60000        5.98633      -0.386330       4.3992E-05  mflow       
  mflow_4365             5.40000        5.82612      -0.426120       4.3992E-05  mflow       
@@ -26226,7 +25735,7 @@
  mflow_4423             22.8000        44.8678       -22.0678       4.3992E-05  mflow       
  mflow_4424             39.9000        91.0263       -51.1263       4.3992E-05  mflow       
  mflow_4425             45.6000        54.0971       -8.49710       4.3992E-05  mflow       
- mflow_4426             42.7000        125.059       -82.3590       4.3992E-05  mflow       
+ mflow_4426             42.7000        125.058       -82.3580       4.3992E-05  mflow       
  mflow_4427             66.9000        89.9945       -23.0945       4.3992E-05  mflow       
  mflow_4428             51.3000        78.9059       -27.6059       4.3992E-05  mflow       
  mflow_4429             52.7000        134.525       -81.8250       4.3992E-05  mflow       
@@ -26244,7 +25753,7 @@
  mflow_4441             119.600        316.454       -196.854       4.3992E-05  mflow       
  mflow_4442             113.900        313.363       -199.463       4.3992E-05  mflow       
  mflow_4443             195.100        450.250       -255.150       4.3992E-05  mflow       
- mflow_4444             247.700        349.919       -102.219       4.3992E-05  mflow       
+ mflow_4444             247.700        349.920       -102.220       4.3992E-05  mflow       
  mflow_4445             226.400        427.413       -201.013       4.3992E-05  mflow       
  mflow_4446             414.300        1247.58       -833.280       4.3992E-05  mflow       
  mflow_4447             2377.60        3839.15       -1461.55       4.3992E-05  mflow       
@@ -26343,7 +25852,7 @@
  mflow_4540             145.200        383.824       -238.624       4.3992E-05  mflow       
  mflow_4541             139.500        310.398       -170.898       4.3992E-05  mflow       
  mflow_4542             140.900        324.813       -183.913       4.3992E-05  mflow       
- mflow_4543             169.400        488.973       -319.573       4.3992E-05  mflow       
+ mflow_4543             169.400        488.972       -319.572       4.3992E-05  mflow       
  mflow_4544             155.200        367.314       -212.114       4.3992E-05  mflow       
  mflow_4545             156.600        323.486       -166.886       4.3992E-05  mflow       
  mflow_4546             159.500        394.576       -235.076       4.3992E-05  mflow       
@@ -26460,7 +25969,7 @@
  mflow_4657             64.1000        57.1257        6.97430       4.3992E-05  mflow       
  mflow_4658             64.1000        56.0511        8.04890       4.3992E-05  mflow       
  mflow_4659             61.2000        54.5839        6.61610       4.3992E-05  mflow       
- mflow_4660             59.8000        53.0568        6.74320       4.3992E-05  mflow       
+ mflow_4660             59.8000        53.0567        6.74330       4.3992E-05  mflow       
  mflow_4661             58.4000        51.6620        6.73800       4.3992E-05  mflow       
  mflow_4662             58.4000        50.4844        7.91560       4.3992E-05  mflow       
  mflow_4663             59.8000        49.4815        10.3185       4.3992E-05  mflow       
@@ -26535,11 +26044,11 @@
  mflow_4732             13.1000        10.9425        2.15750       4.3992E-05  mflow       
  mflow_4733             13.4000        10.7472        2.65280       4.3992E-05  mflow       
  mflow_4734             13.1000        10.4051        2.69490       4.3992E-05  mflow       
- mflow_4735             12.7000        9.99310        2.70690       4.3992E-05  mflow       
+ mflow_4735             12.7000        9.99309        2.70691       4.3992E-05  mflow       
  mflow_4736             12.7000        9.72167        2.97833       4.3992E-05  mflow       
  mflow_4737             14.0000        9.61387        4.38613       4.3992E-05  mflow       
  mflow_4738             15.7000        9.56968        6.13032       4.3992E-05  mflow       
- mflow_4739             15.7000        9.39416        6.30584       4.3992E-05  mflow       
+ mflow_4739             15.7000        9.39415        6.30585       4.3992E-05  mflow       
  mflow_4740             15.7000        9.13771        6.56229       4.3992E-05  mflow       
  mflow_4741             18.5000        10.4210        8.07900       4.3992E-05  mflow       
  mflow_4742             18.5000        9.88723        8.61277       4.3992E-05  mflow       
@@ -26624,7 +26133,7 @@
  mflow_4821             109.600        129.166       -19.5660       4.3992E-05  mflow       
  mflow_4822             122.400        294.641       -172.241       4.3992E-05  mflow       
  mflow_4823             212.100        656.814       -444.714       4.3992E-05  mflow       
- mflow_4824             338.800        730.180       -391.380       4.3992E-05  mflow       
+ mflow_4824             338.800        730.181       -391.381       4.3992E-05  mflow       
  mflow_4825             365.900        660.002       -294.102       4.3992E-05  mflow       
  mflow_4826             306.100        447.911       -141.811       4.3992E-05  mflow       
  mflow_4827             262.000        442.799       -180.799       4.3992E-05  mflow       
@@ -26674,7 +26183,7 @@
  mflow_4871             156.600        318.386       -161.786       4.3992E-05  mflow       
  mflow_4872             152.300        269.659       -117.359       4.3992E-05  mflow       
  mflow_4873             146.600        239.597       -92.9970       4.3992E-05  mflow       
- mflow_4874             143.800        220.416       -76.6160       4.3992E-05  mflow       
+ mflow_4874             143.800        220.415       -76.6150       4.3992E-05  mflow       
  mflow_4875             138.100        207.442       -69.3420       4.3992E-05  mflow       
  mflow_4876             133.800        198.110       -64.3100       4.3992E-05  mflow       
  mflow_4877             131.000        204.437       -73.4370       4.3992E-05  mflow       
@@ -26693,7 +26202,7 @@
  mflow_4890             153.800        249.935       -96.1350       4.3992E-05  mflow       
  mflow_4891             146.600        212.982       -66.3820       4.3992E-05  mflow       
  mflow_4892             140.900        190.279       -49.3790       4.3992E-05  mflow       
- mflow_4893             136.700        182.914       -46.2140       4.3992E-05  mflow       
+ mflow_4893             136.700        182.913       -46.2130       4.3992E-05  mflow       
  mflow_4894             139.500        239.065       -99.5650       4.3992E-05  mflow       
  mflow_4895             158.000        613.436       -455.436       4.3992E-05  mflow       
  mflow_4896             236.300        946.025       -709.725       4.3992E-05  mflow       
@@ -26746,7 +26255,7 @@
  mflow_4943             293.300        283.208        10.0920       4.3992E-05  mflow       
  mflow_4944             357.400        512.022       -154.622       4.3992E-05  mflow       
  mflow_4945             361.600        555.361       -193.761       4.3992E-05  mflow       
- mflow_4946             358.800        405.171       -46.3710       4.3992E-05  mflow       
+ mflow_4946             358.800        405.170       -46.3700       4.3992E-05  mflow       
  mflow_4947             333.200        306.965        26.2350       4.3992E-05  mflow       
  mflow_4948             320.300        275.005        45.2950       4.3992E-05  mflow       
  mflow_4949             284.700        228.783        55.9170       4.3992E-05  mflow       
@@ -26762,7 +26271,7 @@
  mflow_4959             143.800        135.231        8.56900       4.3992E-05  mflow       
  mflow_4960             142.400        133.465        8.93500       4.3992E-05  mflow       
  mflow_4961             131.000        129.190        1.81000       4.3992E-05  mflow       
- mflow_4962             125.300        133.794       -8.49400       4.3992E-05  mflow       
+ mflow_4962             125.300        133.793       -8.49300       4.3992E-05  mflow       
  mflow_4963             153.800        339.031       -185.231       4.3992E-05  mflow       
  mflow_4964             146.600        337.767       -191.167       4.3992E-05  mflow       
  mflow_4965             205.000        662.185       -457.185       4.3992E-05  mflow       
@@ -26818,7 +26327,7 @@
  mflow_5015             55.5000        65.6582       -10.1582       4.3992E-05  mflow       
  mflow_5016             52.7000        63.3527       -10.6527       4.3992E-05  mflow       
  mflow_5017             54.1000        61.4522       -7.35220       4.3992E-05  mflow       
- mflow_5018             52.7000        63.1071       -10.4071       4.3992E-05  mflow       
+ mflow_5018             52.7000        63.1072       -10.4072       4.3992E-05  mflow       
  mflow_5019             48.4000        59.2235       -10.8235       4.3992E-05  mflow       
  mflow_5020             47.0000        57.1840       -10.1840       4.3992E-05  mflow       
  mflow_5021             45.6000        55.8632       -10.2632       4.3992E-05  mflow       
@@ -26953,7 +26462,7 @@
  mflow_5150             42.7000        95.3696       -52.6696       4.3992E-05  mflow       
  mflow_5151             103.900        320.471       -216.571       4.3992E-05  mflow       
  mflow_5152             187.900        553.004       -365.104       4.3992E-05  mflow       
- mflow_5153             452.700        871.648       -418.948       4.3992E-05  mflow       
+ mflow_5153             452.700        871.649       -418.949       4.3992E-05  mflow       
  mflow_5154             374.400        727.341       -352.941       4.3992E-05  mflow       
  mflow_5155             341.700        646.458       -304.758       4.3992E-05  mflow       
  mflow_5156             330.300        558.615       -228.315       4.3992E-05  mflow       
@@ -27002,7 +26511,7 @@
  mflow_5199             669.200        484.015        185.185       4.3992E-05  mflow       
  mflow_5200             545.300        362.534        182.766       4.3992E-05  mflow       
  mflow_5201             454.200        326.310        127.890       4.3992E-05  mflow       
- mflow_5202             384.400        300.919        83.4810       4.3992E-05  mflow       
+ mflow_5202             384.400        300.918        83.4820       4.3992E-05  mflow       
  mflow_5203             327.500        253.336        74.1640       4.3992E-05  mflow       
  mflow_5204             294.700        308.535       -13.8350       4.3992E-05  mflow       
  mflow_5205             324.600        681.905       -357.305       4.3992E-05  mflow       
@@ -27048,7 +26557,7 @@
  mflow_5245             328.900        348.707       -19.8070       4.3992E-05  mflow       
  mflow_5246             317.500        284.292        33.2080       4.3992E-05  mflow       
  mflow_5247             301.800        290.193        11.6070       4.3992E-05  mflow       
- mflow_5248             324.600        546.200       -221.600       4.3992E-05  mflow       
+ mflow_5248             324.600        546.199       -221.599       4.3992E-05  mflow       
  mflow_5249             455.600        1040.68       -585.080       4.3992E-05  mflow       
  mflow_5250             568.100        764.749       -196.649       4.3992E-05  mflow       
  mflow_5251             555.300        634.829       -79.5290       4.3992E-05  mflow       
@@ -27316,7 +26825,7 @@
  mflow_5513             281.900        174.622        107.278       4.3992E-05  mflow       
  mflow_5514             203.600        131.460        72.1400       4.3992E-05  mflow       
  mflow_5515             165.200        109.055        56.1450       4.3992E-05  mflow       
- mflow_5516             149.500        125.818        23.6820       4.3992E-05  mflow       
+ mflow_5516             149.500        125.817        23.6830       4.3992E-05  mflow       
  mflow_5517             257.700        237.078        20.6220       4.3992E-05  mflow       
  mflow_5518             271.900        156.455        115.445       4.3992E-05  mflow       
  mflow_5519             355.900        246.627        109.273       4.3992E-05  mflow       
@@ -27331,14 +26840,14 @@
  mflow_5528             1180.30        1289.38       -109.080       4.3992E-05  mflow       
  mflow_5529             1069.20        933.834        135.366       4.3992E-05  mflow       
  mflow_5530             1026.50        766.786        259.714       4.3992E-05  mflow       
- mflow_5531             879.900        585.537        294.363       4.3992E-05  mflow       
+ mflow_5531             879.900        585.536        294.364       4.3992E-05  mflow       
  mflow_5532             832.900        782.475        50.4250       4.3992E-05  mflow       
  mflow_5533             1049.30        795.411        253.889       4.3992E-05  mflow       
  mflow_5534             842.800        528.094        314.706       4.3992E-05  mflow       
  mflow_5535             649.200        382.942        266.258       4.3992E-05  mflow       
  mflow_5536             559.500        426.821        132.679       4.3992E-05  mflow       
  mflow_5537             595.100        582.081        13.0190       4.3992E-05  mflow       
- mflow_5538             637.800        562.895        74.9050       4.3992E-05  mflow       
+ mflow_5538             637.800        562.894        74.9060       4.3992E-05  mflow       
  mflow_5539             632.100        438.180        193.920       4.3992E-05  mflow       
  mflow_5540             750.300        694.222        56.0780       4.3992E-05  mflow       
  mflow_5541             1362.50        849.701        512.799       4.3992E-05  mflow       
@@ -27377,7 +26886,7 @@
  mflow_5574             636.400        424.030        212.370       4.3992E-05  mflow       
  mflow_5575             533.900        357.773        176.127       4.3992E-05  mflow       
  mflow_5576             462.700        318.599        144.101       4.3992E-05  mflow       
- mflow_5577             407.200        292.191        115.009       4.3992E-05  mflow       
+ mflow_5577             407.200        292.190        115.010       4.3992E-05  mflow       
  mflow_5578             363.100        278.452        84.6480       4.3992E-05  mflow       
  mflow_5579             336.000        291.381        44.6190       4.3992E-05  mflow       
  mflow_5580             324.600        382.329       -57.7290       4.3992E-05  mflow       
@@ -27415,7 +26924,7 @@
  mflow_5612             223.500        278.581       -55.0810       4.3992E-05  mflow       
  mflow_5613             213.600        250.087       -36.4870       4.3992E-05  mflow       
  mflow_5614             213.600        339.457       -125.857       4.3992E-05  mflow       
- mflow_5615             307.500        732.132       -424.632       4.3992E-05  mflow       
+ mflow_5615             307.500        732.131       -424.631       4.3992E-05  mflow       
  mflow_5616             256.300        905.047       -648.747       4.3992E-05  mflow       
  mflow_5617             609.400        1346.58       -737.180       4.3992E-05  mflow       
  mflow_5618             777.400        1071.45       -294.050       4.3992E-05  mflow       
@@ -27424,7 +26933,7 @@
  mflow_5621             625.000        542.949        82.0510       4.3992E-05  mflow       
  mflow_5622             539.600        403.506        136.094       4.3992E-05  mflow       
  mflow_5623             472.700        349.057        123.643       4.3992E-05  mflow       
- mflow_5624             421.400        413.466        7.93400       4.3992E-05  mflow       
+ mflow_5624             421.400        413.465        7.93500       4.3992E-05  mflow       
  mflow_5625             404.300        708.632       -304.332       4.3992E-05  mflow       
  mflow_5626             451.300        932.591       -481.291       4.3992E-05  mflow       
  mflow_5627             441.400        664.850       -223.450       4.3992E-05  mflow       
@@ -27443,7 +26952,7 @@
  mflow_5640             840.000        874.666       -34.6660       4.3992E-05  mflow       
  mflow_5641             871.300        656.816        214.484       4.3992E-05  mflow       
  mflow_5642             764.500        491.964        272.536       4.3992E-05  mflow       
- mflow_5643             689.100        745.627       -56.5270       4.3992E-05  mflow       
+ mflow_5643             689.100        745.628       -56.5280       4.3992E-05  mflow       
  mflow_5644             699.100        1240.21       -541.110       4.3992E-05  mflow       
  mflow_5645             781.600        1227.41       -445.810       4.3992E-05  mflow       
  mflow_5646             1265.70        1747.15       -481.450       4.3992E-05  mflow       
@@ -27488,7 +26997,7 @@
  mflow_5685             326.000        315.941        10.0590       4.3992E-05  mflow       
  mflow_5686             649.200        1069.44       -420.240       4.3992E-05  mflow       
  mflow_5687             844.300        1295.82       -451.520       4.3992E-05  mflow       
- mflow_5688             758.800        935.068       -176.268       4.3992E-05  mflow       
+ mflow_5688             758.800        935.069       -176.269       4.3992E-05  mflow       
  mflow_5689             677.700        929.359       -251.659       4.3992E-05  mflow       
  mflow_5690             686.200        1027.27       -341.070       4.3992E-05  mflow       
  mflow_5691             652.100        747.313       -95.2130       4.3992E-05  mflow       
@@ -27511,7 +27020,7 @@
  mflow_5708             176.500        173.738        2.76200       4.3992E-05  mflow       
  mflow_5709             159.500        156.832        2.66800       4.3992E-05  mflow       
  mflow_5710             156.600        150.543        6.05700       4.3992E-05  mflow       
- mflow_5711             143.800        145.657       -1.85700       4.3992E-05  mflow       
+ mflow_5711             143.800        145.658       -1.85800       4.3992E-05  mflow       
  mflow_5712             140.900        141.337      -0.437000       4.3992E-05  mflow       
  mflow_5713             131.000        137.705       -6.70500       4.3992E-05  mflow       
  mflow_5714             119.600        134.259       -14.6590       4.3992E-05  mflow       
@@ -27922,7 +27431,7 @@
  mflow_6119             86.8000        87.0702      -0.270200       4.3992E-05  mflow       
  mflow_6120             81.2000        77.9837        3.21630       4.3992E-05  mflow       
  mflow_6121             85.4000        98.3588       -12.9588       4.3992E-05  mflow       
- mflow_6122             79.7000        75.0099        4.69010       4.3992E-05  mflow       
+ mflow_6122             79.7000        75.0098        4.69020       4.3992E-05  mflow       
  mflow_6123             75.5000        72.3408        3.15920       4.3992E-05  mflow       
  mflow_6124             71.2000        69.8831        1.31690       4.3992E-05  mflow       
  mflow_6125             68.3000        67.7682       0.531800       4.3992E-05  mflow       
@@ -28038,7 +27547,7 @@
  mflow_6235             79.7000        127.767       -48.0670       4.3992E-05  mflow       
  mflow_6236             75.5000        106.464       -30.9640       4.3992E-05  mflow       
  mflow_6237             153.800        244.651       -90.8510       4.3992E-05  mflow       
- mflow_6238             693.400        528.121        165.279       4.3992E-05  mflow       
+ mflow_6238             693.400        528.120        165.280       4.3992E-05  mflow       
  mflow_6239             1331.20        872.028        459.172       4.3992E-05  mflow       
  mflow_6240             736.100        680.808        55.2920       4.3992E-05  mflow       
  mflow_6241             588.000        499.469        88.5310       4.3992E-05  mflow       
@@ -28140,7 +27649,7 @@
  mflow_6337             476.900        265.140        211.760       4.3992E-05  mflow       
  mflow_6338             431.400        268.155        163.245       4.3992E-05  mflow       
  mflow_6339             424.300        372.706        51.5940       4.3992E-05  mflow       
- mflow_6340             439.900        571.643       -131.743       4.3992E-05  mflow       
+ mflow_6340             439.900        571.644       -131.744       4.3992E-05  mflow       
  mflow_6341             428.500        459.175       -30.6750       4.3992E-05  mflow       
  mflow_6342             407.200        350.245        56.9550       4.3992E-05  mflow       
  mflow_6343             380.100        284.796        95.3040       4.3992E-05  mflow       
@@ -28283,7 +27792,7 @@
  mflow_6480             72.6000        65.7236        6.87640       4.3992E-05  mflow       
  mflow_6481             65.5000        61.7849        3.71510       4.3992E-05  mflow       
  mflow_6482             58.4000        58.7397      -0.339700       4.3992E-05  mflow       
- mflow_6483             55.5000        56.6779       -1.17790       4.3992E-05  mflow       
+ mflow_6483             55.5000        56.6780       -1.17800       4.3992E-05  mflow       
  mflow_6484             52.7000        54.8023       -2.10230       4.3992E-05  mflow       
  mflow_6485             49.8000        53.2229       -3.42290       4.3992E-05  mflow       
  mflow_6486             47.0000        51.8608       -4.86080       4.3992E-05  mflow       
@@ -28460,14 +27969,14 @@
  mflow_6657             195.100        231.287       -36.1870       4.3992E-05  mflow       
  mflow_6658             205.000        273.203       -68.2030       4.3992E-05  mflow       
  mflow_6659             212.100        211.819       0.281000       4.3992E-05  mflow       
- mflow_6660             224.900        210.362        14.5380       4.3992E-05  mflow       
+ mflow_6660             224.900        210.361        14.5390       4.3992E-05  mflow       
  mflow_6661             226.400        187.421        38.9790       4.3992E-05  mflow       
  mflow_6662             216.400        160.425        55.9750       4.3992E-05  mflow       
  mflow_6663             203.600        144.480        59.1200       4.3992E-05  mflow       
  mflow_6664             187.900        134.274        53.6260       4.3992E-05  mflow       
  mflow_6665             176.500        127.277        49.2230       4.3992E-05  mflow       
  mflow_6666             166.600        122.175        44.4250       4.3992E-05  mflow       
- mflow_6667             156.600        118.173        38.4270       4.3992E-05  mflow       
+ mflow_6667             156.600        118.172        38.4280       4.3992E-05  mflow       
  mflow_6668             146.600        114.785        31.8150       4.3992E-05  mflow       
  mflow_6669             139.500        111.844        27.6560       4.3992E-05  mflow       
  mflow_6670             136.700        115.608        21.0920       4.3992E-05  mflow       
@@ -28477,11 +27986,11 @@
  mflow_6674             119.600        123.041       -3.44100       4.3992E-05  mflow       
  mflow_6675             140.900        161.747       -20.8470       4.3992E-05  mflow       
  mflow_6676             252.000        449.207       -197.207       4.3992E-05  mflow       
- mflow_6677             267.700        534.928       -267.228       4.3992E-05  mflow       
+ mflow_6677             267.700        534.927       -267.227       4.3992E-05  mflow       
  mflow_6678             328.900        601.767       -272.867       4.3992E-05  mflow       
  mflow_6679             599.400        834.963       -235.563       4.3992E-05  mflow       
  mflow_6680             1176.00        941.646        234.354       4.3992E-05  mflow       
- mflow_6681             808.700        729.313        79.3870       4.3992E-05  mflow       
+ mflow_6681             808.700        729.312        79.3880       4.3992E-05  mflow       
  mflow_6682             575.200        486.196        89.0040       4.3992E-05  mflow       
  mflow_6683             451.300        348.318        102.982       4.3992E-05  mflow       
  mflow_6684             375.900        267.423        108.477       4.3992E-05  mflow       
@@ -28509,7 +28018,7 @@
  mflow_6706             187.900        417.438       -229.538       4.3992E-05  mflow       
  mflow_6707             236.300        613.636       -377.336       4.3992E-05  mflow       
  mflow_6708             311.800        436.166       -124.366       4.3992E-05  mflow       
- mflow_6709             1148.90        599.332        549.568       4.3992E-05  mflow       
+ mflow_6709             1148.90        599.333        549.567       4.3992E-05  mflow       
  mflow_6710             2762.00        1629.57        1132.43       4.3992E-05  mflow       
  mflow_6711             2491.50        1270.79        1220.71       4.3992E-05  mflow       
  mflow_6712             2164.10        2575.08       -410.980       4.3992E-05  mflow       
@@ -28520,7 +28029,7 @@
  mflow_6717             1808.10        1889.21       -81.1100       4.3992E-05  mflow       
  mflow_6718             1509.20        1514.20       -5.00000       4.3992E-05  mflow       
  mflow_6719             1366.80        1159.22        207.580       4.3992E-05  mflow       
- mflow_6720             1042.20        826.240        215.960       4.3992E-05  mflow       
+ mflow_6720             1042.20        826.241        215.959       4.3992E-05  mflow       
  mflow_6721             783.100        582.365        200.735       4.3992E-05  mflow       
  mflow_6722             606.500        511.020        95.4800       4.3992E-05  mflow       
  mflow_6723             476.900        418.906        57.9940       4.3992E-05  mflow       
@@ -28531,7 +28040,7 @@
  mflow_6728             237.800        322.873       -85.0730       4.3992E-05  mflow       
  mflow_6729             334.600        651.908       -317.308       4.3992E-05  mflow       
  mflow_6730             378.700        618.698       -239.998       4.3992E-05  mflow       
- mflow_6731             677.700        811.288       -133.588       4.3992E-05  mflow       
+ mflow_6731             677.700        811.289       -133.589       4.3992E-05  mflow       
  mflow_6732             1765.40        2709.75       -944.350       4.3992E-05  mflow       
  mflow_6733             1808.10        1967.29       -159.190       4.3992E-05  mflow       
  mflow_6734             1267.10        1367.60       -100.500       4.3992E-05  mflow       
@@ -28565,7 +28074,7 @@
  mflow_6762             303.300        345.584       -42.2840       4.3992E-05  mflow       
  mflow_6763             402.900        421.102       -18.2020       4.3992E-05  mflow       
  mflow_6764             418.600        409.160        9.44000       4.3992E-05  mflow       
- mflow_6765             363.100        332.446        30.6540       4.3992E-05  mflow       
+ mflow_6765             363.100        332.447        30.6530       4.3992E-05  mflow       
  mflow_6766             311.800        287.679        24.1210       4.3992E-05  mflow       
  mflow_6767             269.100        259.852        9.24800       4.3992E-05  mflow       
  mflow_6768             236.300        241.488       -5.18800       4.3992E-05  mflow       
@@ -28585,7 +28094,7 @@
  mflow_6782             682.000        964.401       -282.401       4.3992E-05  mflow       
  mflow_6783             502.600        719.322       -216.722       4.3992E-05  mflow       
  mflow_6784             441.400        636.704       -195.304       4.3992E-05  mflow       
- mflow_6785             394.400        693.497       -299.097       4.3992E-05  mflow       
+ mflow_6785             394.400        693.498       -299.098       4.3992E-05  mflow       
  mflow_6786             347.400        470.034       -122.634       4.3992E-05  mflow       
  mflow_6787             308.900        350.010       -41.1100       4.3992E-05  mflow       
  mflow_6788             276.200        279.007       -2.80700       4.3992E-05  mflow       
@@ -28642,7 +28151,7 @@
  mpeak_21               197.900        403.098       -205.198       4.8907E-04  mpeak       
  mpeak_22               172.300        254.948       -82.6480       4.8907E-04  mpeak       
  mpeak_23               146.600        211.021       -64.4210       4.8907E-04  mpeak       
- mpeak_24               94.0000        97.3526       -3.35260       4.8907E-04  mpeak       
+ mpeak_24               94.0000        97.3527       -3.35270       4.8907E-04  mpeak       
  mpeak_25               92.5000        105.927       -13.4270       4.8907E-04  mpeak       
  mpeak_26               17.1000        38.1508       -21.0508       4.8907E-04  mpeak       
  mpeak_27               19.9000        30.5538       -10.6538       4.8907E-04  mpeak       
@@ -28663,7 +28172,7 @@
  mpeak_42               19.9000        25.7099       -5.80990       4.8907E-04  mpeak       
  mpeak_43               18.5000        33.2537       -14.7537       4.8907E-04  mpeak       
  mpeak_44               94.0000        173.344       -79.3440       4.8907E-04  mpeak       
- mpeak_45               215.000        328.930       -113.930       4.8907E-04  mpeak       
+ mpeak_45               215.000        328.929       -113.929       4.8907E-04  mpeak       
  mpeak_46               348.800        745.588       -396.788       4.8907E-04  mpeak       
  mpeak_47               12.5000        24.1315       -11.6315       4.8907E-04  mpeak       
  mpeak_48               17.1000        39.9552       -22.8552       4.8907E-04  mpeak       
@@ -28863,7 +28372,7 @@
  mvol_stm_91           6.286030E+08   1.308940E+09  -6.803370E+08   8.6910E-11  mvol_stm    
  mvol_stm_92           1.272620E+09   3.561660E+09  -2.289040E+09   8.6910E-11  mvol_stm    
  mvol_stm_93           4.069090E+08   1.496960E+09  -1.090051E+09   8.6910E-11  mvol_stm    
- mtime_1                1.90000        3.71003       -1.81003       3.0242E-02  mtime       
+ mtime_1                1.90000        3.71003       -1.81003       0.3024      mtime       
  mtime_2                6.00000        6.19512      -0.195120       3.0242E-02  mtime       
  mtime_3                10.8000        10.0712       0.728800       3.0242E-02  mtime       
  mtime_4                37.0000        41.4168       -4.41680       3.0242E-02  mtime       
@@ -28879,7 +28388,7 @@
 
  Objective function ----->
 
-   Sum of squared weighted residuals (ie phi)                =   98.187    
+   Sum of squared weighted residuals (ie phi)                =   98.484    
    Contribution to phi from observation group "mlog"         =  0.87305    
    Contribution to phi from observation group "mflow"        =  0.87612    
    Contribution to phi from observation group "mbaseind"     =   14.420    
@@ -28888,7 +28397,7 @@
    Contribution to phi from observation group "mvol_smr"     =  0.81331    
    Contribution to phi from observation group "mvol_wtr"     =  0.85768    
    Contribution to phi from observation group "mvol_stm"     =  0.91161    
-   Contribution to phi from observation group "mtime"        =   77.783    
+   Contribution to phi from observation group "mtime"        =   78.080    
 
 
  Correlation Coefficient ----->
@@ -28900,11 +28409,11 @@
 
    All residuals:-
       Number of residuals with non-zero weight                       = 13887
-      Mean value of non-zero weighted residuals                      = -2.9858E-04
+      Mean value of non-zero weighted residuals                      = -3.3405E-04
       Maximum weighted residual [observation "mtime_8"]              =   8.781    
       Minimum weighted residual [observation "mtime_6"]              = -0.7359    
-      Standard variance of weighted residuals                        =  7.0832E-03
-      Standard error of weighted residuals                           =  8.4162E-02
+      Standard variance of weighted residuals                        =  7.1046E-03
+      Standard error of weighted residuals                           =  8.4289E-02
 
       Note: the above variance was obtained by dividing the objective 
       function by the number of system degrees of freedom (ie. number of 
@@ -29004,11 +28513,11 @@
 
    Residuals for observation group "mtime":-
       Number of residuals with non-zero weight                       =     8
-      Mean value of non-zero weighted residuals                      =  0.9484    
+      Mean value of non-zero weighted residuals                      =  0.8869    
       Maximum weighted residual [observation "mtime_8"]              =   8.781    
       Minimum weighted residual [observation "mtime_6"]              = -0.7359    
-      "Variance" of weighted residuals                               =   9.723    
-      "Standard error" of weighted residuals                         =   3.118    
+      "Variance" of weighted residuals                               =   9.760    
+      "Standard error" of weighted residuals                         =   3.124    
 
       Note: the above "variance" was obtained by dividing the sum of squared 
       residuals by the number of items with non-zero weight.
