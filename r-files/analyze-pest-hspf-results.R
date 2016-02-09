@@ -25,4 +25,13 @@ names(df.res) <- df.res[1, ]
 ## discard first row
 df.res <- df.res[-1, ]
 
-head(df.res)
+# get simulation dates from UCI
+chr.uci <- scan(file = paste0(chr.dir, "/hspf-files/bigelk.uci"), 
+                sep = "\n", what = "character")
+head(chr.uci)
+
+chr.sim.dates <- gsub("([aA-zZ ])|(00\\:00)|(24\\:00)","",
+     grep("START", scan(file = paste0(chr.dir, "/hspf-files/bigelk.uci"), 
+                   sep = "\n", what = "character"), value = TRUE))
+dte.str <- as.POSIXct(substr(chr.sim.dates, start =  1, stop = 10), fmt = "%Y/%m/%d")
+dte.end <- as.POSIXct(substr(chr.sim.dates, start = 11, stop = 20), fmt = "%Y/%m/%d")
