@@ -3,31 +3,31 @@
 
  OPTIMISATION ITERATION NO.  1 ----->
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610         2.104894E-03
-   infilt110       infilt          0.359568         4.383054E-04
-   infilt120       infilt          0.297215         5.662211E-03
-   infilt210       infilt          7.584834E-02     5.141799E-04
-   infilt220       infilt          0.500000         1.841092E-03
-   infilt310       infilt          7.029840E-02     8.479268E-06
-   infilt320       infilt          0.104483         2.462237E-05
-   agwrctr000      agwrc            26.5551         4.818170E-02
-   deepfr000       deepfr          1.924546E-04     3.009529E-06
-   basetp000       basetp          5.740701E-04     3.848098E-04
-   agwetp000       agwetp          3.918439E-04     3.637247E-04
-   uzsn100         uzsn            0.111803         2.457976E-04
-   uzsn200         uzsn             1.04154         2.534945E-04
-   uzsn300         uzsn             1.17150         9.801932E-06
-   intfw100        intfw            1.28157         1.966806E-03
-   intfw200        intfw            9.16762         8.064128E-05
-   intfw300        intfw            4.41629         2.068366E-05
-   irctr000        irc             0.464527         1.962015E-03
-   cepsc100        cepsc           0.100000         1.402765E-03
-   cepsc200        cepsc           2.549242E-02     2.225858E-04
-   cepsc300        cepsc           0.185415         1.007621E-05
-   lzetp100        lzetp           0.436168         2.656619E-03
-   lzetp200        lzetp           0.120742         1.019954E-03
-   lzetp300        lzetp           0.499729         1.003731E-05
-   retsc           iwatr           0.993389         6.243740E-05
+   lzsn000         lzsn             2.00000         2.038423E-03
+   infilt110       infilt          8.248513E-02     2.957399E-04
+   infilt120       infilt          0.161098         5.317277E-03
+   infilt210       infilt          5.676831E-03     3.807671E-05
+   infilt220       infilt          0.500000         6.938334E-04
+   infilt310       infilt          8.177164E-02     5.058398E-06
+   infilt320       infilt          0.218377         3.716378E-05
+   agwrctr000      agwrc            29.5295         4.204193E-03
+   deepfr000       deepfr          1.680072E-04     1.250592E-06
+   basetp000       basetp          2.411290E-04     1.864628E-05
+   agwetp000       agwetp          1.979467E-04     2.015709E-05
+   uzsn100         uzsn            0.306229         5.410887E-04
+   uzsn200         uzsn             2.00000         9.353035E-05
+   uzsn300         uzsn            0.635383         6.245852E-06
+   intfw100        intfw            10.0000         1.046070E-04
+   intfw200        intfw            1.00000         3.999223E-05
+   intfw300        intfw            9.81558         1.505719E-07
+   irctr000        irc              1.38877         6.122806E-03
+   cepsc100        cepsc           0.100000         3.810677E-04
+   cepsc200        cepsc           1.489642E-02     2.252034E-05
+   cepsc300        cepsc           0.200000         1.631704E-06
+   lzetp100        lzetp           0.800000         6.193010E-05
+   lzetp200        lzetp           0.100000         2.547861E-04
+   lzetp300        lzetp           0.520920         2.198040E-06
+   retsc           iwatr            1.00000         7.213543E-05
 
 
 
@@ -37,31 +37,31 @@
 
  Number of observations with non-zero weight =  6817
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610         1.868469E-04
-   infilt110       infilt          0.359568         1.378973E-05
-   infilt120       infilt          0.297215         1.986221E-04
-   infilt210       infilt          7.584834E-02     1.046036E-05
-   infilt220       infilt          0.500000         3.956250E-05
-   infilt310       infilt          7.029840E-02     4.384959E-07
-   infilt320       infilt          0.104483         1.246657E-06
-   agwrctr000      agwrc            26.5551         8.998610E-04
-   deepfr000       deepfr          1.924546E-04     1.270245E-07
-   basetp000       basetp          5.740701E-04     5.078542E-06
-   agwetp000       agwetp          3.918439E-04     3.933180E-06
-   uzsn100         uzsn            0.111803         3.513563E-05
-   uzsn200         uzsn             1.04154         1.321788E-05
-   uzsn300         uzsn             1.17150         8.707093E-07
-   intfw100        intfw            1.28157         3.935040E-05
-   intfw200        intfw            9.16762         9.961961E-07
-   intfw300        intfw            4.41629         4.743384E-07
-   irctr000        irc             0.464527         5.267153E-05
-   cepsc100        cepsc           0.100000         6.900286E-05
-   cepsc200        cepsc           2.549242E-02     4.219849E-06
-   cepsc300        cepsc           0.185415         8.555837E-07
-   lzetp100        lzetp           0.436168         2.202666E-04
-   lzetp200        lzetp           0.120742         1.676448E-05
-   lzetp300        lzetp           0.499729         5.524258E-07
-   retsc           iwatr           0.993389         1.024401E-04
+   lzsn000         lzsn             2.00000         1.740135E-04
+   infilt110       infilt          8.248513E-02     1.196379E-05
+   infilt120       infilt          0.161098         1.996420E-04
+   infilt210       infilt          5.676831E-03     1.764866E-06
+   infilt220       infilt          0.500000         4.296643E-05
+   infilt310       infilt          8.177164E-02     4.480486E-07
+   infilt320       infilt          0.218377         1.584749E-06
+   agwrctr000      agwrc            29.5295         6.782724E-04
+   deepfr000       deepfr          1.680072E-04     8.128851E-08
+   basetp000       basetp          2.411290E-04     1.829077E-06
+   agwetp000       agwetp          1.979467E-04     1.662571E-06
+   uzsn100         uzsn            0.306229         5.335558E-05
+   uzsn200         uzsn             2.00000         1.251739E-05
+   uzsn300         uzsn            0.635383         5.850923E-07
+   intfw100        intfw            10.0000         8.815618E-06
+   intfw200        intfw            1.00000         4.553676E-06
+   intfw300        intfw            9.81558         2.171240E-07
+   irctr000        irc              1.38877         8.985825E-05
+   cepsc100        cepsc           0.100000         4.710594E-05
+   cepsc200        cepsc           1.489642E-02     1.950021E-06
+   cepsc300        cepsc           0.200000         8.276266E-07
+   lzetp100        lzetp           0.800000         5.386330E-05
+   lzetp200        lzetp           0.100000         1.515647E-05
+   lzetp300        lzetp           0.520920         5.157529E-07
+   retsc           iwatr            1.00000         8.601898E-05
 
 
 
@@ -69,31 +69,31 @@
 
  Number of observations with non-zero weight =  6817
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610         1.054309E-04
-   infilt110       infilt          0.359568         1.556250E-05
-   infilt120       infilt          0.297215         1.989965E-04
-   infilt210       infilt          7.584834E-02     2.377061E-06
-   infilt220       infilt          0.500000         1.237969E-05
-   infilt310       infilt          7.029840E-02     2.436412E-07
-   infilt320       infilt          0.104483         9.495606E-07
-   agwrctr000      agwrc            26.5551         1.153120E-04
-   deepfr000       deepfr          1.924546E-04     6.889324E-08
-   basetp000       basetp          5.740701E-04     1.149469E-07
-   agwetp000       agwetp          3.918439E-04     5.878866E-08
-   uzsn100         uzsn            0.111803         2.339313E-05
-   uzsn200         uzsn             1.04154         4.068453E-06
-   uzsn300         uzsn             1.17150         8.154029E-07
-   intfw100        intfw            1.28157         8.299287E-05
-   intfw200        intfw            9.16762         1.495521E-06
-   intfw300        intfw            4.41629         5.800391E-07
-   irctr000        irc             0.464527         9.338258E-05
-   cepsc100        cepsc           0.100000         1.742594E-05
-   cepsc200        cepsc           2.549242E-02     4.363524E-07
-   cepsc300        cepsc           0.185415         1.592344E-07
-   lzetp100        lzetp           0.436168         3.225956E-05
-   lzetp200        lzetp           0.120742         4.586834E-06
-   lzetp300        lzetp           0.499729         1.723894E-07
-   retsc           iwatr           0.993389         8.503741E-06
+   lzsn000         lzsn             2.00000         8.784530E-05
+   infilt110       infilt          8.248513E-02     7.155296E-06
+   infilt120       infilt          0.161098         1.205088E-04
+   infilt210       infilt          5.676831E-03     1.144126E-06
+   infilt220       infilt          0.500000         1.280066E-05
+   infilt310       infilt          8.177164E-02     1.930275E-07
+   infilt320       infilt          0.218377         9.310223E-07
+   agwrctr000      agwrc            29.5295         7.593465E-05
+   deepfr000       deepfr          1.680072E-04     3.854088E-08
+   basetp000       basetp          2.411290E-04     4.602789E-08
+   agwetp000       agwetp          1.979467E-04     2.608542E-08
+   uzsn100         uzsn            0.306229         3.048057E-05
+   uzsn200         uzsn             2.00000         5.955152E-06
+   uzsn300         uzsn            0.635383         4.128664E-07
+   intfw100        intfw            10.0000         1.977753E-05
+   intfw200        intfw            1.00000         8.405815E-06
+   intfw300        intfw            9.81558         1.862399E-07
+   irctr000        irc              1.38877         1.592036E-04
+   cepsc100        cepsc           0.100000         9.624018E-06
+   cepsc200        cepsc           1.489642E-02     3.223852E-07
+   cepsc300        cepsc           0.200000         1.297495E-07
+   lzetp100        lzetp           0.800000         1.011422E-05
+   lzetp200        lzetp           0.100000         3.862760E-06
+   lzetp300        lzetp           0.520920         1.332385E-07
+   retsc           iwatr            1.00000         7.860874E-06
 
 
 
@@ -101,31 +101,31 @@
 
  Number of observations with non-zero weight =     1
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610          21.4669    
-   infilt110       infilt          0.359568          4.51451    
-   infilt120       infilt          0.297215          60.7154    
-   infilt210       infilt          7.584834E-02     0.768693    
-   infilt220       infilt          0.500000          4.56057    
-   infilt310       infilt          7.029840E-02     6.476784E-02
-   infilt320       infilt          0.104483         0.276397    
-   agwrctr000      agwrc            26.5551          10.2728    
-   deepfr000       deepfr          1.924546E-04     1.409644E-02
-   basetp000       basetp          5.740701E-04     3.808127E-02
-   agwetp000       agwetp          3.918439E-04     1.444066E-02
-   uzsn100         uzsn            0.111803          2.94826    
-   uzsn200         uzsn             1.04154         0.414597    
-   uzsn300         uzsn             1.17150         9.213282E-02
-   intfw100        intfw            1.28157          2.11905    
-   intfw200        intfw            9.16762         4.606635E-02
-   intfw300        intfw            4.41629          0.00000    
-   irctr000        irc             0.464527          18.3805    
-   cepsc100        cepsc           0.100000          4.09991    
-   cepsc200        cepsc           2.549242E-02     5.871715E-02
-   cepsc300        cepsc           0.185415          0.00000    
-   lzetp100        lzetp           0.436168          1.93479    
-   lzetp200        lzetp           0.120742         0.875257    
-   lzetp300        lzetp           0.499729          0.00000    
-   retsc           iwatr           0.993389         0.414597    
+   lzsn000         lzsn             2.00000          28.0658    
+   infilt110       infilt          8.248513E-02      4.09362    
+   infilt120       infilt          0.161098          73.5018    
+   infilt210       infilt          5.676831E-03     0.490605    
+   infilt220       infilt          0.500000          6.93089    
+   infilt310       infilt          8.177164E-02     6.996920E-02
+   infilt320       infilt          0.218377         0.513399    
+   agwrctr000      agwrc            29.5295          12.7494    
+   deepfr000       deepfr          1.680072E-04     1.667593E-02
+   basetp000       basetp          2.411290E-04     2.991725E-02
+   agwetp000       agwetp          1.979467E-04     1.253384E-02
+   uzsn100         uzsn            0.306229          7.44428    
+   uzsn200         uzsn             2.00000         0.513400    
+   uzsn300         uzsn            0.635383         8.556655E-02
+   intfw100        intfw            10.0000          1.19793    
+   intfw200        intfw            1.00000         0.513400    
+   intfw300        intfw            9.81558          0.00000    
+   irctr000        irc              1.38877          84.8822    
+   cepsc100        cepsc           0.100000          4.87730    
+   cepsc200        cepsc           1.489642E-02     0.101971    
+   cepsc300        cepsc           0.200000          0.00000    
+   lzetp100        lzetp           0.800000         8.556659E-02
+   lzetp200        lzetp           0.100000          1.54020    
+   lzetp300        lzetp           0.520920          0.00000    
+   retsc           iwatr            1.00000         0.770099    
 
 
 
@@ -133,31 +133,31 @@
 
  Number of observations with non-zero weight =    93
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610         8.363582E-03
-   infilt110       infilt          0.359568         1.139189E-03
-   infilt120       infilt          0.297215         1.219840E-02
-   infilt210       infilt          7.584834E-02     1.810918E-04
-   infilt220       infilt          0.500000         9.539359E-04
-   infilt310       infilt          7.029840E-02     1.262540E-05
-   infilt320       infilt          0.104483         5.061154E-05
-   agwrctr000      agwrc            26.5551         9.874078E-03
-   deepfr000       deepfr          1.924546E-04     4.950908E-06
-   basetp000       basetp          5.740701E-04     1.227887E-05
-   agwetp000       agwetp          3.918439E-04     5.973597E-06
-   uzsn100         uzsn            0.111803         9.354260E-03
-   uzsn200         uzsn             1.04154         5.975679E-04
-   uzsn300         uzsn             1.17150         6.703856E-05
-   intfw100        intfw            1.28157         5.504198E-03
-   intfw200        intfw            9.16762         1.854046E-04
-   intfw300        intfw            4.41629         3.992914E-05
-   irctr000        irc             0.464527         5.392932E-03
-   cepsc100        cepsc           0.100000         7.079896E-03
-   cepsc200        cepsc           2.549242E-02     6.782777E-05
-   cepsc300        cepsc           0.185415         1.407391E-05
-   lzetp100        lzetp           0.436168         4.539495E-03
-   lzetp200        lzetp           0.120742         5.727167E-04
-   lzetp300        lzetp           0.499729         1.984628E-05
-   retsc           iwatr           0.993389         2.450477E-03
+   lzsn000         lzsn             2.00000         6.628796E-03
+   infilt110       infilt          8.248513E-02     4.723797E-04
+   infilt120       infilt          0.161098         6.552591E-03
+   infilt210       infilt          5.676831E-03     9.469382E-05
+   infilt220       infilt          0.500000         1.016058E-03
+   infilt310       infilt          8.177164E-02     1.235977E-05
+   infilt320       infilt          0.218377         5.232954E-05
+   agwrctr000      agwrc            29.5295         6.543174E-03
+   deepfr000       deepfr          1.680072E-04     2.809744E-06
+   basetp000       basetp          2.411290E-04     4.672885E-06
+   agwetp000       agwetp          1.979467E-04     2.690319E-06
+   uzsn100         uzsn            0.306229         2.355166E-03
+   uzsn200         uzsn             2.00000         1.081033E-03
+   uzsn300         uzsn            0.635383         3.469759E-05
+   intfw100        intfw            10.0000         1.271970E-03
+   intfw200        intfw            1.00000         4.814654E-04
+   intfw300        intfw            9.81558         6.780065E-06
+   irctr000        irc              1.38877         7.440016E-03
+   cepsc100        cepsc           0.100000         1.131530E-03
+   cepsc200        cepsc           1.489642E-02     5.615413E-05
+   cepsc300        cepsc           0.200000         9.335508E-06
+   lzetp100        lzetp           0.800000         8.971162E-04
+   lzetp200        lzetp           0.100000         5.019536E-04
+   lzetp300        lzetp           0.520920         1.050461E-05
+   retsc           iwatr            1.00000         2.251620E-03
 
 
 
@@ -165,31 +165,31 @@
 
  Number of observations with non-zero weight =    20
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610         6.092067E-02
-   infilt110       infilt          0.359568         2.229413E-03
-   infilt120       infilt          0.297215         2.896882E-02
-   infilt210       infilt          7.584834E-02     4.096905E-04
-   infilt220       infilt          0.500000         2.081984E-03
-   infilt310       infilt          7.029840E-02     1.014825E-04
-   infilt320       infilt          0.104483         2.282517E-04
-   agwrctr000      agwrc            26.5551         4.437414E-02
-   deepfr000       deepfr          1.924546E-04     1.371803E-04
-   basetp000       basetp          5.740701E-04     1.835529E-04
-   agwetp000       agwetp          3.918439E-04     1.023157E-04
-   uzsn100         uzsn            0.111803         1.161449E-02
-   uzsn200         uzsn             1.04154         1.936788E-03
-   uzsn300         uzsn             1.17150         3.953455E-04
-   intfw100        intfw            1.28157         3.321838E-03
-   intfw200        intfw            9.16762         2.282525E-04
-   intfw300        intfw            4.41629         1.768036E-04
-   irctr000        irc             0.464527         4.061362E-03
-   cepsc100        cepsc           0.100000         1.500195E-02
-   cepsc200        cepsc           2.549242E-02     3.176398E-04
-   cepsc300        cepsc           0.185415         2.041555E-04
-   lzetp100        lzetp           0.436168         3.644856E-02
-   lzetp200        lzetp           0.120742         1.327004E-03
-   lzetp300        lzetp           0.499729         1.768039E-04
-   retsc           iwatr           0.993389         2.316511E-03
+   lzsn000         lzsn             2.00000         5.272110E-02
+   infilt110       infilt          8.248513E-02     1.120700E-03
+   infilt120       infilt          0.161098         2.095715E-02
+   infilt210       infilt          5.676831E-03     1.007916E-04
+   infilt220       infilt          0.500000         1.828679E-03
+   infilt310       infilt          8.177164E-02     9.744165E-05
+   infilt320       infilt          0.218377         2.664566E-04
+   agwrctr000      agwrc            29.5295         2.573443E-02
+   deepfr000       deepfr          1.680072E-04     6.881234E-05
+   basetp000       basetp          2.411290E-04     6.064987E-05
+   agwetp000       agwetp          1.979467E-04     3.900616E-05
+   uzsn100         uzsn            0.306229         1.526310E-02
+   uzsn200         uzsn             2.00000         2.450824E-03
+   uzsn300         uzsn            0.635383         2.664568E-04
+   intfw100        intfw            10.0000         1.173621E-03
+   intfw200        intfw            1.00000         4.296488E-04
+   intfw300        intfw            9.81558          0.00000    
+   irctr000        irc              1.38877         1.209230E-02
+   cepsc100        cepsc           0.100000         7.094461E-03
+   cepsc200        cepsc           1.489642E-02     1.783958E-04
+   cepsc300        cepsc           0.200000         1.685221E-04
+   lzetp100        lzetp           0.800000         9.095513E-03
+   lzetp200        lzetp           0.100000         8.957074E-04
+   lzetp300        lzetp           0.520920         1.685221E-04
+   retsc           iwatr            1.00000         1.853743E-03
 
 
 
@@ -197,31 +197,31 @@
 
  Number of observations with non-zero weight =    18
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610         0.100018    
-   infilt110       infilt          0.359568         1.132374E-02
-   infilt120       infilt          0.297215         0.163728    
-   infilt210       infilt          7.584834E-02     3.436296E-03
-   infilt220       infilt          0.500000         2.034070E-02
-   infilt310       infilt          7.029840E-02     2.379326E-04
-   infilt320       infilt          0.104483         9.345304E-04
-   agwrctr000      agwrc            26.5551         0.531138    
-   deepfr000       deepfr          1.924546E-04     1.285560E-04
-   basetp000       basetp          5.740701E-04     1.402307E-03
-   agwetp000       agwetp          3.918439E-04     6.991202E-04
-   uzsn100         uzsn            0.111803         1.879050E-02
-   uzsn200         uzsn             1.04154         2.228401E-03
-   uzsn300         uzsn             1.17150         3.522272E-04
-   intfw100        intfw            1.28157         1.366847E-02
-   intfw200        intfw            9.16762         3.191039E-04
-   intfw300        intfw            4.41629         2.222162E-04
-   irctr000        irc             0.464527         3.035990E-03
-   cepsc100        cepsc           0.100000         6.744775E-02
-   cepsc200        cepsc           2.549242E-02     9.524652E-04
-   cepsc300        cepsc           0.185415         5.587755E-04
-   lzetp100        lzetp           0.436168         0.140449    
-   lzetp200        lzetp           0.120742         2.316194E-03
-   lzetp300        lzetp           0.499729         1.238365E-05
-   retsc           iwatr           0.993389         9.698563E-03
+   lzsn000         lzsn             2.00000         6.939281E-02
+   infilt110       infilt          8.248513E-02     7.424349E-03
+   infilt120       infilt          0.161098         0.136687    
+   infilt210       infilt          5.676831E-03     5.274326E-04
+   infilt220       infilt          0.500000         1.488168E-02
+   infilt310       infilt          8.177164E-02     1.793756E-04
+   infilt320       infilt          0.218377         1.052356E-03
+   agwrctr000      agwrc            29.5295         0.282109    
+   deepfr000       deepfr          1.680072E-04     6.095474E-05
+   basetp000       basetp          2.411290E-04     4.262988E-04
+   agwetp000       agwetp          1.979467E-04     2.249887E-04
+   uzsn100         uzsn            0.306229         2.413916E-02
+   uzsn200         uzsn             2.00000         1.424522E-03
+   uzsn300         uzsn            0.635383         2.018431E-04
+   intfw100        intfw            10.0000         3.149703E-03
+   intfw200        intfw            1.00000         9.253435E-04
+   intfw300        intfw            9.81558         1.252983E-05
+   irctr000        irc              1.38877         4.948884E-03
+   cepsc100        cepsc           0.100000         3.525058E-02
+   cepsc200        cepsc           1.489642E-02     3.436738E-04
+   cepsc300        cepsc           0.200000         4.453824E-04
+   lzetp100        lzetp           0.800000         1.597098E-02
+   lzetp200        lzetp           0.100000         1.545468E-03
+   lzetp300        lzetp           0.520920         1.981140E-05
+   retsc           iwatr            1.00000         6.924490E-03
 
 
 
@@ -229,31 +229,31 @@
 
  Number of observations with non-zero weight =    20
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610         4.064475E-02
-   infilt110       infilt          0.359568         3.140099E-03
-   infilt120       infilt          0.297215         3.893698E-02
-   infilt210       infilt          7.584834E-02     4.157480E-04
-   infilt220       infilt          0.500000         2.470199E-03
-   infilt310       infilt          7.029840E-02     1.363616E-05
-   infilt320       infilt          0.104483         2.794178E-04
-   agwrctr000      agwrc            26.5551         8.123967E-02
-   deepfr000       deepfr          1.924546E-04     9.013571E-05
-   basetp000       basetp          5.740701E-04     3.409551E-06
-   agwetp000       agwetp          3.918439E-04     3.088865E-06
-   uzsn100         uzsn            0.111803         1.817898E-03
-   uzsn200         uzsn             1.04154         4.987092E-04
-   uzsn300         uzsn             1.17150         2.403262E-04
-   intfw100        intfw            1.28157         4.189169E-03
-   intfw200        intfw            9.16762         1.968635E-04
-   intfw300        intfw            4.41629         2.375701E-05
-   irctr000        irc             0.464527         5.683352E-03
-   cepsc100        cepsc           0.100000         1.510519E-03
-   cepsc200        cepsc           2.549242E-02     8.859518E-05
-   cepsc300        cepsc           0.185415         1.378455E-04
-   lzetp100        lzetp           0.436168         5.570230E-03
-   lzetp200        lzetp           0.120742         5.373831E-04
-   lzetp300        lzetp           0.499729         2.375706E-05
-   retsc           iwatr           0.993389          0.00000    
+   lzsn000         lzsn             2.00000         4.051000E-02
+   infilt110       infilt          8.248513E-02     1.672874E-03
+   infilt120       infilt          0.161098         3.336967E-02
+   infilt210       infilt          5.676831E-03     1.244104E-04
+   infilt220       infilt          0.500000         2.687154E-03
+   infilt310       infilt          8.177164E-02     1.646603E-04
+   infilt320       infilt          0.218377         3.860178E-04
+   agwrctr000      agwrc            29.5295         6.109800E-02
+   deepfr000       deepfr          1.680072E-04     5.585784E-05
+   basetp000       basetp          2.411290E-04     1.526727E-06
+   agwetp000       agwetp          1.979467E-04     1.832165E-06
+   uzsn100         uzsn            0.306229         4.924776E-03
+   uzsn200         uzsn             2.00000         1.217994E-03
+   uzsn300         uzsn            0.635383         1.441301E-04
+   intfw100        intfw            10.0000         1.852195E-03
+   intfw200        intfw            1.00000         6.864395E-04
+   intfw300        intfw            9.81558          0.00000    
+   irctr000        irc              1.38877         1.876395E-02
+   cepsc100        cepsc           0.100000         1.016800E-03
+   cepsc200        cepsc           1.489642E-02     8.991512E-05
+   cepsc300        cepsc           0.200000          0.00000    
+   lzetp100        lzetp           0.800000         2.597345E-03
+   lzetp200        lzetp           0.100000         6.757350E-04
+   lzetp300        lzetp           0.520920         1.998726E-05
+   retsc           iwatr            1.00000          0.00000    
 
 
 
@@ -261,31 +261,31 @@
 
  Number of observations with non-zero weight =    93
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610         7.565401E-03
-   infilt110       infilt          0.359568         6.719349E-04
-   infilt120       infilt          0.297215         8.710184E-03
-   infilt210       infilt          7.584834E-02     1.417333E-04
-   infilt220       infilt          0.500000         7.768267E-04
-   infilt310       infilt          7.029840E-02     9.156787E-06
-   infilt320       infilt          0.104483         4.072693E-05
-   agwrctr000      agwrc            26.5551         1.734726E-02
-   deepfr000       deepfr          1.924546E-04     6.762358E-06
-   basetp000       basetp          5.740701E-04     3.674437E-05
-   agwetp000       agwetp          3.918439E-04     2.077089E-05
-   uzsn100         uzsn            0.111803         2.355617E-03
-   uzsn200         uzsn             1.04154         4.571897E-04
-   uzsn300         uzsn             1.17150         3.965183E-05
-   intfw100        intfw            1.28157         1.086677E-03
-   intfw200        intfw            9.16762         2.719654E-05
-   intfw300        intfw            4.41629         8.148595E-06
-   irctr000        irc             0.464527         8.516599E-04
-   cepsc100        cepsc           0.100000         2.458200E-03
-   cepsc200        cepsc           2.549242E-02     4.483277E-05
-   cepsc300        cepsc           0.185415         1.902851E-05
-   lzetp100        lzetp           0.436168         4.549409E-03
-   lzetp200        lzetp           0.120742         3.153677E-04
-   lzetp300        lzetp           0.499729         9.301467E-06
-   retsc           iwatr           0.993389         7.072610E-04
+   lzsn000         lzsn             2.00000         6.184755E-03
+   infilt110       infilt          8.248513E-02     4.092898E-04
+   infilt120       infilt          0.161098         7.146474E-03
+   infilt210       infilt          5.676831E-03     3.134256E-05
+   infilt220       infilt          0.500000         6.348865E-04
+   infilt310       infilt          8.177164E-02     8.734207E-06
+   infilt320       infilt          0.218377         5.433965E-05
+   agwrctr000      agwrc            29.5295         1.041349E-02
+   deepfr000       deepfr          1.680072E-04     3.539815E-06
+   basetp000       basetp          2.411290E-04     1.285000E-05
+   agwetp000       agwetp          1.979467E-04     8.131495E-06
+   uzsn100         uzsn            0.306229         2.095114E-03
+   uzsn200         uzsn             2.00000         4.072348E-04
+   uzsn300         uzsn            0.635383         2.192014E-05
+   intfw100        intfw            10.0000         3.170045E-04
+   intfw200        intfw            1.00000         8.446031E-05
+   intfw300        intfw            9.81558         3.582452E-06
+   irctr000        irc              1.38877         2.042651E-03
+   cepsc100        cepsc           0.100000         1.294929E-03
+   cepsc200        cepsc           1.489642E-02     2.481169E-05
+   cepsc300        cepsc           0.200000         1.699036E-05
+   lzetp100        lzetp           0.800000         9.125147E-04
+   lzetp200        lzetp           0.100000         1.757992E-04
+   lzetp300        lzetp           0.520920         7.965908E-06
+   retsc           iwatr            1.00000         5.844600E-04
 
 
 
@@ -293,31 +293,31 @@
 
  Number of observations with non-zero weight =     8
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610          2.45260    
-   infilt110       infilt          0.359568         0.509059    
-   infilt120       infilt          0.297215          6.22652    
-   infilt210       infilt          7.584834E-02     0.887279    
-   infilt220       infilt          0.500000          3.14408    
-   infilt310       infilt          7.029840E-02     1.226927E-02
-   infilt320       infilt          0.104483         2.501115E-02
-   agwrctr000      agwrc            26.5551          83.6148    
-   deepfr000       deepfr          1.924546E-04     4.889822E-03
-   basetp000       basetp          5.740701E-04     0.667943    
-   agwetp000       agwetp          3.918439E-04     0.631367    
-   uzsn100         uzsn            0.111803         0.172379    
-   uzsn200         uzsn             1.04154         0.436668    
-   uzsn300         uzsn             1.17150         1.237161E-02
-   intfw100        intfw            1.28157          3.40215    
-   intfw200        intfw            9.16762         0.139835    
-   intfw300        intfw            4.41629         3.588918E-02
-   irctr000        irc             0.464527          2.51158    
-   cepsc100        cepsc           0.100000          2.37297    
-   cepsc200        cepsc           2.549242E-02     0.386286    
-   cepsc300        cepsc           0.185415         1.741697E-02
-   lzetp100        lzetp           0.436168          4.58891    
-   lzetp200        lzetp           0.120742          1.76704    
-   lzetp300        lzetp           0.499729         1.740894E-02
-   retsc           iwatr           0.993389          0.00000    
+   lzsn000         lzsn             2.00000         0.349614    
+   infilt110       infilt          8.248513E-02     3.475684E-02
+   infilt120       infilt          0.161098         0.790321    
+   infilt210       infilt          5.676831E-03     2.453129E-02
+   infilt220       infilt          0.500000         0.834970    
+   infilt310       infilt          8.177164E-02     1.044192E-04
+   infilt320       infilt          0.218377         5.756460E-03
+   agwrctr000      agwrc            29.5295          7.06621    
+   deepfr000       deepfr          1.680072E-04     5.394788E-04
+   basetp000       basetp          2.411290E-04     3.209795E-02
+   agwetp000       agwetp          1.979467E-04     3.492242E-02
+   uzsn100         uzsn            0.306229         8.760906E-02
+   uzsn200         uzsn             2.00000         0.147866    
+   uzsn300         uzsn            0.635383         1.330036E-03
+   intfw100        intfw            10.0000         9.948620E-02
+   intfw200        intfw            1.00000         2.436874E-02
+   intfw300        intfw            9.81558         1.257200E-05
+   irctr000        irc              1.38877         0.591449    
+   cepsc100        cepsc           0.100000         0.239136    
+   cepsc200        cepsc           1.489642E-02     3.689932E-02
+   cepsc300        cepsc           0.200000         2.506109E-03
+   lzetp100        lzetp           0.800000         8.479230E-02
+   lzetp200        lzetp           0.100000         0.397878    
+   lzetp300        lzetp           0.520920         3.761210E-03
+   retsc           iwatr            1.00000          0.00000    
 
 
 
@@ -325,28 +325,28 @@
 
  Number of observations with non-zero weight = 13887
  Parameter name    Group          Current value    Sensitivity
-   lzsn000         lzsn             2.00610         2.104894E-03
-   infilt110       infilt          0.359568         4.383054E-04
-   infilt120       infilt          0.297215         5.662211E-03
-   infilt210       infilt          7.584834E-02     5.141799E-04
-   infilt220       infilt          0.500000         1.841092E-03
-   infilt310       infilt          7.029840E-02     8.479268E-06
-   infilt320       infilt          0.104483         2.462237E-05
-   agwrctr000      agwrc            26.5551         4.818170E-02
-   deepfr000       deepfr          1.924546E-04     3.009529E-06
-   basetp000       basetp          5.740701E-04     3.848098E-04
-   agwetp000       agwetp          3.918439E-04     3.637247E-04
-   uzsn100         uzsn            0.111803         2.457976E-04
-   uzsn200         uzsn             1.04154         2.534945E-04
-   uzsn300         uzsn             1.17150         9.801932E-06
-   intfw100        intfw            1.28157         1.966806E-03
-   intfw200        intfw            9.16762         8.064128E-05
-   intfw300        intfw            4.41629         2.068366E-05
-   irctr000        irc             0.464527         1.962015E-03
-   cepsc100        cepsc           0.100000         1.402765E-03
-   cepsc200        cepsc           2.549242E-02     2.225858E-04
-   cepsc300        cepsc           0.185415         1.007621E-05
-   lzetp100        lzetp           0.436168         2.656619E-03
-   lzetp200        lzetp           0.120742         1.019954E-03
-   lzetp300        lzetp           0.499729         1.003731E-05
-   retsc           iwatr           0.993389         6.243740E-05
+   lzsn000         lzsn             2.00000         2.038423E-03
+   infilt110       infilt          8.248513E-02     2.957399E-04
+   infilt120       infilt          0.161098         5.317277E-03
+   infilt210       infilt          5.676831E-03     3.807671E-05
+   infilt220       infilt          0.500000         6.938334E-04
+   infilt310       infilt          8.177164E-02     5.058398E-06
+   infilt320       infilt          0.218377         3.716378E-05
+   agwrctr000      agwrc            29.5295         4.204193E-03
+   deepfr000       deepfr          1.680072E-04     1.250592E-06
+   basetp000       basetp          2.411290E-04     1.864628E-05
+   agwetp000       agwetp          1.979467E-04     2.015709E-05
+   uzsn100         uzsn            0.306229         5.410887E-04
+   uzsn200         uzsn             2.00000         9.353035E-05
+   uzsn300         uzsn            0.635383         6.245852E-06
+   intfw100        intfw            10.0000         1.046070E-04
+   intfw200        intfw            1.00000         3.999223E-05
+   intfw300        intfw            9.81558         1.505719E-07
+   irctr000        irc              1.38877         6.122806E-03
+   cepsc100        cepsc           0.100000         3.810677E-04
+   cepsc200        cepsc           1.489642E-02     2.252034E-05
+   cepsc300        cepsc           0.200000         1.631704E-06
+   lzetp100        lzetp           0.800000         6.193010E-05
+   lzetp200        lzetp           0.100000         2.547861E-04
+   lzetp300        lzetp           0.520920         2.198040E-06
+   retsc           iwatr            1.00000         7.213543E-05
