@@ -1,0 +1,352 @@
+                     PARAMETER SENSITIVITIES: CASE control-bpa
+
+
+ OPTIMISATION ITERATION NO.  1 ----->
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000         2.961557E-03
+   infilt110       infilt          0.408192         4.277042E-04
+   infilt120       infilt          0.269281         5.698604E-03
+   infilt210       infilt          7.017180E-02     4.824574E-04
+   infilt220       infilt          0.500000         1.891740E-03
+   infilt310       infilt          6.969002E-02     6.542377E-06
+   infilt320       infilt          0.103142         2.784858E-05
+   agwrctr000      agwrc            26.5621         4.632828E-02
+   deepfr000       deepfr          1.920565E-04     2.899595E-06
+   basetp000       basetp          5.938534E-04     3.976239E-04
+   agwetp000       agwetp          4.058890E-04     3.763550E-04
+   uzsn100         uzsn            0.101165         3.043983E-04
+   uzsn200         uzsn             1.10275         3.000360E-04
+   uzsn300         uzsn             1.17931         1.464110E-05
+   intfw100        intfw            1.39055         5.542755E-04
+   intfw200        intfw            8.48011         2.181981E-05
+   intfw300        intfw            4.31115         7.133392E-06
+   irctr000        irc             0.704421         1.820908E-03
+   cepsc100        cepsc           0.100000         1.426463E-03
+   cepsc200        cepsc           2.580025E-02     1.967414E-04
+   cepsc300        cepsc           0.185268         1.117603E-05
+   lzetp100        lzetp           0.400000         4.117848E-03
+   lzetp200        lzetp           0.107042         9.818853E-04
+   lzetp300        lzetp           0.500733         1.004247E-05
+   retsc           iwatr           0.982750         6.873322E-05
+
+
+
+                        COMPLETION OF OPTIMISATION PROCESS
+
+ Composite sensitivities for observation group "mlog" ----->
+
+ Number of observations with non-zero weight =  6817
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000         1.745830E-04
+   infilt110       infilt          0.408192         1.337737E-05
+   infilt120       infilt          0.269281         2.075822E-04
+   infilt210       infilt          7.017180E-02     1.014786E-05
+   infilt220       infilt          0.500000         4.016464E-05
+   infilt310       infilt          6.969002E-02     4.309464E-07
+   infilt320       infilt          0.103142         1.230807E-06
+   agwrctr000      agwrc            26.5621         8.820397E-04
+   deepfr000       deepfr          1.920565E-04     1.249568E-07
+   basetp000       basetp          5.938534E-04     5.284727E-06
+   agwetp000       agwetp          4.058890E-04     4.086542E-06
+   uzsn100         uzsn            0.101165         3.556727E-05
+   uzsn200         uzsn             1.10275         1.351637E-05
+   uzsn300         uzsn             1.17931         8.529661E-07
+   intfw100        intfw            1.39055         4.241871E-05
+   intfw200        intfw            8.48011         1.141019E-06
+   intfw300        intfw            4.31115         4.879017E-07
+   irctr000        irc             0.704421         6.454641E-05
+   cepsc100        cepsc           0.100000         7.375070E-05
+   cepsc200        cepsc           2.580025E-02     3.961870E-06
+   cepsc300        cepsc           0.185268         8.262545E-07
+   lzetp100        lzetp           0.400000         2.238698E-04
+   lzetp200        lzetp           0.107042         1.758263E-05
+   lzetp300        lzetp           0.500733         5.061949E-07
+   retsc           iwatr           0.982750         9.985406E-05
+
+
+
+ Composite sensitivities for observation group "mflow" ----->
+
+ Number of observations with non-zero weight =  6817
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000         9.860342E-05
+   infilt110       infilt          0.408192         1.419824E-05
+   infilt120       infilt          0.269281         1.918946E-04
+   infilt210       infilt          7.017180E-02     2.206306E-06
+   infilt220       infilt          0.500000         1.152592E-05
+   infilt310       infilt          6.969002E-02     2.370061E-07
+   infilt320       infilt          0.103142         9.114536E-07
+   agwrctr000      agwrc            26.5621         1.102484E-04
+   deepfr000       deepfr          1.920565E-04     6.596265E-08
+   basetp000       basetp          5.938534E-04     1.187582E-07
+   agwetp000       agwetp          4.058890E-04     6.091874E-08
+   uzsn100         uzsn            0.101165         2.755658E-05
+   uzsn200         uzsn             1.10275         3.981369E-06
+   uzsn300         uzsn             1.17931         7.738603E-07
+   intfw100        intfw            1.39055         9.059944E-05
+   intfw200        intfw            8.48011         1.906782E-06
+   intfw300        intfw            4.31115         6.333234E-07
+   irctr000        irc             0.704421         1.100918E-04
+   cepsc100        cepsc           0.100000         1.962346E-05
+   cepsc200        cepsc           2.580025E-02     4.219153E-07
+   cepsc300        cepsc           0.185268         1.458376E-07
+   lzetp100        lzetp           0.400000         3.225788E-05
+   lzetp200        lzetp           0.107042         4.415510E-06
+   lzetp300        lzetp           0.500733         1.584836E-07
+   retsc           iwatr           0.982750         8.421577E-06
+
+
+
+ Composite sensitivities for observation group "mbaseind" ----->
+
+ Number of observations with non-zero weight =     1
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000          19.3939    
+   infilt110       infilt          0.408192          4.00777    
+   infilt120       infilt          0.269281          57.1683    
+   infilt210       infilt          7.017180E-02     0.646512    
+   infilt220       infilt          0.500000          4.14597    
+   infilt310       infilt          6.969002E-02     3.210366E-02
+   infilt320       infilt          0.103142         0.230333    
+   agwrctr000      agwrc            26.5621          10.2728    
+   deepfr000       deepfr          1.920565E-04     1.318255E-02
+   basetp000       basetp          5.938534E-04     3.802577E-02
+   agwetp000       agwetp          4.058890E-04     1.477129E-02
+   uzsn100         uzsn            0.101165          2.81004    
+   uzsn200         uzsn             1.10275         0.322465    
+   uzsn300         uzsn             1.17931         4.606637E-02
+   intfw100        intfw            1.39055         0.783128    
+   intfw200        intfw            8.48011         4.606639E-02
+   intfw300        intfw            4.31115          0.00000    
+   irctr000        irc             0.704421          24.4612    
+   cepsc100        cepsc           0.100000          3.68531    
+   cepsc200        cepsc           2.580025E-02     7.131142E-02
+   cepsc300        cepsc           0.185268         4.606634E-02
+   lzetp100        lzetp           0.400000          1.75052    
+   lzetp200        lzetp           0.107042         0.875262    
+   lzetp300        lzetp           0.500733          0.00000    
+   retsc           iwatr           0.982750         0.368531    
+
+
+
+ Composite sensitivities for observation group "mpeak" ----->
+
+ Number of observations with non-zero weight =    93
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000         8.205686E-03
+   infilt110       infilt          0.408192         9.758875E-04
+   infilt120       infilt          0.269281         1.416645E-02
+   infilt210       infilt          7.017180E-02     2.262759E-04
+   infilt220       infilt          0.500000         8.378162E-04
+   infilt310       infilt          6.969002E-02     1.434588E-05
+   infilt320       infilt          0.103142         4.477914E-05
+   agwrctr000      agwrc            26.5621         9.413643E-03
+   deepfr000       deepfr          1.920565E-04     4.773276E-06
+   basetp000       basetp          5.938534E-04     1.335780E-05
+   agwetp000       agwetp          4.058890E-04     6.130350E-06
+   uzsn100         uzsn            0.101165         1.633019E-02
+   uzsn200         uzsn             1.10275         5.724304E-04
+   uzsn300         uzsn             1.17931         6.335452E-05
+   intfw100        intfw            1.39055         6.235596E-03
+   intfw200        intfw            8.48011         3.080802E-04
+   intfw300        intfw            4.31115         4.149404E-05
+   irctr000        irc             0.704421         6.035517E-03
+   cepsc100        cepsc           0.100000         1.085192E-02
+   cepsc200        cepsc           2.580025E-02     7.286982E-05
+   cepsc300        cepsc           0.185268         1.244986E-05
+   lzetp100        lzetp           0.400000         4.618168E-03
+   lzetp200        lzetp           0.107042         5.116649E-04
+   lzetp300        lzetp           0.500733         1.441847E-05
+   retsc           iwatr           0.982750         2.425818E-03
+
+
+
+ Composite sensitivities for observation group "mvol_ann" ----->
+
+ Number of observations with non-zero weight =    20
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000         5.798353E-02
+   infilt110       infilt          0.408192         2.236408E-03
+   infilt120       infilt          0.269281         2.845933E-02
+   infilt210       infilt          7.017180E-02     4.114815E-04
+   infilt220       infilt          0.500000         2.111799E-03
+   infilt310       infilt          6.969002E-02     1.232145E-04
+   infilt320       infilt          0.103142         2.041561E-04
+   agwrctr000      agwrc            26.5621         4.240956E-02
+   deepfr000       deepfr          1.920565E-04     1.319145E-04
+   basetp000       basetp          5.938534E-04     1.909446E-04
+   agwetp000       agwetp          4.058890E-04     1.065452E-04
+   uzsn100         uzsn            0.101165         1.186734E-02
+   uzsn200         uzsn             1.10275         2.086983E-03
+   uzsn300         uzsn             1.17931         4.330789E-04
+   intfw100        intfw            1.39055         3.463125E-03
+   intfw200        intfw            8.48011         1.768038E-04
+   intfw300        intfw            4.31115          0.00000    
+   irctr000        irc             0.704421         6.043304E-03
+   cepsc100        cepsc           0.100000         1.593262E-02
+   cepsc200        cepsc           2.580025E-02     3.048646E-04
+   cepsc300        cepsc           0.185268         2.700720E-04
+   lzetp100        lzetp           0.400000         3.672655E-02
+   lzetp200        lzetp           0.107042         1.172784E-03
+   lzetp300        lzetp           0.500733         2.700721E-04
+   retsc           iwatr           0.982750         2.321005E-03
+
+
+
+ Composite sensitivities for observation group "mvol_smr" ----->
+
+ Number of observations with non-zero weight =    18
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000         9.388971E-02
+   infilt110       infilt          0.408192         1.111571E-02
+   infilt120       infilt          0.269281         0.172657    
+   infilt210       infilt          7.017180E-02     3.135641E-03
+   infilt220       infilt          0.500000         2.005174E-02
+   infilt310       infilt          6.969002E-02     2.498278E-04
+   infilt320       infilt          0.103142         8.794161E-04
+   agwrctr000      agwrc            26.5621         0.506969    
+   deepfr000       deepfr          1.920565E-04     1.258034E-04
+   basetp000       basetp          5.938534E-04     1.464197E-03
+   agwetp000       agwetp          4.058890E-04     7.294743E-04
+   uzsn100         uzsn            0.101165         1.981659E-02
+   uzsn200         uzsn             1.10275         2.293616E-03
+   uzsn300         uzsn             1.17931         3.051003E-04
+   intfw100        intfw            1.39055         1.316341E-02
+   intfw200        intfw            8.48011         4.099715E-04
+   intfw300        intfw            4.31115         1.298806E-04
+   irctr000        irc             0.704421         3.972752E-03
+   cepsc100        cepsc           0.100000         7.078600E-02
+   cepsc200        cepsc           2.580025E-02     9.667107E-04
+   cepsc300        cepsc           0.185268         5.587749E-04
+   lzetp100        lzetp           0.400000         0.118312    
+   lzetp200        lzetp           0.107042         2.165298E-03
+   lzetp300        lzetp           0.500733         1.238364E-05
+   retsc           iwatr           0.982750         9.473126E-03
+
+
+
+ Composite sensitivities for observation group "mvol_wtr" ----->
+
+ Number of observations with non-zero weight =    20
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000         3.900416E-02
+   infilt110       infilt          0.408192         3.247304E-03
+   infilt120       infilt          0.269281         3.848287E-02
+   infilt210       infilt          7.017180E-02     4.035559E-04
+   infilt220       infilt          0.500000         2.481331E-03
+   infilt310       infilt          6.969002E-02     1.655628E-05
+   infilt320       infilt          0.103142         1.508780E-04
+   agwrctr000      agwrc            26.5621         7.668941E-02
+   deepfr000       deepfr          1.920565E-04     8.635098E-05
+   basetp000       basetp          5.938534E-04     3.137819E-06
+   agwetp000       agwetp          4.058890E-04     3.091691E-06
+   uzsn100         uzsn            0.101165         1.805842E-03
+   uzsn200         uzsn             1.10275         5.199481E-04
+   uzsn300         uzsn             1.17931         1.987656E-04
+   intfw100        intfw            1.39055         4.694642E-03
+   intfw200        intfw            8.48011         1.973408E-04
+   intfw300        intfw            4.31115         1.959054E-04
+   irctr000        irc             0.704421         7.854273E-03
+   cepsc100        cepsc           0.100000         1.485591E-03
+   cepsc200        cepsc           2.580025E-02     1.143967E-04
+   cepsc300        cepsc           0.185268         1.378453E-04
+   lzetp100        lzetp           0.400000         5.608824E-03
+   lzetp200        lzetp           0.107042         5.292726E-04
+   lzetp300        lzetp           0.500733         1.385261E-04
+   retsc           iwatr           0.982750          0.00000    
+
+
+
+ Composite sensitivities for observation group "mvol_stm" ----->
+
+ Number of observations with non-zero weight =    93
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000         7.408086E-03
+   infilt110       infilt          0.408192         6.560496E-04
+   infilt120       infilt          0.269281         9.045555E-03
+   infilt210       infilt          7.017180E-02     1.314111E-04
+   infilt220       infilt          0.500000         7.733131E-04
+   infilt310       infilt          6.969002E-02     8.024302E-06
+   infilt320       infilt          0.103142         4.155719E-05
+   agwrctr000      agwrc            26.5621         1.658798E-02
+   deepfr000       deepfr          1.920565E-04     6.533259E-06
+   basetp000       basetp          5.938534E-04     3.833991E-05
+   agwetp000       agwetp          4.058890E-04     2.155134E-05
+   uzsn100         uzsn            0.101165         3.059629E-03
+   uzsn200         uzsn             1.10275         4.935103E-04
+   uzsn300         uzsn             1.17931         3.886394E-05
+   intfw100        intfw            1.39055         1.230342E-03
+   intfw200        intfw            8.48011         3.880812E-05
+   intfw300        intfw            4.31115         8.947505E-06
+   irctr000        irc             0.704421         1.196146E-03
+   cepsc100        cepsc           0.100000         2.848541E-03
+   cepsc200        cepsc           2.580025E-02     4.546446E-05
+   cepsc300        cepsc           0.185268         1.885741E-05
+   lzetp100        lzetp           0.400000         4.643692E-03
+   lzetp200        lzetp           0.107042         2.964189E-04
+   lzetp300        lzetp           0.500733         9.757010E-06
+   retsc           iwatr           0.982750         6.988527E-04
+
+
+
+ Composite sensitivities for observation group "mtime" ----->
+
+ Number of observations with non-zero weight =     8
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000          4.52006    
+   infilt110       infilt          0.408192         0.546864    
+   infilt120       infilt          0.269281          6.82097    
+   infilt210       infilt          7.017180E-02     0.833494    
+   infilt220       infilt          0.500000          3.24213    
+   infilt310       infilt          6.969002E-02     1.059468E-02
+   infilt320       infilt          0.103142         3.874835E-02
+   agwrctr000      agwrc            26.5621          80.3976    
+   deepfr000       deepfr          1.920565E-04     4.728670E-03
+   basetp000       basetp          5.938534E-04     0.690186    
+   agwetp000       agwetp          4.058890E-04     0.653291    
+   uzsn100         uzsn            0.101165         0.337878    
+   uzsn200         uzsn             1.10275         0.518996    
+   uzsn300         uzsn             1.17931         2.468138E-02
+   intfw100        intfw            1.39055         0.949916    
+   intfw200        intfw            8.48011         3.719628E-02
+   intfw300        intfw            4.31115         1.234090E-02
+   irctr000        irc             0.704421         0.790073    
+   cepsc100        cepsc           0.100000          2.42301    
+   cepsc200        cepsc           2.580025E-02     0.341376    
+   cepsc300        cepsc           0.185268         1.845195E-02
+   lzetp100        lzetp           0.400000          7.13615    
+   lzetp200        lzetp           0.107042          1.70082    
+   lzetp300        lzetp           0.500733         1.740889E-02
+   retsc           iwatr           0.982750         5.892870E-02
+
+
+
+ Composite sensitivities for all observations/prior info ----->
+
+ Number of observations with non-zero weight = 13887
+ Parameter name    Group          Current value    Sensitivity
+   lzsn000         lzsn             2.00000         2.961557E-03
+   infilt110       infilt          0.408192         4.277042E-04
+   infilt120       infilt          0.269281         5.698604E-03
+   infilt210       infilt          7.017180E-02     4.824574E-04
+   infilt220       infilt          0.500000         1.891740E-03
+   infilt310       infilt          6.969002E-02     6.542377E-06
+   infilt320       infilt          0.103142         2.784858E-05
+   agwrctr000      agwrc            26.5621         4.632828E-02
+   deepfr000       deepfr          1.920565E-04     2.899595E-06
+   basetp000       basetp          5.938534E-04     3.976239E-04
+   agwetp000       agwetp          4.058890E-04     3.763550E-04
+   uzsn100         uzsn            0.101165         3.043983E-04
+   uzsn200         uzsn             1.10275         3.000360E-04
+   uzsn300         uzsn             1.17931         1.464110E-05
+   intfw100        intfw            1.39055         5.542755E-04
+   intfw200        intfw            8.48011         2.181981E-05
+   intfw300        intfw            4.31115         7.133392E-06
+   irctr000        irc             0.704421         1.820908E-03
+   cepsc100        cepsc           0.100000         1.426463E-03
+   cepsc200        cepsc           2.580025E-02     1.967414E-04
+   cepsc300        cepsc           0.185268         1.117603E-05
+   lzetp100        lzetp           0.400000         4.117848E-03
+   lzetp200        lzetp           0.107042         9.818853E-04
+   lzetp300        lzetp           0.500733         1.004247E-05
+   retsc           iwatr           0.982750         6.873322E-05

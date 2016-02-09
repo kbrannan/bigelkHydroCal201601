@@ -1,56 +1,37 @@
 pcf
 * control data
 restart estimation
-     25  13887     12      0     9
-     1     1   single   point   1   0   0
-5.0   2.0    0.3    0.03    10  999
-5.0   5.0   1.0e-3
-0.1   noaui
-   -1  .005  4   4  .005   4
-1    1    1
+     13  13887      1      0      9  
+    1    1 double point  1    0  0
+   5.0000        2.0000      0.3  0.03  10     999
+      0.100  10.0  0.001
+ 0.1
+    50  0.005  4  4  0.005  4
+1  1  1  1 nojcosaveitn noreisaveitn
 * singular value decomposition
-1
+     1
     10  5.0000000E-07
-0
+     0
+* svd assist
+control.pst
+control.jco
+    0    0    0    1    0
 * parameter groups
-lzsn         relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-infilt       relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-agwrc        relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-deepfr       relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-basetp       relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-agwetp       relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-uzsn         relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-intfw        relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-irc          relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-cepsc        relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-lzetp        relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
-iwatr        relative     1.0000E-02  1.0000E-03  switch      2.000      parabolic
+ pargp absolute    0.015  0.0  switch    2.0 parabolic
 * parameter data
-lzsn000       log    factor    2.000000      2.0000        15.000      lzsn           1.000       0.000        1
-infilt110     log    factor   8.2485132E-02  1.00000e-03   0.50000      infilt         1.000       0.000        1
-infilt120     log    factor   0.1610981      1.00000e-03   0.50000      infilt         1.000       0.000        1
-infilt210     log    factor   5.6768311E-03  1.00000e-03   0.50000      infilt         1.000       0.000        1
-infilt220     log    factor   0.5000000      1.00000e-03   0.50000      infilt         1.000       0.000        1
-infilt310     log    factor   8.1771636E-02  1.00000e-03   0.50000      infilt         1.000       0.000        1
-infilt320     log    factor   0.2183768      1.00000e-03   0.50000      infilt         1.000       0.000        1
-agwrctr000    log    factor    29.52952      9.30000e-01   9.990e+2     agwrc          1.000       0.000        1
-deepfr000     log    factor   1.6800716E-04  1.00000e-06   0.50000      deepfr         1.000       0.000        1
-basetp000     log    factor   2.4112900E-04  1.00000e-06   0.20000      basetp         1.000       0.000        1
-agwetp000     log    factor   1.9794672E-04  1.00000e-06   0.20000      agwetp         1.000       0.000        1
-uzsn100       log    factor   0.3062286      5.00000e-02    2.0000      uzsn           1.000       0.000        1
-uzsn200       log    factor    2.000000      5.00000e-02    2.0000      uzsn           1.000       0.000        1
-uzsn300       log    factor   0.6353827      5.00000e-02    2.0000      uzsn           1.000       0.000        1
-intfw100      log    factor    10.00000      1.0000        10.000       intfw          1.000       0.000        1
-intfw200      log    factor    1.000000      1.0000        10.000       intfw          1.000       0.000        1
-intfw300      log    factor    9.815576      1.0000        10.000       intfw          1.000       0.000        1
-irctr000      log    factor    1.388773      0.428571429   2.33333      irc            1.000       0.000        1
-cepsc100      log    factor   0.1000000      0.10000       0.40000      cepsc          1.000       0.000        1
-cepsc200      log    factor   1.4896422E-02  1.00000e-02   0.20000      cepsc          1.000       0.000        1
-cepsc300      log    factor   0.2000000      1.00000e-02   0.20000      cepsc          1.000       0.000        1
-lzetp100      log    factor   0.8000000      0.40000       0.80000      lzetp          1.000       0.000        1
-lzetp200      log    factor   0.1000000      0.10000       0.80000      lzetp          1.000       0.000        1
-lzetp300      log    factor   0.5209198      0.10000       0.80000      lzetp          1.000       0.000        1
-retsc         log    factor    1.000000      0.01000       1.00000      iwatr          1.000       0.000        1
+par1         none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par2         none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par3         none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par4         none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par5         none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par6         none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par7         none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par8         none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par9         none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par10        none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par11        none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par12        none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
+par13        none  relative   10.000     1.0e-20  1.0e20  pargp  1.0  -10.000      1
 * observation groups
 mlog
 mflow
@@ -13950,7 +13931,7 @@ mtime
  mtime_7               1466.400       4.346284E-03  mtime
  mtime_8               2819.000       4.346284E-03  mtime
 * model command line
-model.bat
+svdabatch.bat
 * model input/output
-p2p_bigelk.tpl   p2p_bigelk.dat
+parcalc.tpl   parcalc.in
 model.ins   model.out
