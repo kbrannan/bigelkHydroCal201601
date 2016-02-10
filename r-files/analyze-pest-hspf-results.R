@@ -85,7 +85,9 @@ p.mtime00 <- ggplot(data = df.mtime.lg,
 p.mtime00 <- p.mtime00 + geom_line(aes(y = value))
 ## add weighted residuals
 p.mtime00 <- p.mtime00 + geom_point(data = df.mtime.lg[df.mtime.lg$src == "obs", ], 
-                                 aes(x = 100 * (1 - probs), y = value, size = WeightxResidual))
+                                 aes(x = 100 * (1 - probs), y = value, 
+                                     size = WeightxResidual)) + 
+  scale_size_continuous(name = "Weighted Resudual", range = c(4,8))
 plot(p.mtime00)
 
 ## 
