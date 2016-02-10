@@ -60,12 +60,33 @@ df.mtime <- data.frame(
 
 df.mtime[ , 4:12] <- sapply(df.mtime[, 4:12], as.numeric)
 
-## plot mtime 
-p.mtime00 <- ggplot(data = df.mtime) + scale_y_log10()
-## add obsered data
-p.mtime00 <- p.mtime00 + geom_line(aes(x = 1 - probs, y = Measured))
-## add modeled data
-p.mtime00 <- p.mtime00 + geom_line(aes(x = 1 - probs, y = Modelled))
+df.mtime.lg <- data.frame(rbind(cbind(src = "obs", value = df.mtime[ , 5], df.mtime[ ,c(1,6:12)]),
+                          cbind(src = "model", value = df.mtime[ , 4], df.mtime[ ,c(1,6:12)])),
+                          stringsAsFactors = FALSE)
+df.mtime.lg$src <- as.factor(df.mtime.lg$src)
+levels(df.mtime.lg$src) <- c("Obs", "Model")
 
+
+df.mtime.lg[ , -1] <- sapply(df.mtime.lg[ , -1], as.numeric)
+
+
+
+str(df.mtime.lg)
+
+
+## plot mtime ADD information from USGS regression equations
+p.mtime00 <- ggplot(data = df.mtime.lg, 
+                    aes(x = 100 * (1 - probs), colour = src)) + 
+  scale_y_log10() + 
+  scale_colour_discrete(name = "", breaks = c("obs", "model"), 
+                        labels = c("Obs", "Model")) +
+  xlab("Percent Time Greater") + ylab("Mean Daily Flow (cfs)") 
+## add flow data
+p.mtime00 <- p.mtime00 + geom_line(aes(y = value))
+## add weighted residuals
+p.mtime00 <- p.mtime00 + geom_point(data = df.mtime.lg[df.mtime.lg$src == "obs", ], 
+                                 aes(x = 100 * (1 - probs), y = value, size = WeightxResidual))
 plot(p.mtime00)
+
+## 
 
