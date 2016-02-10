@@ -41,7 +41,35 @@ dte.flows <- seq(from = dte.str, to = dte.end, by = "day")
 ## get mlog time-series
 df.mlog <- data.frame(dates = dte.flows, 
                       df.res[grep("mlog", as.character(df.res$Group)), ])
+df.mlog[, 4:12] <- sapply(df.mlog[ , 4:12], as.numeric)
+## add year as factor
+df.mlog <- cbind(df.mlog, year = factor(format(df.mlog$dates, "%Y")))
+### add month
+df.mlog <- cbind(df.mlog, 
+                 month = as.factor(format(df.mlog$dates, "%b")))
 
+levels(df.mlog$month) <- c("Oct", "Nov", "Dec", "Jan","Feb", 
+                           "Mar", "Apr", "May","Jun", "Jul", "Aug", "Sep")
+
+
+## add season
+chr_season <- function(chr.month) {
+  if(chr.month %in% c("Dec", "Jan", "Feb")) season  <- "winter"
+  if(chr.month %in% c("Mar", "Apr", "May")) season   <- "spring"
+  if(chr.month %in% c("Jul", "Jun", "Aug")) season   <- "summer"
+  if(chr.month %in% c("Sep", "Oct", "Nov")) season <- "fall"
+  return(season)
+}
+df.mlog <- cbind(df.mlog, 
+                 season = sapply(df.mlog$month, chr_season))
+
+## bar plot of weight residuals
+p.mlog.bar.wt.rs.all <- ggplot(data = df.mlog, 
+                               aes(x=factor(0), y = WeightxResidual)) + 
+  geom_boxplot()
+plot(p.mlog.bar.wt.rs.all)
+
+summary(df.mlog$WeightxResidual)
 
 
 ## get mtime
@@ -57,23 +85,14 @@ df.mtime <- data.frame(
                         quiet = TRUE), 
                       value = TRUE)))), 
   df.res[grep("mtime", as.character(df.res$Group)), ])
-
 df.mtime[ , 4:12] <- sapply(df.mtime[, 4:12], as.numeric)
-
+## create a long format table for mtime with factor indicating if from obs or model
 df.mtime.lg <- data.frame(rbind(cbind(src = "obs", value = df.mtime[ , 5], df.mtime[ ,c(1,6:12)]),
                           cbind(src = "model", value = df.mtime[ , 4], df.mtime[ ,c(1,6:12)])),
                           stringsAsFactors = FALSE)
 df.mtime.lg$src <- as.factor(df.mtime.lg$src)
 levels(df.mtime.lg$src) <- c("Obs", "Model")
-
-
 df.mtime.lg[ , -1] <- sapply(df.mtime.lg[ , -1], as.numeric)
-
-
-
-str(df.mtime.lg)
-
-
 ## plot mtime ADD information from USGS regression equations
 p.mtime00 <- ggplot(data = df.mtime.lg, 
                     aes(x = 100 * (1 - probs), colour = src)) + 
