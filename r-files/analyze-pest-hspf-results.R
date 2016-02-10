@@ -25,13 +25,34 @@ names(df.res) <- df.res[1, ]
 ## discard first row
 df.res <- df.res[-1, ]
 
-# get simulation dates from UCI
-chr.uci <- scan(file = paste0(chr.dir, "/hspf-files/bigelk.uci"), 
-                sep = "\n", what = "character")
-head(chr.uci)
-
+## get simulation dates from UCI
 chr.sim.dates <- gsub("([aA-zZ ])|(00\\:00)|(24\\:00)","",
      grep("START", scan(file = paste0(chr.dir, "/hspf-files/bigelk.uci"), 
                    sep = "\n", what = "character"), value = TRUE))
 dte.str <- as.POSIXct(substr(chr.sim.dates, start =  1, stop = 10), fmt = "%Y/%m/%d")
 dte.end <- as.POSIXct(substr(chr.sim.dates, start = 11, stop = 20), fmt = "%Y/%m/%d")
+
+## create date sequence
+dte.flows <- seq(from = dte.str, to = dte.end, by = "day")
+
+## get mlog time-series
+df.mlog <- data.frame(dates = dte.flows, 
+                      df.res[grep("mlog", as.character(df.res$Group)), ])
+
+
+
+## get mtime
+df.mtime <- data.frame(
+  probs = eval(
+    parse(text = 
+            gsub("(tmp.per)|(<-)|(( ){1, })", "", 
+                 grep("tmp.per <-", 
+                      scan(
+                        file = paste0(chr.dir, "/r-files/hspf-output-proc.R"), 
+                        sep = "\n", 
+                        what = "character", 
+                        quiet = TRUE), 
+                      value = TRUE)))), 
+  df.res[grep("mtime", as.character(df.res$Group)), ])
+
+
