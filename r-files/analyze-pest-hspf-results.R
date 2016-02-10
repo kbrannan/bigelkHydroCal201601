@@ -1,5 +1,8 @@
 ## analyze pest-hspf results
 
+## load packages
+library(ggplot2)
+
 ## working path 
 chr.dir <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601"
 
@@ -55,4 +58,14 @@ df.mtime <- data.frame(
                       value = TRUE)))), 
   df.res[grep("mtime", as.character(df.res$Group)), ])
 
+df.mtime[ , 4:12] <- sapply(df.mtime[, 4:12], as.numeric)
+
+## plot mtime 
+p.mtime00 <- ggplot(data = df.mtime) + scale_y_log10()
+## add obsered data
+p.mtime00 <- p.mtime00 + geom_line(aes(x = 1 - probs, y = Measured))
+## add modeled data
+p.mtime00 <- p.mtime00 + geom_line(aes(x = 1 - probs, y = Modelled))
+
+plot(p.mtime00)
 
