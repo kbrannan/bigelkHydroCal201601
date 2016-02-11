@@ -46,10 +46,12 @@ df.mlog[, 4:12] <- sapply(df.mlog[ , 4:12], as.numeric)
 df.mlog <- cbind(df.mlog, year = factor(format(df.mlog$dates, "%Y")))
 ### add month
 df.mlog <- cbind(df.mlog, 
-                 month = as.factor(format(df.mlog$dates, "%b")))
-
-levels(df.mlog$month) <- c("Oct", "Nov", "Dec", "Jan","Feb", 
-                           "Mar", "Apr", "May","Jun", "Jul", "Aug", "Sep")
+                 month = 
+                   factor(
+                     format(df.mlog$dates, "%b"),
+                     levels = c("Oct", "Nov", "Dec", "Jan","Feb",
+                                "Mar", "Apr", "May","Jun", "Jul", 
+                                "Aug", "Sep")))
 ## add season
 chr_season <- function(chr.month) {
   if(chr.month %in% c("Dec", "Jan", "Feb")) season  <- "winter"
@@ -59,7 +61,7 @@ chr_season <- function(chr.month) {
   return(season)
 }
 df.mlog <- cbind(df.mlog, 
-                 season = sapply(df.mlog$month, chr_season))
+                 season = sapply(as.character(df.mlog$month), chr_season))
 
 ## assign flow zones used in LCD
 ## add ecdf to mlog
@@ -82,10 +84,11 @@ get.flow.zone <- function(flow.exceed) {
   }
   return(flow.zone)
 }
-df.mlog <- cbind(df.mlog, flw.zn = factor(sapply(df.mlog$exceed,get.flow.zone)))
-
-levels(df.mlog$flw.zn) <- c("dry", "low", "typical", "transitional", "high")
-
+df.mlog <- cbind(df.mlog, 
+                 flw.zn = factor(
+                   sapply(df.mlog$exceed,get.flow.zone), 
+                   levels = c("dry", "low", "typical", 
+                              "transitional", "high")))
 ## boxplot of weight x residuals
 p.mlog.bar.wt.rs.all <- ggplot(data = df.mlog, 
                                aes(x=factor(0), y = WeightxResidual)) + 
@@ -110,6 +113,7 @@ p.mlog.bar.wt.rs.fz <- ggplot(data = df.mlog,
   geom_boxplot()
 plot(p.mlog.bar.wt.rs.fz)
 
+
 ## get mflow time-series
 df.mflow <- data.frame(dates = dte.flows, 
                       df.res[grep("mflow", as.character(df.res$Group)), ])
@@ -118,10 +122,12 @@ df.mflow[, 4:12] <- sapply(df.mflow[ , 4:12], as.numeric)
 df.mflow <- cbind(df.mflow, year = factor(format(df.mflow$dates, "%Y")))
 ### add month
 df.mflow <- cbind(df.mflow, 
-                 month = as.factor(format(df.mflow$dates, "%b")))
-
-levels(df.mflow$month) <- c("Oct", "Nov", "Dec", "Jan","Feb", 
-                           "Mar", "Apr", "May","Jun", "Jul", "Aug", "Sep")
+                 month = 
+                   factor(
+                     format(df.mflow$dates, "%b"),
+                     levels = c("Oct", "Nov", "Dec", "Jan","Feb",
+                                "Mar", "Apr", "May","Jun", "Jul", 
+                                "Aug", "Sep")))
 ## add season
 df.mflow <- cbind(df.mflow, 
                  season = sapply(df.mflow$month, chr_season))
@@ -130,9 +136,11 @@ df.mflow <- cbind(df.mflow,
 ## add ecdf to mlog
 mflow.ecdf <- ecdf(df.mflow$Modelled)
 df.mflow <- cbind(df.mflow, exceed = 100 * ( 1 - round(mflow.ecdf(df.mflow$Modelled),3)) )
-df.mflow <- cbind(df.mflow, flw.zn = factor(sapply(df.mflow$exceed,get.flow.zone)))
-levels(df.mflow$flw.zn) <- c("dry", "low", "typical", "transitional", "high")
-
+df.mflow <- cbind(df.mflow, 
+                 flw.zn = factor(
+                   sapply(df.mflow$exceed,get.flow.zone), 
+                   levels = c("dry", "low", "typical", 
+                              "transitional", "high")))
 ## boxplot of weight x residuals
 p.mflow.bar.wt.rs.all <- ggplot(data = df.mflow, 
                                aes(x=factor(0), y = WeightxResidual)) + 
@@ -221,9 +229,6 @@ p.mvol_ann.bar.wt.rs.yr <- ggplot(data = df.mvol_ann,
 plot(p.mvol_ann.bar.wt.rs.yr)
 
 ## get mvol_smr
-
-
-
 df.mvol_smr <- data.frame(
   year = factor(
     unique(
@@ -233,23 +238,27 @@ df.mvol_smr <- data.frame(
 df.mvol_smr[, 4:12] <- sapply(df.mvol_smr[ , 4:12], as.numeric)
 
 ## boxplot of weight x residuals
-p.mvol_ann.bar.wt.rs.all <- ggplot(data = df.mvol_ann, 
-                                   aes(x=factor(0), y = WeightxResidual)) + 
+p.mvol_smr.bar.wt.rs.all <- ggplot(data = df.mvol_smr, 
+                                   aes(x=factor(0), y = Residual)) + 
   geom_boxplot()
-plot(p.mvol_ann.bar.wt.rs.all)
+plot(p.mvol_smr.bar.wt.rs.all)
 
 ## scatter plot of weight x residuals by year
-p.mvol_ann.pnt.wt.rs.yr <- ggplot(data = df.mvol_ann, 
-                                  aes(x=as.numeric(as.character(df.mvol_ann$year)), 
-                                      y = WeightxResidual)) +
-  geom_point(shape = 1, size = 4)
-plot(p.mvol_ann.pnt.wt.rs.yr)
+p.mvol_smr.pnt.wt.rs.yr <- 
+  ggplot(data = df.mvol_smr,
+         aes(
+           x=as.numeric(as.character(df.mvol_smr$year)),
+           y = Residual)) + 
+  xlab("year") + ylab("residual (ac-ft)") + geom_point(shape = 1, size = 4)
+plot(p.mvol_smr.pnt.wt.rs.yr)
 
 ## bar plot of weight x residuals by year
-p.mvol_ann.bar.wt.rs.yr <- ggplot(data = df.mvol_ann, 
-                                  aes(x=as.numeric(as.character(df.mvol_ann$year)), 
-                                      y = WeightxResidual)) + xlab("year") +
+p.mvol_smr.bar.wt.rs.yr <- ggplot(data = df.mvol_smr,
+                                  aes(x=as.numeric(
+                                    as.character(df.mvol_smr$year)),
+                                    y = Residual)) + 
+  xlab("year") + ylab("residual (ac-ft)") +
   geom_bar(stat = "identity", fill = "blue", position=position_dodge())
-plot(p.mvol_ann.bar.wt.rs.yr)
+plot(p.mvol_smr.bar.wt.rs.yr)
 
 
