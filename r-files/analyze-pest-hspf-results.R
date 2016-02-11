@@ -50,8 +50,6 @@ df.mlog <- cbind(df.mlog,
 
 levels(df.mlog$month) <- c("Oct", "Nov", "Dec", "Jan","Feb", 
                            "Mar", "Apr", "May","Jun", "Jul", "Aug", "Sep")
-
-
 ## add season
 chr_season <- function(chr.month) {
   if(chr.month %in% c("Dec", "Jan", "Feb")) season  <- "winter"
@@ -63,13 +61,30 @@ chr_season <- function(chr.month) {
 df.mlog <- cbind(df.mlog, 
                  season = sapply(df.mlog$month, chr_season))
 
-## bar plot of weight residuals
+## add ecdf to mlog
+mlog.ecdf <- ecdf(df.mlog$Modelled)
+df.mlog <- cbind(df.mlog, exceed = 100 * ( 1 - round(mlog.ecdf(df.mlog$Modelled),3)) )
+
+
+
+## boxplot of weight x residuals
 p.mlog.bar.wt.rs.all <- ggplot(data = df.mlog, 
                                aes(x=factor(0), y = WeightxResidual)) + 
   geom_boxplot()
 plot(p.mlog.bar.wt.rs.all)
 
-summary(df.mlog$WeightxResidual)
+## boxplot of weight x residuals by year
+p.mlog.bar.wt.rs.yr <- ggplot(data = df.mlog, 
+                               aes(x=year, y = WeightxResidual)) + 
+  geom_boxplot()
+plot(p.mlog.bar.wt.rs.yr)
+
+## boxplot of weight x residuals by seaon
+p.mlog.bar.wt.rs.sn <- ggplot(data = df.mlog, 
+                              aes(x=season, y = WeightxResidual)) + 
+  geom_boxplot()
+plot(p.mlog.bar.wt.rs.sn)
+
 
 
 ## get mtime
