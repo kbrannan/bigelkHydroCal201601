@@ -358,3 +358,10 @@ df.storms.peak <- cbind(df.storms.peak,
                                      "transitional", "high"))
                         
                         )
+## volumes
+df.storms.vol <- df.res[ df.res$Group == "mvol_stm", ]
+df.storms.vol[ ,3:11] <- sapply(df.storms.vol[ ,3:11],as.numeric)
+## combine dates with storms
+df.storms.vol <- cbind(df.strm.dates, df.storms.vol)
+## add info from peaks data.frame
+df.storms.vol <- cbind(df.storms.vol, df.storms.peak[ , 14:20])
