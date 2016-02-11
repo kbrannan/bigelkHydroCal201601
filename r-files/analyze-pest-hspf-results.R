@@ -194,5 +194,31 @@ p.mtime00 <- p.mtime00 + geom_point(data = df.mtime.lg[df.mtime.lg$src == "obs",
   scale_size_continuous(name = "Weighted Resudual", range = c(4,8))
 plot(p.mtime00)
 
-## 
+## get mvol_ann
+chr.yrs <- unique(format(dte.flows, "%Y"))
+df.mvol_ann <- data.frame(year = factor(chr.yrs), 
+                       df.res[grep("mvol_ann", as.character(df.res$Group)), ])
+df.mvol_ann[, 4:12] <- sapply(df.mvol_ann[ , 4:12], as.numeric)
+
+## boxplot of weight x residuals
+p.mvol_ann.bar.wt.rs.all <- ggplot(data = df.mvol_ann, 
+                                aes(x=factor(0), y = WeightxResidual)) + 
+  geom_boxplot()
+plot(p.mvol_ann.bar.wt.rs.all)
+
+## scatter plot of weight x residuals by year
+p.mvol_ann.pnt.wt.rs.yr <- ggplot(data = df.mvol_ann, 
+                               aes(x=as.numeric(as.character(df.mvol_ann$year)), 
+                                   y = WeightxResidual)) +
+  geom_point(shape = 1, size = 4)
+plot(p.mvol_ann.pnt.wt.rs.yr)
+
+## bar plot of weight x residuals by year
+p.mvol_ann.bar.wt.rs.yr <- ggplot(data = df.mvol_ann, 
+                                  aes(x=as.numeric(as.character(df.mvol_ann$year)), 
+                                      y = WeightxResidual)) + xlab("year") +
+  geom_bar(stat = "identity", fill = "blue", position=position_dodge())
+plot(p.mvol_ann.bar.wt.rs.yr)
+
+
 
