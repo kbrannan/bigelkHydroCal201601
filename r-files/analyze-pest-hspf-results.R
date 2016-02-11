@@ -5,6 +5,8 @@ library(ggplot2)
 
 ## working path 
 chr.dir <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601"
+## path to storm dates file
+chr.dir.stm.dates <- "m:/models/bacteria/hspf/HydroCal201506/R_projs/Select_Storm_HydCal"
 
 ## read residuals file
 chr.res <- scan(file = paste0(chr.dir,"/pest-files/control.res"),
@@ -261,4 +263,98 @@ p.mvol_smr.bar.wt.rs.yr <- ggplot(data = df.mvol_smr,
   geom_bar(stat = "identity", fill = "blue", position=position_dodge())
 plot(p.mvol_smr.bar.wt.rs.yr)
 
+## get mvol_wtr
+df.mvol_wtr <- data.frame(
+  year = factor(
+    unique(
+      format(df.mlog$dates[
+        grep("winter", as.character(df.mlog$season))], "%Y"))), 
+  df.res[grep("mvol_wtr", as.character(df.res$Group)), ])
+df.mvol_wtr[, 4:12] <- sapply(df.mvol_wtr[ , 4:12], as.numeric)
 
+## boxplot of weight x residuals
+p.mvol_wtr.bar.wt.rs.all <- ggplot(data = df.mvol_wtr, 
+                                   aes(x=factor(0), y = Residual)) + 
+  xlab("year") + ylab("residual (ac-ft)") +
+  geom_boxplot()
+plot(p.mvol_wtr.bar.wt.rs.all)
+
+## scatter plot of weight x residuals by year
+p.mvol_wtr.pnt.wt.rs.yr <- 
+  ggplot(data = df.mvol_wtr,
+         aes(
+           x=as.numeric(as.character(df.mvol_wtr$year)),
+           y = Residual)) + 
+  xlab("year") + ylab("residual (ac-ft)") + geom_point(shape = 1, size = 4)
+plot(p.mvol_wtr.pnt.wt.rs.yr)
+
+## bar plot of weight x residuals by year
+p.mvol_wtr.bar.wt.rs.yr <- ggplot(data = df.mvol_wtr,
+                                  aes(x=as.numeric(
+                                    as.character(df.mvol_wtr$year)),
+                                    y = Residual)) + 
+  xlab("year") + ylab("residual (ac-ft)") +
+  geom_bar(stat = "identity", fill = "blue", position=position_dodge())
+plot(p.mvol_wtr.bar.wt.rs.yr)
+
+## get storms
+## storm information
+## get storm dates from text file Information in this file from 
+## Select_Storm_HydCal repo
+## column 2 is the begin date of storm and column 8 is the end date of storm
+df.strm.dates.raw <- read.delim(file = paste0(chr.dir.stm.dates, "/dates_stm.dat"),
+                                header = FALSE, sep = " ", 
+                                stringsAsFactors = FALSE)[ , c(2, 8)]
+## convert to POSIXct dates
+df.strm.dates <- data.frame(apply(df.strm.dates.raw, MARGIN = 2, strptime, 
+                                  format = "%m/%d/%Y"))
+## set names
+names(df.strm.dates) <- c("begin", "end")
+
+## peaks
+df.storms.peak <- df.res[ df.res$Group == "mpeak", ]
+df.storms.peak[ ,3:11] <- sapply(df.storms.peak[ ,3:11],as.numeric)
+
+## combine dates with storms
+df.storms.peak <- cbind(df.strm.dates, df.storms.peak)
+## add year from year storm starts
+df.storms.peak <- cbind(df.storms.peak, 
+                        year = factor(format(df.storms.peak$begin, "%Y")))
+## add month from month storm starts
+df.storms.peak <- cbind(df.storms.peak, 
+                   month = 
+                     factor(
+                       format(df.storms.peak$begin, "%b"),
+                       levels = c("Oct", "Nov", "Dec", "Jan",
+                                  "Feb", "Mar","Apr", "May","Jun", 
+                                  "Jul", "Aug", "Sep")))
+## add season from month storm starts
+df.storms.peak <- cbind(df.storms.peak, 
+                   season = factor(
+                     sapply(as.character(df.storms.peak$month), chr_season)))
+## add flow regime for peak flow
+mflow.ecdf.mod <- ecdf(df.mflow$Modelled)
+mflow.ecdf.obs <- ecdf(df.mflow$Measured)
+df.storms.peak <- cbind(df.storms.peak, 
+                        mod.exceed = 
+                          100 * ( 1 - round(
+                            mflow.ecdf.mod(
+                              df.storms[df.storms$Group == "mpeak", 
+                                        "Modelled"]),3)),
+                        obs.exceed = 
+                          100 * ( 1 - round(
+                            mflow.ecdf.obs(
+                              df.storms[df.storms$Group == "mpeak", 
+                                        "Measured"]),3))
+                        )
+df.storms.peak <- cbind(df.storms.peak, 
+                        mod.flw.zn = factor(
+                          sapply(df.storms.peak$mod.exceed,get.flow.zone),
+                          levels = c("dry", "low", "typical", 
+                                     "transitional", "high")),
+                        obs.flw.zn = factor(
+                          sapply(df.storms.peak$obs.exceed,get.flow.zone),
+                          levels = c("dry", "low", "typical", 
+                                     "transitional", "high"))
+                        
+                        )
