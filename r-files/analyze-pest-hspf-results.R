@@ -61,11 +61,30 @@ chr_season <- function(chr.month) {
 df.mlog <- cbind(df.mlog, 
                  season = sapply(df.mlog$month, chr_season))
 
+## assign flow zones used in LCD
 ## add ecdf to mlog
 mlog.ecdf <- ecdf(df.mlog$Modelled)
 df.mlog <- cbind(df.mlog, exceed = 100 * ( 1 - round(mlog.ecdf(df.mlog$Modelled),3)) )
+## function taken from the LDC functions
+get.flow.zone <- function(flow.exceed) {
+  flow.zone <- NA
+  if(is.na(flow.exceed) == TRUE) {return(flow.zone)}
+  if(flow.exceed >= 0 & flow.exceed <= 10) {
+    flow.zone <- "high"
+  } else if(flow.exceed > 10 & flow.exceed <= 40) {
+    flow.zone <- "transitional"
+  } else if(flow.exceed > 40 & flow.exceed <= 60) {
+    flow.zone <- "typical"
+  } else if(flow.exceed > 60 & flow.exceed <= 90) {
+    flow.zone <- "dry"
+  } else if(flow.exceed > 90 & flow.exceed <= 100) {
+    flow.zone <- "low"
+  }
+  return(flow.zone)
+}
+df.mlog <- cbind(df.mlog, flw.zn = factor(sapply(df.mlog$exceed,get.flow.zone)))
 
-
+levels(df.mlog$flw.zn) <- c("dry", "low", "typical", "transitional", "high")
 
 ## boxplot of weight x residuals
 p.mlog.bar.wt.rs.all <- ggplot(data = df.mlog, 
