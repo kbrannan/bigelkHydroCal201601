@@ -98,7 +98,7 @@ p.mlog.bar.wt.rs.yr <- ggplot(data = df.mlog,
   geom_boxplot()
 plot(p.mlog.bar.wt.rs.yr)
 
-## boxplot of weight x residuals by seaon
+## boxplot of weight x residuals by season
 p.mlog.bar.wt.rs.sn <- ggplot(data = df.mlog, 
                               aes(x=season, y = WeightxResidual)) + 
   geom_boxplot()
