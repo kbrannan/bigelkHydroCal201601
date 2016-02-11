@@ -104,6 +104,12 @@ p.mlog.bar.wt.rs.sn <- ggplot(data = df.mlog,
   geom_boxplot()
 plot(p.mlog.bar.wt.rs.sn)
 
+## boxplot of weight x residuals by ldc flow zone
+p.mlog.bar.wt.rs.fz <- ggplot(data = df.mlog, 
+                              aes(x=flw.zn, y = WeightxResidual)) + 
+  geom_boxplot()
+plot(p.mlog.bar.wt.rs.fz)
+
 
 
 ## get mtime
