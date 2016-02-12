@@ -201,6 +201,22 @@ tmp.fdc.ss.name <- paste0("fdc.ss.st",tmp.one.station)
 eval(parse(text=paste0(tmp.fdc.ss.name," <- tmp.fdc.ss.est")))
 rm(list=ls(pattern="^tmp\\.*")) ## clean up
 
+## create three difference data.frames for plots
+df.mtime.obs <- df.mtime.lg[df.mtime.lg$src == "Obs", c("probs", "value")]
+df.mtime.mod <- df.mtime.lg[df.mtime.lg$src == "Model", c("probs", "value", "Residual","WeightxResidual")]
+df.mtime.eq <- fdc.ss.st34453
+
+df.mtime.obs$probs <- 100 * (1 - df.mtime.obs$probs)
+df.mtime.mod$probs <- 100 * (1 - df.mtime.mod$probs)
+df.mtime.eq$FDPercent <- 100 * (1 - df.mtime.eq$FDPercent)
+
+names(df.mtime.obs) <- c("x", "y")
+names(df.mtime.mod) <- c("x", "y", "res", "wxres")
+names(df.mtime.eq)  <- c("x", "y", "ymin", "ymax")
+
+df.mtime.obs <- df.mtime.obs[order(df.mtime.obs$x), ]
+df.mtime.mod <- df.mtime.mod[order(df.mtime.mod$x), ]
+
 p.mtime00 <- ggplot(data = df.mtime.lg, 
                     aes(x = 100 * (1 - probs), colour = src)) + 
   scale_y_log10() + 
@@ -216,12 +232,23 @@ p.mtime00 <- p.mtime00 + geom_point(data = df.mtime.lg[df.mtime.lg$src == "obs",
   scale_size_continuous(name = "Weighted Resudual", range = c(4,8))
 plot(p.mtime00)
 
+p.mtime00 <- ggplot(data = df.mtime.lg, 
+                    aes(x = 100 * (1 - probs), colour = src)) + 
+  scale_y_log10() + 
+  scale_colour_discrete(name = "", breaks = c("obs", "model"), 
+                        labels = c("Obs", "Model")) +
+  xlab("Percent Time Greater") + ylab("Mean Daily Flow (cfs)") 
+## add flow data
+p.mtime00 <- p.mtime00 + geom_line(aes(y = value))
+
+
+
 ## add USGS regression eq results
 p.mtime01 <- ggplot(data = fdc.ss.st34453, aes(x = FDPercent, y = FDEst)) +
   geom_point() + geom_errorbar(aes(ymin = lower, ymax = upper))
 
 p.mtime01 <- p.mtime01 + 
-  geom_point(data = fdc.ss.st34453, aes(x=FDPercent, y = FDEst))
+  geom_point(data = , aes(x=FDPercent, y = FDEst))
 
 plot(p.mtime00 + p.mtime01)
 
