@@ -2,6 +2,7 @@
 
 ## load packages
 library(ggplot2)
+library(reshape)
 
 ## load functions
 source("m:/Models/Bacteria/LDC/Calculations/Rscripts/LDC Functions.R")
@@ -208,7 +209,7 @@ df.mtime.eq <- fdc.ss.st34453
 
 df.mtime.obs$probs <- 100 * (1 - df.mtime.obs$probs)
 df.mtime.mod$probs <- 100 * (1 - df.mtime.mod$probs)
-df.mtime.eq$FDPercent <- 100 * (1 - df.mtime.eq$FDPercent)
+df.mtime.eq$FDPercent <- 100 * df.mtime.eq$FDPercent
 
 names(df.mtime.obs) <- c("x", "y")
 names(df.mtime.mod) <- c("x", "y", "res", "wxres")
@@ -217,14 +218,33 @@ names(df.mtime.eq)  <- c("x", "y", "ymin", "ymax")
 df.mtime.obs <- df.mtime.obs[order(df.mtime.obs$x), ]
 df.mtime.mod <- df.mtime.mod[order(df.mtime.mod$x), ]
 
-p.mtime00 <- ggplot(data = df.mtime.lg, 
-                    aes(x = 100 * (1 - probs), colour = src)) + 
+df.mtime.all <- melt(list(obs = df.mtime.obs, 
+                          mod = df.mtime.mod, 
+                          eq = df.mtime.eq),
+                     id.vars = "x")
+
+
+
+p.mtime00 <- ggplot(data = df.mtime.all, 
+                    aes(x = x, y = value, colour = L1)) + 
   scale_y_log10() + 
-  scale_colour_discrete(name = "", breaks = c("obs", "model"), 
-                        labels = c("Obs", "Model")) +
+  scale_colour_discrete(name = "", breaks = c("obs", "model", "eq"), 
+                        labels = c("Obs", "Model", "USGS Eq")) +
   xlab("Percent Time Greater") + ylab("Mean Daily Flow (cfs)") 
 ## add flow data
-p.mtime00 <- p.mtime00 + geom_line(aes(y = value))
+p.mtime00 <- p.mtime00 + geom_line(data = df.mtime.all[df.mtime.all$L1=="obs",])
+
+p.mtime00 <- p.mtime00 + 
+  geom_point(data = df.mtime.all[
+    df.mtime.all$L1 != "mod" & as.character(df.mtime.all$variable) == "y", ])
+
+p.mtime00 <- p.mtime00 + 
+  geom_point(data = df.mtime.all[df.mtime.all$L1 == "mod", ],
+             aes(x = x, y = value), 
+             size = abs(df.mtime.all[df.mtime.all$variable == "wxres", "value"]))
+
+plot(p.mtime00)
+
 ## add weighted residuals
 p.mtime00 <- p.mtime00 + geom_point(data = df.mtime.lg[df.mtime.lg$src == "obs", ], 
                                  aes(x = 100 * (1 - probs), y = value, 
