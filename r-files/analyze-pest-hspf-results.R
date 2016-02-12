@@ -339,13 +339,11 @@ df.storms.peak <- cbind(df.storms.peak,
                         mod.exceed = 
                           100 * ( 1 - round(
                             mflow.ecdf.mod(
-                              df.storms[df.storms$Group == "mpeak", 
-                                        "Modelled"]),3)),
+                              df.storms.peak$Modelled),3)),
                         obs.exceed = 
                           100 * ( 1 - round(
                             mflow.ecdf.obs(
-                              df.storms[df.storms$Group == "mpeak", 
-                                        "Measured"]),3))
+                              df.storms.peak$Measured),3))
                         )
 df.storms.peak <- cbind(df.storms.peak, 
                         mod.flw.zn = factor(
@@ -365,3 +363,6 @@ df.storms.vol[ ,3:11] <- sapply(df.storms.vol[ ,3:11],as.numeric)
 df.storms.vol <- cbind(df.strm.dates, df.storms.vol)
 ## add info from peaks data.frame
 df.storms.vol <- cbind(df.storms.vol, df.storms.peak[ , 14:20])
+
+## get precip, obs and model flow for each storms and make plots as in 
+## the Storm_Select script
