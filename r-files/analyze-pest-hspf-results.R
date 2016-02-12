@@ -3,6 +3,9 @@
 ## load packages
 library(ggplot2)
 
+## load functions
+source("m:/Models/Bacteria/LDC/Calculations/Rscripts/LDC Functions.R")
+
 ## working path 
 chr.dir <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601"
 ## path to storm dates file
@@ -188,7 +191,16 @@ df.mtime.lg <- data.frame(rbind(cbind(src = "obs", value = df.mtime[ , 5], df.mt
 df.mtime.lg$src <- as.factor(df.mtime.lg$src)
 levels(df.mtime.lg$src) <- c("Obs", "Model")
 df.mtime.lg[ , -1] <- sapply(df.mtime.lg[ , -1], as.numeric)
-## plot mtime ADD information from USGS regression equations
+
+## estimate fdc
+## stations at outlet is LASAR 34453
+tmp.one.station <- 34453
+tmp.ss.est.fn <- paste0("st",tmp.one.station,".xml")
+tmp.fdc.ss.est <- fdc.ss.estimate(ss.fn=tmp.ss.est.fn, ss.path=get.path("StreamStatsBacteria"))
+tmp.fdc.ss.name <- paste0("fdc.ss.st",tmp.one.station)
+eval(parse(text=paste0(tmp.fdc.ss.name," <- tmp.fdc.ss.est")))
+rm(list=ls(pattern="^tmp\\.*")) ## clean up
+
 p.mtime00 <- ggplot(data = df.mtime.lg, 
                     aes(x = 100 * (1 - probs), colour = src)) + 
   scale_y_log10() + 
@@ -203,6 +215,15 @@ p.mtime00 <- p.mtime00 + geom_point(data = df.mtime.lg[df.mtime.lg$src == "obs",
                                      size = WeightxResidual)) + 
   scale_size_continuous(name = "Weighted Resudual", range = c(4,8))
 plot(p.mtime00)
+
+## add USGS regression eq results
+p.mtime01 <- ggplot(data = fdc.ss.st34453, aes(x = FDPercent, y = FDEst)) +
+  geom_point() + geom_errorbar(aes(ymin = lower, ymax = upper))
+
+p.mtime01 <- p.mtime01 + 
+  geom_point(data = fdc.ss.st34453, aes(x=FDPercent, y = FDEst))
+
+plot(p.mtime00 + p.mtime01)
 
 ## get mvol_ann
 chr.yrs <- unique(format(dte.flows, "%Y"))
