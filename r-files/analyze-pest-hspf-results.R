@@ -228,20 +228,15 @@ df.mtime.all <- melt(list(obs = df.mtime.obs,
 p.mtime00 <- ggplot(data = df.mtime.all, 
                     aes(x = x, y = value, colour = L1)) + 
   scale_y_log10() + 
-  scale_colour_discrete(name = "", breaks = c("obs", "model", "eq"), 
+  scale_colour_discrete(name = "", breaks = c("obs", "mod", "eq"), 
                         labels = c("Obs", "Model", "USGS Eq")) +
   xlab("Percent Time Greater") + ylab("Mean Daily Flow (cfs)") 
 ## add flow data
-p.mtime00 <- p.mtime00 + geom_line(data = df.mtime.all[df.mtime.all$L1=="obs",])
+p.mtime00 <- p.mtime00 + 
+  geom_line(data = df.mtime.all[as.character(df.mtime.all$variable) == "y", ])
 
 p.mtime00 <- p.mtime00 + 
-  geom_point(data = df.mtime.all[
-    df.mtime.all$L1 != "mod" & as.character(df.mtime.all$variable) == "y", ])
-
-p.mtime00 <- p.mtime00 + 
-  geom_point(data = df.mtime.all[df.mtime.all$L1 == "mod", ],
-             aes(x = x, y = value), 
-             size = abs(df.mtime.all[df.mtime.all$variable == "wxres", "value"]))
+  geom_point(data = df.mtime.all[as.character(df.mtime.all$variable) == "y", ])
 
 plot(p.mtime00)
 
