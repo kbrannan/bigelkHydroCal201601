@@ -260,39 +260,8 @@ p.mtime00 <- p.mtime00 +
                           as.character(df.mtime.all$variable) == "ymax", "value"]
     ))
 
-
 plot(p.mtime00)
 
-
-
-
-
-## add weighted residuals
-p.mtime00 <- p.mtime00 + geom_point(data = df.mtime.lg[df.mtime.lg$src == "obs", ], 
-                                 aes(x = 100 * (1 - probs), y = value, 
-                                     size = WeightxResidual)) + 
-  scale_size_continuous(name = "Weighted Resudual", range = c(4,8))
-plot(p.mtime00)
-
-p.mtime00 <- ggplot(data = df.mtime.lg, 
-                    aes(x = 100 * (1 - probs), colour = src)) + 
-  scale_y_log10() + 
-  scale_colour_discrete(name = "", breaks = c("obs", "model"), 
-                        labels = c("Obs", "Model")) +
-  xlab("Percent Time Greater") + ylab("Mean Daily Flow (cfs)") 
-## add flow data
-p.mtime00 <- p.mtime00 + geom_line(aes(y = value))
-
-
-
-## add USGS regression eq results
-p.mtime01 <- ggplot(data = fdc.ss.st34453, aes(x = FDPercent, y = FDEst)) +
-  geom_point() + geom_errorbar(aes(ymin = lower, ymax = upper))
-
-p.mtime01 <- p.mtime01 + 
-  geom_point(data = , aes(x=FDPercent, y = FDEst))
-
-plot(p.mtime00 + p.mtime01)
 
 ## get mvol_ann
 chr.yrs <- unique(format(dte.flows, "%Y"))
