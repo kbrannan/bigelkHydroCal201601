@@ -86,18 +86,29 @@ rpltgen <- function(chr.dir = "m:/models/bacteria/hspf/",
 }
 
 storms_plot_to_file <- function(dte.stms = dte.stms, 
-                                          dte.flows  = dte.flows,
-                                          obs.flow   = obs.flow,
-                                          mod.flow   = mod.flow,
-                                          precip = precip,
-                                          out.file  = "strmInvdPlots.pdf") {
+                                dte.flows  = dte.flows,
+                                obs.flow   = obs.flow,
+                                mod.flow   = mod.flow,
+                                obs.bflow  = obs.bflow,
+                                mod.bflow  = mod.bflow,
+                                obs.pflow  = obs.pflow,
+                                mod.pflow  = mod.pflow,
+                                precip     = precip,
+                                out.file  = "strmInvdPlots.pdf") {
   
   # plot flow and precip times series with storm hydrographs highlighted for 
   # each individula storm and send figure to pdf file
   # input:
-  # pot.strm - list of data.frames of dates and flows for storm info
-  #    dates - vector of POSIXct dates that correspond to flow values
-  #     flow - vector of numeric flow values in cfs
+  #
+  # dte.stms - data.frame of POSIXct dates that correspond to first and last 
+  #            days of storms
+  # dte.flows - vector of POSIXct dates that correspond to flow values
+  # obs.flow - vector of observed daily flow values in cfs
+  # mod.flow - vector of modeled daily flow values in cfs
+  # obs.bflow - vector of observed daily base flow values in cfs
+  # mod.pflow - vector of modeled daily base flow values in cfs
+  # obs.pflow - vector of observed peak flow values in cfs for storms
+  # mod.pflow - vector of modeled peak flow values in cfs for storms
   #   precip - vector of numeric precip values in inches
   # out.file - string for pdf filename (and path) where figure is sent
   #
