@@ -130,12 +130,8 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
   
   
     
-  # creating temporary data sets for flow and precip  
-  df.f <- data.frame(dates = dates, flow = flow)
-  df.p <- data.frame(date = dates, p = precip)
-  
   # creating temporary data sets for storm list data set
-  strm.nums <- length(dte.stms$begin)
+  strm.nums <- 1:length(dte.stms$begin)
   
   # open pdf file for output
   pdf(file = out.file, width = 11, height = 8.5, onefile = TRUE)
@@ -149,21 +145,36 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
          strftime(dte.flows, format = "%Y%m%d"))
     lng.end   <- grep(strftime(dte.stms$end[ii], format = "%Y%m%d"), 
                       strftime(dte.flows, format = "%Y%m%d"))
+    ## expand range for plotting
+    lng.ex <- 1 # number of days before start and after end
+    lng.begin.ex <- max(lng.begin - lng.ex, 1)
+    lng.end.ex   <- min(lng.end + lng.ex, length(dte.flows))
+    ## dates for storm time series
+    tmp.dte.stm.ts <- dte.flows[lng.begin:lng.end]
+    # get data for current storm
+    tmp.dte.flows  <- df.mflow$dates[lng.begin.ex:lng.end.ex]
+    tmp.obs.flow   <- df.mflow$Measured[lng.begin.ex:lng.end.ex]
+    tmp.mod.flow   <- df.mflow$Modelled[lng.begin.ex:lng.end.ex]
+    tmp.obs.bflow  <- df.hysep88.8.obs$BaseQ[lng.begin.ex:lng.end.ex]
+    tmp.mod.bflow  <- df.hysep88.8.mod$BaseQ[lng.begin.ex:lng.end.ex]
+    tmp.obs.pflow  <- df.storms.peak$Measured[ii]
+    tmp.mod.pflow  <- df.storms.peak$Modelled[ii]
+    tmp.dte.obs.pflow <- tmp.dte.stm.ts[df.mflow$Measured[lng.begin:lng.end] == tmp.obs.pflow]
+    tmp.dte.mod.pflow <- tmp.dte.stm.ts[df.mflow$Modelled[lng.begin:lng.end] == tmp.mod.pflow]
+    tmp.precip     <- df.daily.precip$daily.precip[lng.begin.ex:lng.end.ex]
+    
+
     
     
-    x <- tmp.pot.strms[tmp.pot.strms$strm.num == strm.nums[ii], ]
     
     # set y-limits for current storm
-    tmp.ylims <- c(10 ^ (floor(log10(min(x$flow))   - 1)), 
-                   10 ^ (ceiling(log10(max(x$flow)) + 1)))
+    tmp.ylims <- 
+      c(10 ^ (floor(log10(min(tmp.obs.bflow, tmp.mod.bflow))   - 1)), 
+        10 ^ (ceiling(log10(max(tmp.obs.flow, tmp.mod.flow,
+                                tmp.obs.pflow, tmp.mod.pflow)) + 1)))
     
     # set x-limits for current storm
-    tmp.xlims <- c(min(x$date) - 1, max(x$date) + 1)
-    
-    # subset precip and flow for current storm
-    tmp.p <- df.p[df.p$date >= tmp.xlims[1] & df.p$date <= tmp.xlims[2], ]
-    tmp.f <- df.f[df.f$date >= tmp.xlims[1] & 
-                    df.f$date <= tmp.xlims[2], ]
+    tmp.xlims <- c(dte.flows[lng.begin.ex], dte.flows[lng.end.ex])
     
     # set plot area matrix for 2 rows and one column along with other pars
     par(mfrow = c(2, 1), tck = 0.01,  mar = c(0, 1, 0, 0.5), 
@@ -174,35 +185,39 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
            widths = c(1, 1))
     
     # precip plot set up, don't plot data
-    plot(x = tmp.p$date, y = tmp.p$p, xlab = "",pch = "", xlim = tmp.xlims,
-         ylim = c(0, max(c(tmp.p$p, 0.1))), xaxt = "n")
+    plot(x = tmp.dte.flows, y = tmp.precip, xlab = "",pch = "", xlim = tmp.xlims,
+         ylim = c(0, max(c(tmp.precip, 0.1))), xaxt = "n")
     
-    # title for plot is current sorm
+    # title for plot is current storm
     title(xlab = "", ylab = "", main = paste0("storm num ", strm.nums[ii]), 
           outer = TRUE, line = 3)
     
     # plot vertical lines for each precip obs
-    lines(x = tmp.p$date, y = tmp.p$p, type = "h")
+    lines(x = tmp.dte.flows, y = tmp.precip, type = "h")
     
     # add grid lines in plot for dates
     grid(nx = 30, ny = NULL)
     
     # set up plot for flow, don't plot data. Plot flow data after the storm
     # polygons are plotted so flow lines are borders of polygons  
-    plot(x = tmp.f$date, y = tmp.f$flow, type = "l", log = "y", lty = "blank",
+    plot(x = tmp.dte.flows, y = tmp.obs.flow, type = "l", log = "y", lty = "blank",
          xlim = tmp.xlims, ylim = tmp.ylims, xaxt = "n")
     
     # storm flow as a filled in polygon
-    polygon(x = x$date, y = x$flow, col = "yellow", lty = "blank")
+    polygon(x = tmp.dte.flows, y = tmp.obs.flow, col = "yellow", lty = "blank")
     
-    # flow data for year plotted over storm polygon
-    lines(x = tmp.f$date, y = tmp.f$flow, type = "l", col = "blue")
+    # flow data storm polygon
+    lines(x = tmp.dte.flows, y = tmp.obs.flow, type = "l", col = "blue")
+    lines(x = tmp.dte.flows, y = tmp.mod.flow, type = "l", col = "red")
     
-    # points for rises ploted over storm polygon and flow data
-    points(x = tmp.rises$date, y = tmp.rises$flow)
+    # base flow data storm polygon
+    lines(x = tmp.dte.flows, y = tmp.obs.bflow, type = "l", lty = "dashed", col = "blue")
+    lines(x = tmp.dte.flows, y = tmp.mod.bflow, type = "l", lty = "dashed", col = "red")
     
+
     # points for peaks ploted over storm polygon and flow data
-    points(x = tmp.peaks$date, y = tmp.peaks$flow)
+    points(x = tmp.dte.obs.pflow, y = tmp.obs.pflow, col = "blue", pch = 1, cex = 1.1)
+    points(x = tmp.dte.mod.pflow, y = tmp.mod.pflow, col = "red", pch = 2, cex = 1.1)
     
     # add grid lines in plot for dates
     grid(nx = 30, ny = NULL)
