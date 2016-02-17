@@ -115,17 +115,27 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
   # output:
   # No output in R environment. Figure is sent to pdf file at location sepcified
   # in out.file vairable
+
+  # temerpory assignments for function development
+  dte.stms <- df.storms.peak[ , c("begin", "end")]
+  dte.flows  <- df.mflow$dates
+  obs.flow   <- df.mflow$Measured
+  mod.flow   <- df.mflow$Modelled
+  obs.bflow  <- df.hysep88.8.obs$BaseQ
+  mod.bflow  <- df.hysep88.8.mod$BaseQ
+  obs.pflow  <- df.storms.peak$Measured
+  mod.pflow  <- df.storms.peak$Modelled
+  precip     <- df.daily.precip$daily.precip
   
+  
+  
+    
   # creating temporary data sets for flow and precip  
   df.f <- data.frame(dates = dates, flow = flow)
   df.p <- data.frame(date = dates, p = precip)
   
   # creating temporary data sets for storm list data set
-  tmp.peaks <- pot.strm$convex
-  tmp.rises <- pot.strm$concave
-  tmp.rises.sel <- pot.strm$rises.sel
-  tmp.pot.strms <- pot.strm$pot.strm
-  strm.nums <- as.numeric(unique(as.character(tmp.pot.strms$strm.num)))
+  strm.nums <- length(dte.stms$begin)
   
   # open pdf file for output
   pdf(file = out.file, width = 11, height = 8.5, onefile = TRUE)
@@ -133,6 +143,14 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
   # loop to print a figure for each storm to a signle page in "out.file"
   for(ii in 1:(length(strm.nums))) {
     # get info for storm ii
+    ii <- 1
+    ## begin row for storm in flow time-series
+    lng.begin <- grep(strftime(dte.stms$begin[ii], format = "%Y%m%d"), 
+         strftime(dte.flows, format = "%Y%m%d"))
+    lng.end   <- grep(strftime(dte.stms$end[ii], format = "%Y%m%d"), 
+                      strftime(dte.flows, format = "%Y%m%d"))
+    
+    
     x <- tmp.pot.strms[tmp.pot.strms$strm.num == strm.nums[ii], ]
     
     # set y-limits for current storm
