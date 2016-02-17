@@ -426,3 +426,23 @@ df.storms.vol <- cbind(df.storms.vol, df.storms.peak[ , 14:20])
 
 # get precip data
 source(file=paste0(chr.dir.stm,"/devel/get-precip-data.R"))
+# use max precip between the two gages (src) for daily precip
+df.daily.precip.max.stations <- 
+  summaryBy(prec.sum ~ date_org, tmp.daily.precip, FUN = max)
+## last day of precip not included in simulation
+df.daily.precip.max.stations <- 
+  df.daily.precip.max.stations[-1 * 
+                                 length(df.daily.precip.max.stations$date), ]
+names(df.daily.precip.max.stations) <- c("date_org", "daily.precip")
+## use mflow dates and drop date_org
+df.daily.precip <- data.frame(dates = df.mflow$dates, 
+                         daily.precip = 
+                           df.daily.precip.max.stations$prec.sum.max)
+# baseflow seperation using USGS-HySep R version
+df.hysep88.8.obs <- hysep(Flow = df.mflow$Measured, 
+                      Dates = as.Date(df.mflow$dates), da = 88.8)
+# baseflow seperation using USGS-HySep R version
+df.hysep88.8.mod <- hysep(Flow = df.mflow$Modelled, 
+                          Dates = as.Date(df.mflow$dates), da = 88.8)
+
+
