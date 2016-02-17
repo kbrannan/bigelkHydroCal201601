@@ -3,14 +3,17 @@
 ## load packages
 library(ggplot2)
 library(reshape)
-
-## load functions
-source("m:/Models/Bacteria/LDC/Calculations/Rscripts/LDC Functions.R")
+require(DVstats)
 
 ## working path 
 chr.dir <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601"
 ## path to storm dates file
-chr.dir.stm.dates <- "m:/models/bacteria/hspf/HydroCal201506/R_projs/Select_Storm_HydCal"
+chr.dir.stm <- "m:/models/bacteria/hspf/HydroCal201506/R_projs/Select_Storm_HydCal"
+
+## load functions
+source("m:/Models/Bacteria/LDC/Calculations/Rscripts/LDC Functions.R")
+source(file=paste0(chr.dir.stm,"/devel/functions.R"))
+
 
 ## read residuals file
 chr.res <- scan(file = paste0(chr.dir,"/pest-files/control.res"),
@@ -356,7 +359,7 @@ plot(p.mvol_wtr.bar.wt.rs.yr)
 ## get storm dates from text file Information in this file from 
 ## Select_Storm_HydCal repo
 ## column 2 is the begin date of storm and column 8 is the end date of storm
-df.strm.dates.raw <- read.delim(file = paste0(chr.dir.stm.dates, "/dates_stm.dat"),
+df.strm.dates.raw <- read.delim(file = paste0(chr.dir.stm, "/dates_stm.dat"),
                                 header = FALSE, sep = " ", 
                                 stringsAsFactors = FALSE)[ , c(2, 8)]
 ## convert to POSIXct dates
@@ -420,3 +423,6 @@ df.storms.vol <- cbind(df.storms.vol, df.storms.peak[ , 14:20])
 
 ## get precip, obs and model flow for each storms and make plots as in 
 ## the Storm_Select script
+
+# get precip data
+source(file=paste0(chr.dir.stm,"/devel/get-precip-data.R"))
