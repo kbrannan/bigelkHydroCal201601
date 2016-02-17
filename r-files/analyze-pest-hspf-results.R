@@ -223,22 +223,49 @@ df.mtime.all <- melt(list(obs = df.mtime.obs,
                           eq = df.mtime.eq),
                      id.vars = "x")
 
+df.mtime.all$L1 <- factor(df.mtime.all$L1, levels = c("obs", "mod", "eq"))
 
 
-p.mtime00 <- ggplot(data = df.mtime.all, 
-                    aes(x = x, y = value, colour = L1)) + 
+## plot mtime and related data
+p.mtime00 <- ggplot(data = df.mtime.all) + 
   scale_y_log10() + 
-  scale_colour_discrete(name = "", breaks = c("obs", "mod", "eq"), 
-                        labels = c("Obs", "Model", "USGS Eq")) +
-  xlab("Percent Time Greater") + ylab("Mean Daily Flow (cfs)") 
-## add flow data
+  scale_colour_manual(name = "", breaks = c("obs", "mod", "eq"), 
+                        labels = c("Obs", "Model", "USGS Eq"), 
+                      values = c("blue", "green", "black")) +
+#  scale_size_manual(name = "", breaks = c("obs", "mod", "eq"), 
+#                    labels = c("Obs", "Model", "USGS Eq"),
+#                    values = c(4, 4, 4)) +
+  scale_shape_manual(name = "", breaks = c("obs", "mod", "eq"), 
+                     labels = c("Obs", "Model", "USGS Eq"),
+                     values = c(21, 17, 15)) +
+    xlab("Percent Time Greater") + ylab("Mean Daily Flow (cfs)")
+
+## add obs and mod flow data along with reg eq
 p.mtime00 <- p.mtime00 + 
-  geom_line(data = df.mtime.all[as.character(df.mtime.all$variable) == "y", ])
+  geom_line(data = df.mtime.all[as.character(df.mtime.all$variable) == "y", ],
+            aes(x = x, y = value, colour = L1))
 
 p.mtime00 <- p.mtime00 + 
-  geom_point(data = df.mtime.all[as.character(df.mtime.all$variable) == "y", ])
+  geom_point(data = df.mtime.all[as.character(df.mtime.all$variable) == "y", ],
+             aes(x = x, y = value, colour = L1, shape = L1), size = 4)
+
+## add error bars from reg eq
+p.mtime00 <- p.mtime00 + 
+  geom_errorbar(data = df.mtime.all[df.mtime.all$L1 == "eq", ], 
+                aes(x = df.mtime.all[df.mtime.all$L1 == "eq" & 
+                                       as.character(df.mtime.all$variable) == "ymin", 'x'],
+    ymin = df.mtime.all[df.mtime.all$L1 == "eq" & 
+                          as.character(df.mtime.all$variable) == "ymin", 'value'],
+    ymax = df.mtime.all[df.mtime.all$L1 == "eq" & 
+                          as.character(df.mtime.all$variable) == "ymax", "value"]
+    ))
+
 
 plot(p.mtime00)
+
+
+
+
 
 ## add weighted residuals
 p.mtime00 <- p.mtime00 + geom_point(data = df.mtime.lg[df.mtime.lg$src == "obs", ], 
