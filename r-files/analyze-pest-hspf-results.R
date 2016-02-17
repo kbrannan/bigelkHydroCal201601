@@ -14,7 +14,7 @@ chr.dir.stm.dates <- "m:/models/bacteria/hspf/HydroCal201506/R_projs/Select_Stor
 
 ## read residuals file
 chr.res <- scan(file = paste0(chr.dir,"/pest-files/control.res"),
-                what = "character", sep = "\n")
+                what = "character", sep = "\n", quiet = TRUE)
 ## replace * with x in field names
 chr.res[1] <- gsub("\\*","x",chr.res[1])
 
@@ -37,7 +37,7 @@ df.res <- df.res[-1, ]
 ## get simulation dates from UCI
 chr.sim.dates <- gsub("([aA-zZ ])|(00\\:00)|(24\\:00)","",
      grep("START", scan(file = paste0(chr.dir, "/hspf-files/bigelk.uci"), 
-                   sep = "\n", what = "character"), value = TRUE))
+                   sep = "\n", what = "character", quiet = TRUE), value = TRUE))
 dte.str <- as.POSIXct(substr(chr.sim.dates, start =  1, stop = 10), fmt = "%Y/%m/%d")
 dte.end <- as.POSIXct(substr(chr.sim.dates, start = 11, stop = 20), fmt = "%Y/%m/%d")
 
@@ -93,8 +93,8 @@ get.flow.zone <- function(flow.exceed) {
 df.mlog <- cbind(df.mlog, 
                  flw.zn = factor(
                    sapply(df.mlog$exceed,get.flow.zone), 
-                   levels = c("dry", "low", "typical", 
-                              "transitional", "high")))
+                   levels = c("high", "transitional", "typical", 
+                              "dry", "low")))
 ## boxplot of weight x residuals
 p.mlog.bar.wt.rs.all <- ggplot(data = df.mlog, 
                                aes(x=factor(0), y = WeightxResidual)) + 
@@ -145,8 +145,8 @@ df.mflow <- cbind(df.mflow, exceed = 100 * ( 1 - round(mflow.ecdf(df.mflow$Model
 df.mflow <- cbind(df.mflow, 
                  flw.zn = factor(
                    sapply(df.mflow$exceed,get.flow.zone), 
-                   levels = c("dry", "low", "typical", 
-                              "transitional", "high")))
+                   levels = c("high", "transitional", "typical", 
+                              "dry", "low")))
 ## boxplot of weight x residuals
 p.mflow.bar.wt.rs.all <- ggplot(data = df.mflow, 
                                aes(x=factor(0), y = WeightxResidual)) + 
@@ -232,9 +232,6 @@ p.mtime00 <- ggplot(data = df.mtime.all) +
   scale_colour_manual(name = "", breaks = c("obs", "mod", "eq"), 
                         labels = c("Obs", "Model", "USGS Eq"), 
                       values = c("blue", "green", "black")) +
-#  scale_size_manual(name = "", breaks = c("obs", "mod", "eq"), 
-#                    labels = c("Obs", "Model", "USGS Eq"),
-#                    values = c(4, 4, 4)) +
   scale_shape_manual(name = "", breaks = c("obs", "mod", "eq"), 
                      labels = c("Obs", "Model", "USGS Eq"),
                      values = c(21, 17, 15)) +
@@ -259,7 +256,6 @@ p.mtime00 <- p.mtime00 +
     ymax = df.mtime.all[df.mtime.all$L1 == "eq" & 
                           as.character(df.mtime.all$variable) == "ymax", "value"]
     ))
-
 plot(p.mtime00)
 
 
