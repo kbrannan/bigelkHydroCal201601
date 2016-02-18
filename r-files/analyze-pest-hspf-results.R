@@ -8,7 +8,7 @@ require(DVstats)
 ## working path 
 chr.dir <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601"
 ## path to storm dates file
-chr.dir.stm <- "m:/models/bacteria/hspf/HydroCal201506/R_projs/Select_Storm_HydCal"
+chr.dir.stm <- "M:/Models/Bacteria/HSPF/HydroCal201506/R_projs/Select_Storm_HydCal"
 
 ## load functions
 source("m:/Models/Bacteria/LDC/Calculations/Rscripts/LDC Functions.R")
@@ -41,11 +41,11 @@ df.res <- df.res[-1, ]
 chr.sim.dates <- gsub("([aA-zZ ])|(00\\:00)|(24\\:00)","",
      grep("START", scan(file = paste0(chr.dir, "/hspf-files/bigelk.uci"), 
                    sep = "\n", what = "character", quiet = TRUE), value = TRUE))
-dte.str <- as.POSIXct(substr(chr.sim.dates, start =  1, stop = 10), fmt = "%Y/%m/%d")
-dte.end <- as.POSIXct(substr(chr.sim.dates, start = 11, stop = 20), fmt = "%Y/%m/%d")
+dte.str <- as.Date(substr(chr.sim.dates, start =  1, stop = 10), fmt = "%Y/%m/%d")
+dte.end <- as.Date(substr(chr.sim.dates, start = 11, stop = 20), fmt = "%Y/%m/%d")
 
 ## create date sequence
-dte.flows <- seq(from = dte.str, to = dte.end, by = "day")
+dte.flows <- seq(from = as.Date(dte.str), to = as.Date(dte.end), by = "day")
 
 ## get mlog time-series
 df.mlog <- data.frame(dates = dte.flows, 
@@ -425,19 +425,24 @@ df.storms.vol <- cbind(df.storms.vol, df.storms.peak[ , 14:20])
 ## the Storm_Select script
 
 # get precip data
-source(file=paste0(chr.dir.stm,"/devel/get-precip-data.R"))
+source(file=paste0(chr.dir.stm,"/devel/get-precip-data.R"),
+       local = TRUE)
 # use max precip between the two gages (src) for daily precip
-df.daily.precip.max.stations <- 
-  summaryBy(prec.sum ~ date_org, tmp.daily.precip, FUN = max)
-## last day of precip not included in simulation
-df.daily.precip.max.stations <- 
-  df.daily.precip.max.stations[-1 * 
-                                 length(df.daily.precip.max.stations$date), ]
-names(df.daily.precip.max.stations) <- c("date_org", "daily.precip")
-## use mflow dates and drop date_org
-df.daily.precip <- data.frame(dates = df.mflow$dates, 
-                         daily.precip = 
-                           df.daily.precip.max.stations$prec.sum.max)
+tmp.daily.precip.max.stations <- 
+  summaryBy(prec.sum ~ date_org, df.daily.precip, FUN = max)
+
+# get precip for dates in flow ts
+df.daily.precip <- tmp.daily.precip.max.stations[do.call(rbind,lapply(strftime(df.mflow$dates, format = "%Y%m%d"), grep, strftime(tmp.daily.precip.max.stations$date_org, format = "%Y%m%d"))), ]
+names(df.daily.precip) <- c("dates", "daily.precip")
+# ## last day of precip not included in simulation
+# df.daily.precip.max.stations <- 
+#   df.daily.precip.max.stations[-1 * 
+#                                  length(df.daily.precip.max.stations$date), ]
+# names(df.daily.precip.max.stations) <- c("date_org", "daily.precip")
+# ## use mflow dates and drop date_org
+# df.daily.precip <- data.frame(dates = df.mflow$dates, 
+#                          daily.precip = 
+#                            df.daily.precip.max.stations$prec.sum.max)
 # baseflow seperation using USGS-HySep R version
 df.hysep88.8.obs <- hysep(Flow = df.mflow$Measured, 
                       Dates = as.Date(df.mflow$dates), da = 88.8)
