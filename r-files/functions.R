@@ -190,8 +190,11 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
          ylim = c(0, max(c(tmp.precip, 0.1))), xaxt = "n")
     
     # title for plot is current storm
-    title(xlab = "", ylab = "", main = paste0("storm num ", strm.nums[ii]),
-          sub = paste0("Season = ", storms.peak$season[ii]),
+    title(xlab = "", ylab = "", 
+          main = paste0("storm num ", strm.nums[ii],
+          "  Season = ", storms.peak$season[ii],
+          "  Obs Flow-zone = ", storms.peak$obs.flw.zn[ii],
+          "  Mod Flow-zone = ", storms.peak$mod.flw.zn[ii]),
           outer = TRUE, line = 3)
     
     # plot vertical lines for each precip obs
