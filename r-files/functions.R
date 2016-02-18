@@ -145,6 +145,7 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
          strftime(dte.flows, format = "%Y%m%d"))
     lng.end   <- grep(strftime(dte.stms$end[ii], format = "%Y%m%d"), 
                       strftime(dte.flows, format = "%Y%m%d"))
+    if(length(lng.begin) > 1 | length(lng.end) > 1) print(paste0("Too mang matches for dates for storm ", ii))
     ## expand range for plotting
     lng.ex <- 2 # number of days before start and after end
     lng.begin.ex <- max(lng.begin - lng.ex, 1)
