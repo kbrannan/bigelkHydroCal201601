@@ -126,7 +126,7 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
   obs.pflow  <- df.storms.peak$Measured
   mod.pflow  <- df.storms.peak$Modelled
   precip     <- df.daily.precip$daily.precip
-  
+  out.file <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601/indvstrms.pdf"
   
   
     
@@ -139,7 +139,7 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
   # loop to print a figure for each storm to a signle page in "out.file"
   for(ii in 1:(length(strm.nums))) {
     # get info for storm ii
-    ii <- 1
+    ##ii <- 25
     ## begin row for storm in flow time-series
     lng.begin <- grep(strftime(dte.stms$begin[ii], format = "%Y%m%d"), 
          strftime(dte.flows, format = "%Y%m%d"))
@@ -169,9 +169,9 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
     
     # set y-limits for current storm
     tmp.ylims <- 
-      c(10 ^ (floor(log10(min(tmp.obs.bflow, tmp.mod.bflow))   - 1)), 
+      c(10 ^ (floor(log10(min(tmp.obs.bflow, tmp.mod.bflow))   )), 
         10 ^ (ceiling(log10(max(tmp.obs.flow, tmp.mod.flow,
-                                tmp.obs.pflow, tmp.mod.pflow)) + 1)))
+                                tmp.obs.pflow, tmp.mod.pflow)) )))
     
     # set x-limits for current storm
     tmp.xlims <- c(dte.flows[lng.begin.ex], dte.flows[lng.end.ex])
@@ -204,7 +204,7 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
          xlim = tmp.xlims, ylim = tmp.ylims, xaxt = "n")
     
     # storm flow as a filled in polygon
-    polygon(x = tmp.dte.flows, y = tmp.obs.flow, col = "yellow", lty = "blank")
+    #polygon(x = tmp.dte.flows, y = tmp.obs.flow, col = "yellow", lty = "blank")
     
     # flow data storm polygon
     lines(x = tmp.dte.flows, y = tmp.obs.flow, type = "l", col = "blue")
@@ -218,12 +218,12 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
     # points for peaks ploted over storm polygon and flow data
     points(x = tmp.dte.obs.pflow, y = tmp.obs.pflow, col = "blue", pch = 1, cex = 1.1)
     points(x = tmp.dte.mod.pflow, y = tmp.mod.pflow, col = "red", pch = 2, cex = 1.1)
-    
+
     # add grid lines in plot for dates
     grid(nx = 30, ny = NULL)
     
     # format x-axis on flow plot to include day, month and year
-    axis.Date(side = 1, x = tmp.f$date, format = "%m-%d-%Y")
+    axis.Date(side = 1, x = tmp.dte.flows, format = "%m-%d-%Y")
   }
   
   # close file done
