@@ -434,15 +434,7 @@ tmp.daily.precip.max.stations <-
 # get precip for dates in flow ts
 df.daily.precip <- tmp.daily.precip.max.stations[do.call(rbind,lapply(strftime(df.mflow$dates, format = "%Y%m%d"), grep, strftime(tmp.daily.precip.max.stations$date_org, format = "%Y%m%d"))), ]
 names(df.daily.precip) <- c("dates", "daily.precip")
-# ## last day of precip not included in simulation
-# df.daily.precip.max.stations <- 
-#   df.daily.precip.max.stations[-1 * 
-#                                  length(df.daily.precip.max.stations$date), ]
-# names(df.daily.precip.max.stations) <- c("date_org", "daily.precip")
-# ## use mflow dates and drop date_org
-# df.daily.precip <- data.frame(dates = df.mflow$dates, 
-#                          daily.precip = 
-#                            df.daily.precip.max.stations$prec.sum.max)
+
 # baseflow seperation using USGS-HySep R version
 df.hysep88.8.obs <- hysep(Flow = df.mflow$Measured, 
                       Dates = as.Date(df.mflow$dates), da = 88.8)
