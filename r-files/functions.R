@@ -160,22 +160,8 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
     tmp.mod.bflow  <- df.hysep88.8.mod$BaseQ[lng.begin.ex:lng.end.ex]
     tmp.obs.pflow  <- df.storms.peak$Measured[ii]
     tmp.mod.pflow  <- df.storms.peak$Modelled[ii]
-    tmp.dte.obs.pflow <- tmp.dte.stm.ts[df.mflow$Measured[lng.begin:lng.end] == tmp.obs.pflow]
-    if(length(tmp.dte.obs.pflow) == 0) {
-      tmp.dte.obs.pflow <- mean(tmp.dte.flows)
-      tmp.obs.pflow <- max(tmp.obs.flow)
-      tmp.obs.pflow.msg <- "obs peak not in date range"
-    } else {
-      tmp.obs.pflow.msg <- "none"
-    }
-    tmp.dte.mod.pflow <- tmp.dte.stm.ts[df.mflow$Modelled[lng.begin:lng.end] == tmp.mod.pflow]
-    if(length(tmp.dte.mod.pflow) == 0) {
-      tmp.dte.mod.pflow <- mean(tmp.dte.flows)
-      tmp.mod.pflow <- max(tmp.mod.flow)
-      tmp.mod.pflow.msg <- "mod peak not in date range"
-    } else {
-      tmp.mod.pflow.msg <- "none"
-    }
+    tmp.dte.obs.pflow <- min(tmp.dte.stm.ts[df.mflow$Measured[lng.begin:lng.end] == tmp.obs.pflow])
+    tmp.dte.mod.pflow <- min(tmp.dte.stm.ts[df.mflow$Modelled[lng.begin:lng.end] == tmp.mod.pflow])
     tmp.precip     <- df.daily.precip$daily.precip[lng.begin.ex:lng.end.ex]
     
 
@@ -184,7 +170,7 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
     
     # set y-limits for current storm
     tmp.ylims <- 
-      c(min(10 ^ (floor(log10(min(tmp.obs.bflow, tmp.mod.bflow)))), 1), 
+      c(10 ^ (floor(log10(min(tmp.obs.bflow, tmp.mod.bflow)))), 
         10 ^ (ceiling(log10(max(tmp.obs.flow, tmp.mod.flow,
                                 tmp.obs.pflow, tmp.mod.pflow)) )))
     
@@ -231,25 +217,10 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
     
 
     # points for peaks ploted over storm polygon and flow data
-    if(tmp.obs.pflow.msg == "none") {
-      points(x = min(tmp.dte.obs.pflow), y = tmp.obs.pflow, col = "blue", 
+      points(x = tmp.dte.obs.pflow, y = tmp.obs.pflow, col = "blue", 
              pch = 2, cex = 1.1)
-    } else {
-      text(x = mean(tmp.dte.flows), 
-             y = max(tmp.obs.flow), 
-           labels = tmp.obs.pflow.msg, pos = 3,
-             col = "blue", cex = 0.7)
-    }
-    if(tmp.mod.pflow.msg == "none") {
-      points(x = min(tmp.dte.mod.pflow), y = tmp.mod.pflow, col = "red", 
+      points(x = tmp.dte.mod.pflow, y = tmp.mod.pflow, col = "red", 
              pch = 2, cex = 1.1)
-    } else {
-      text(x = mean(tmp.dte.mod.pflow), 
-           y = max(tmp.mod.flow), 
-           labels = tmp.mod.pflow.msg, pos = 3,
-           col = "red", cex = 0.7)
-    }
-    
 
     # add grid lines in plot for dates
     grid(nx = 30, ny = NULL)
