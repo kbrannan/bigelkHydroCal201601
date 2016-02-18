@@ -91,8 +91,7 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
                                 mod.flow   = mod.flow,
                                 obs.bflow  = obs.bflow,
                                 mod.bflow  = mod.bflow,
-                                obs.pflow  = obs.pflow,
-                                mod.pflow  = mod.pflow,
+                                peak.flow  = peak.flow,
                                 precip     = precip,
                                 out.file  = "strmInvdPlots.pdf") {
   
@@ -123,8 +122,9 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
   mod.flow   <- df.mflow$Modelled
   obs.bflow  <- df.hysep88.8.obs$BaseQ
   mod.bflow  <- df.hysep88.8.mod$BaseQ
-  obs.pflow  <- df.storms.peak$Measured
-  mod.pflow  <- df.storms.peak$Modelled
+  storms.peak <- df.storms.peak
+  obs.pflow  <- storms.peak$Measured
+  mod.pflow  <- storms.peak$Modelled
   precip     <- df.daily.precip$daily.precip
   out.file <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601/indvstrms.pdf"
   
@@ -145,7 +145,7 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
          strftime(dte.flows, format = "%Y%m%d"))
     lng.end   <- grep(strftime(dte.stms$end[ii], format = "%Y%m%d"), 
                       strftime(dte.flows, format = "%Y%m%d"))
-    if(length(lng.begin) > 1 | length(lng.end) > 1) print(paste0("Too mang matches for dates for storm ", ii))
+    if(length(lng.begin) > 1 | length(lng.end) > 1) print(paste0("Too many matches for dates for storm ", ii))
     ## expand range for plotting
     lng.ex <- 2 # number of days before start and after end
     lng.begin.ex <- max(lng.begin - lng.ex, 1)
@@ -153,13 +153,13 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
     ## dates for storm time series
     tmp.dte.stm.ts <- dte.flows[lng.begin:lng.end]
     # get data for current storm
-    tmp.dte.flows  <- df.mflow$dates[lng.begin.ex:lng.end.ex]
-    tmp.obs.flow   <- df.mflow$Measured[lng.begin.ex:lng.end.ex]
-    tmp.mod.flow   <- df.mflow$Modelled[lng.begin.ex:lng.end.ex]
-    tmp.obs.bflow  <- df.hysep88.8.obs$BaseQ[lng.begin.ex:lng.end.ex]
-    tmp.mod.bflow  <- df.hysep88.8.mod$BaseQ[lng.begin.ex:lng.end.ex]
-    tmp.obs.pflow  <- df.storms.peak$Measured[ii]
-    tmp.mod.pflow  <- df.storms.peak$Modelled[ii]
+    tmp.dte.flows  <- dte.flows[lng.begin.ex:lng.end.ex]
+    tmp.obs.flow   <- obs.flow[lng.begin.ex:lng.end.ex]
+    tmp.mod.flow   <- mod.flow[lng.begin.ex:lng.end.ex]
+    tmp.obs.bflow  <- obs.bflow[lng.begin.ex:lng.end.ex]
+    tmp.mod.bflow  <- mod.bflow[lng.begin.ex:lng.end.ex]
+    tmp.obs.pflow  <- obs.pflow[ii]
+    tmp.mod.pflow  <- mod.pflow[ii]
     tmp.dte.obs.pflow <- min(tmp.dte.stm.ts[df.mflow$Measured[lng.begin:lng.end] == tmp.obs.pflow])
     tmp.dte.mod.pflow <- min(tmp.dte.stm.ts[df.mflow$Modelled[lng.begin:lng.end] == tmp.mod.pflow])
     tmp.precip     <- df.daily.precip$daily.precip[lng.begin.ex:lng.end.ex]
@@ -190,7 +190,8 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
          ylim = c(0, max(c(tmp.precip, 0.1))), xaxt = "n")
     
     # title for plot is current storm
-    title(xlab = "", ylab = "", main = paste0("storm num ", strm.nums[ii]), 
+    title(xlab = "", ylab = "", main = paste0("storm num ", strm.nums[ii]),
+          sub = paste0("Season = ", storms.peak$season[ii]),
           outer = TRUE, line = 3)
     
     # plot vertical lines for each precip obs
