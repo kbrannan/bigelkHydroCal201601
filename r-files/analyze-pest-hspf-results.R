@@ -5,6 +5,7 @@ library(ggplot2)
 library(reshape)
 require(DVstats)
 library(gridExtra)
+library(doBy)
 
 ## working path 
 chr.dir <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601"
@@ -107,6 +108,19 @@ p.mlog.bar.wt.rs.all <-
   xlab("") + geom_boxplot()
 plot(p.mlog.bar.wt.rs.all)
 
+## summary table of weight x residuals
+df.sum.mlog.res <- data.frame(
+  mean = mean(df.mlog$WeightxResidual),
+  sd = sd(df.mlog$WeightxResidual),
+  median = median(df.mlog$WeightxResidual),
+  min = min(df.mlog$WeightxResidual),
+  max = max(df.mlog$WeightxResidual),
+  n = length(df.mlog$WeightxResidual))
+
+# commands to write table to pdf
+#grid.table(df.sum.mlog.res, show.rownames = FALSE)
+#dev.off()
+
 ## boxplot of weight x residuals by year
 p.mlog.bar.wt.rs.yr <- 
   ggplot(data = df.mlog, 
@@ -114,6 +128,13 @@ p.mlog.bar.wt.rs.yr <-
              title = "weight x residuals by year for log10 of daily flow (mlog)")) + 
   geom_boxplot()
 plot(p.mlog.bar.wt.rs.yr)
+
+## summary table of weight x residuals
+df.sum.by.year.mlog.res <- 
+  summaryBy(WeightxResidual ~ year, data = df.mlog,
+            FUN = c(mean, sd, median, min, max, length))
+names(df.sum.by.year.mlog.res) <- 
+  c("year", "mean", "sd", "median", "min", "max", "n")
 
 ## boxplot of weight x residuals by season
 p.mlog.bar.wt.rs.sn <- 
