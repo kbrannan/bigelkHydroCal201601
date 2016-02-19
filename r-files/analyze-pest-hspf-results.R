@@ -4,6 +4,7 @@
 library(ggplot2)
 library(reshape)
 require(DVstats)
+library(gridExtra)
 
 ## working path 
 chr.dir <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601"
@@ -99,27 +100,34 @@ df.mlog <- cbind(df.mlog,
                    levels = c("high", "transitional", "typical", 
                               "dry", "low")))
 ## boxplot of weight x residuals
-p.mlog.bar.wt.rs.all <- ggplot(data = df.mlog, 
-                               aes(x=factor(0), y = WeightxResidual)) + 
-  geom_boxplot()
+p.mlog.bar.wt.rs.all <- 
+  ggplot(data = df.mlog,
+         aes(x=factor(0), y = WeightxResidual,
+             title = "weight x residuals for log10 of daily flow (mlog)")) +
+  xlab("") + geom_boxplot()
 plot(p.mlog.bar.wt.rs.all)
 
 ## boxplot of weight x residuals by year
-p.mlog.bar.wt.rs.yr <- ggplot(data = df.mlog, 
-                               aes(x=year, y = WeightxResidual)) + 
+p.mlog.bar.wt.rs.yr <- 
+  ggplot(data = df.mlog, 
+         aes(x=year, y = WeightxResidual, 
+             title = "weight x residuals by year for log10 of daily flow (mlog)")) + 
   geom_boxplot()
 plot(p.mlog.bar.wt.rs.yr)
 
 ## boxplot of weight x residuals by season
-p.mlog.bar.wt.rs.sn <- ggplot(data = df.mlog, 
-                              aes(x=season, y = WeightxResidual)) + 
+p.mlog.bar.wt.rs.sn <- 
+  ggplot(data = df.mlog,
+        aes(x=season, y = WeightxResidual, 
+            title = "weight x residuals by season for log10 of daily flow (mlog)")) + 
   geom_boxplot()
 plot(p.mlog.bar.wt.rs.sn)
 
 ## boxplot of weight x residuals by ldc flow zone
-p.mlog.bar.wt.rs.fz <- ggplot(data = df.mlog, 
-                              aes(x=flw.zn, y = WeightxResidual)) + 
-  geom_boxplot()
+p.mlog.bar.wt.rs.fz <- 
+  ggplot(data = df.mlog, 
+         aes(x=flw.zn, y = WeightxResidual, title = "weight x residuals by ldc flow-zone for log10 of daily flow (mlog)")) + 
+  xlab("Flow-Zone") + geom_boxplot()
 plot(p.mlog.bar.wt.rs.fz)
 
 
@@ -151,27 +159,35 @@ df.mflow <- cbind(df.mflow,
                    levels = c("high", "transitional", "typical", 
                               "dry", "low")))
 ## boxplot of weight x residuals
-p.mflow.bar.wt.rs.all <- ggplot(data = df.mflow, 
-                               aes(x=factor(0), y = WeightxResidual)) + 
-  geom_boxplot()
+p.mflow.bar.wt.rs.all <- 
+  ggplot(data = df.mflow,
+         aes(x=factor(0), y = WeightxResidual,
+             title = "weight x residuals for daily flow (mflow)")) + 
+  xlab("") + geom_boxplot()
 plot(p.mflow.bar.wt.rs.all)
 
 ## boxplot of weight x residuals by year
-p.mflow.bar.wt.rs.yr <- ggplot(data = df.mflow, 
-                              aes(x=year, y = WeightxResidual)) + 
+p.mflow.bar.wt.rs.yr <- 
+  ggplot(data = df.mflow,
+         aes(x=year, y = WeightxResidual,
+             title = "weight x residuals by year for daily flow (mflow)")) + 
   geom_boxplot()
 plot(p.mflow.bar.wt.rs.yr)
 
 ## boxplot of weight x residuals by season
-p.mflow.bar.wt.rs.sn <- ggplot(data = df.mflow, 
-                              aes(x=season, y = WeightxResidual)) + 
+p.mflow.bar.wt.rs.sn <- 
+  ggplot(data = df.mflow, 
+         aes(x=season, y = WeightxResidual, 
+             title = "weight x residuals by season for daily flow (mflow)")) + 
   geom_boxplot()
 plot(p.mflow.bar.wt.rs.sn)
 
 ## boxplot of weight x residuals by ldc flow zone
-p.mflow.bar.wt.rs.fz <- ggplot(data = df.mflow, 
-                              aes(x=flw.zn, y = WeightxResidual)) + 
-  geom_boxplot()
+p.mflow.bar.wt.rs.fz <- 
+  ggplot(data = df.mflow,
+         aes(x=flw.zn, y = WeightxResidual,
+             title = "weight x residuals by ldc flow-zone for daily flow (mflow)")) + 
+  xlab("Flow-Zone") + geom_boxplot()
 plot(p.mflow.bar.wt.rs.fz)
 
 ## get mtime
@@ -230,7 +246,8 @@ df.mtime.all$L1 <- factor(df.mtime.all$L1, levels = c("obs", "mod", "eq"))
 
 
 ## plot mtime and related data
-p.mtime00 <- ggplot(data = df.mtime.all) + 
+p.mtime00 <- ggplot(data = df.mtime.all,
+                    title = "flow duration curves") + 
   scale_y_log10() + 
   scale_colour_manual(name = "", breaks = c("obs", "mod", "eq"), 
                         labels = c("Obs", "Model", "USGS Eq"), 
@@ -268,23 +285,30 @@ df.mvol_ann <- data.frame(year = factor(chr.yrs),
 df.mvol_ann[, 4:12] <- sapply(df.mvol_ann[ , 4:12], as.numeric)
 
 ## boxplot of weight x residuals
-p.mvol_ann.bar.wt.rs.all <- ggplot(data = df.mvol_ann, 
-                                aes(x=factor(0), y = WeightxResidual)) + 
-  geom_boxplot()
+p.mvol_ann.bar.wt.rs.all <- 
+  ggplot(data = df.mvol_ann,
+         aes(x=factor(0), y = WeightxResidual, 
+             title = "weight x residuals for annual flow volume (mvol_ann)")) +
+  xlab("") + geom_boxplot()
 plot(p.mvol_ann.bar.wt.rs.all)
 
 ## scatter plot of weight x residuals by year
-p.mvol_ann.pnt.wt.rs.yr <- ggplot(data = df.mvol_ann, 
-                               aes(x=as.numeric(as.character(df.mvol_ann$year)), 
-                                   y = WeightxResidual)) +
-  geom_point(shape = 1, size = 4)
-plot(p.mvol_ann.pnt.wt.rs.yr)
+# p.mvol_ann.pnt.wt.rs.yr <- 
+#   ggplot(data = df.mvol_ann, 
+#          aes(x=as.numeric(as.character(df.mvol_ann$year)),
+#              y = WeightxResidual,
+#              title = "weight x residuals by year for annual flow volume (mvol_ann)")) +
+#   geom_point(shape = 1, size = 4)
+# plot(p.mvol_ann.pnt.wt.rs.yr)
 
 ## bar plot of weight x residuals by year
-p.mvol_ann.bar.wt.rs.yr <- ggplot(data = df.mvol_ann, 
-                                  aes(x=as.numeric(as.character(df.mvol_ann$year)), 
-                                      y = WeightxResidual)) + xlab("year") +
-  geom_bar(stat = "identity", fill = "blue", position=position_dodge())
+p.mvol_ann.bar.wt.rs.yr <- 
+  ggplot(data = df.mvol_ann, 
+         aes(x=as.numeric(as.character(df.mvol_ann$year)),
+             y = WeightxResidual,
+             title = "weight x residuals by year for annual flow volume (mvol_ann)")) + 
+  xlab("year") + geom_bar(stat = "identity", 
+                         fill = "blue", position=position_dodge())
 plot(p.mvol_ann.bar.wt.rs.yr)
 
 ## get mvol_smr
@@ -297,25 +321,28 @@ df.mvol_smr <- data.frame(
 df.mvol_smr[, 4:12] <- sapply(df.mvol_smr[ , 4:12], as.numeric)
 
 ## boxplot of weight x residuals
-p.mvol_smr.bar.wt.rs.all <- ggplot(data = df.mvol_smr, 
-                                   aes(x=factor(0), y = Residual)) + 
-  geom_boxplot()
+p.mvol_smr.bar.wt.rs.all <- 
+  ggplot(data = df.mvol_smr, 
+         aes(x=factor(0), y = Residual, 
+             title = "weight x residuals for summer flow volume (mvol_smr)")) + 
+  xlab("") + geom_boxplot()
 plot(p.mvol_smr.bar.wt.rs.all)
 
 ## scatter plot of weight x residuals by year
-p.mvol_smr.pnt.wt.rs.yr <- 
-  ggplot(data = df.mvol_smr,
-         aes(
-           x=as.numeric(as.character(df.mvol_smr$year)),
-           y = Residual)) + 
-  xlab("year") + ylab("residual (ac-ft)") + geom_point(shape = 1, size = 4)
-plot(p.mvol_smr.pnt.wt.rs.yr)
+# p.mvol_smr.pnt.wt.rs.yr <- 
+#   ggplot(data = df.mvol_smr,
+#          aes(x=as.numeric(as.character(df.mvol_smr$year)),
+#            y = Residual,
+#            title = "weight x residuals by year for summer flow volume (mvol_smr)")) + 
+#   xlab("year") + ylab("residual (ac-ft)") + geom_point(shape = 1, size = 4)
+# plot(p.mvol_smr.pnt.wt.rs.yr)
 
 ## bar plot of weight x residuals by year
-p.mvol_smr.bar.wt.rs.yr <- ggplot(data = df.mvol_smr,
-                                  aes(x=as.numeric(
-                                    as.character(df.mvol_smr$year)),
-                                    y = Residual)) + 
+p.mvol_smr.bar.wt.rs.yr <- 
+  ggplot(data = df.mvol_smr,
+         aes(x=as.numeric(as.character(df.mvol_smr$year)),
+             y = Residual,
+             title = "weight x residuals by year for summer flow volume (mvol_smr)")) + 
   xlab("year") + ylab("residual (ac-ft)") +
   geom_bar(stat = "identity", fill = "blue", position=position_dodge())
 plot(p.mvol_smr.bar.wt.rs.yr)
@@ -330,26 +357,28 @@ df.mvol_wtr <- data.frame(
 df.mvol_wtr[, 4:12] <- sapply(df.mvol_wtr[ , 4:12], as.numeric)
 
 ## boxplot of weight x residuals
-p.mvol_wtr.bar.wt.rs.all <- ggplot(data = df.mvol_wtr, 
-                                   aes(x=factor(0), y = Residual)) + 
-  xlab("year") + ylab("residual (ac-ft)") +
-  geom_boxplot()
+p.mvol_wtr.bar.wt.rs.all <- 
+  ggplot(data = df.mvol_wtr, 
+         aes(x=factor(0), y = Residual, 
+             title = "weight x residuals for winter flow volume (mvol_wtr)")) +
+  xlab("year") + ylab("residual (ac-ft)") + geom_boxplot()
 plot(p.mvol_wtr.bar.wt.rs.all)
 
 ## scatter plot of weight x residuals by year
-p.mvol_wtr.pnt.wt.rs.yr <- 
-  ggplot(data = df.mvol_wtr,
-         aes(
-           x=as.numeric(as.character(df.mvol_wtr$year)),
-           y = Residual)) + 
-  xlab("year") + ylab("residual (ac-ft)") + geom_point(shape = 1, size = 4)
-plot(p.mvol_wtr.pnt.wt.rs.yr)
+# p.mvol_wtr.pnt.wt.rs.yr <- 
+#   ggplot(data = df.mvol_wtr,
+#          aes(x=as.numeric(as.character(df.mvol_wtr$year)),
+#              y = Residual,
+#              title = "weight x residuals by year for winter flow volume (mvol_wtr)")) + 
+#   xlab("year") + ylab("residual (ac-ft)") + geom_point(shape = 1, size = 4)
+# plot(p.mvol_wtr.pnt.wt.rs.yr)
 
 ## bar plot of weight x residuals by year
-p.mvol_wtr.bar.wt.rs.yr <- ggplot(data = df.mvol_wtr,
-                                  aes(x=as.numeric(
-                                    as.character(df.mvol_wtr$year)),
-                                    y = Residual)) + 
+p.mvol_wtr.bar.wt.rs.yr <- 
+  ggplot(data = df.mvol_wtr,
+         aes(x=as.numeric(as.character(df.mvol_wtr$year)),
+             y = Residual,
+             title = "weight x residuals by year for winter flow volume (mvol_wtr)")) +
   xlab("year") + ylab("residual (ac-ft)") +
   geom_bar(stat = "identity", fill = "blue", position=position_dodge())
 plot(p.mvol_wtr.bar.wt.rs.yr)
