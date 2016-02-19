@@ -96,41 +96,41 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
                                 precip     = precip,
                                 out.file  = "strmInvdPlots.pdf") {
   
-  # plot flow and precip times series with storm hydrographs highlighted for 
-  # each individula storm and send figure to pdf file
+  # plot flow and precip information foreach individula storm and send
+  # figure to pdf file
+  #
   # input:
   #
-  # dte.stms - data.frame of POSIXct dates that correspond to first and last 
-  #            days of storms
-  # dte.flows - vector of POSIXct dates that correspond to flow values
-  # obs.flow - vector of observed daily flow values in cfs
-  # mod.flow - vector of modeled daily flow values in cfs
-  # obs.bflow - vector of observed daily base flow values in cfs
-  # mod.pflow - vector of modeled daily base flow values in cfs
-  # obs.pflow - vector of observed peak flow values in cfs for storms
-  # mod.pflow - vector of modeled peak flow values in cfs for storms
-  #   precip - vector of numeric precip values in inches
-  # out.file - string for pdf filename (and path) where figure is sent
+  #    dte.stms - data.frame of POSIXct dates that correspond to first and last 
+  #               days of storms
+  #   dte.flows - vector of POSIXct dates that correspond to flow values
+  #    obs.flow - vector of observed daily flow values in cfs
+  #    mod.flow - vector of modeled daily flow values in cfs
+  #   obs.bflow - vector of observed daily base flow values in cfs
+  # storms.peak - data.frame for peak flow data for each storm
+  #  storms.vol - data.frame for flow volume data for each storm
+  #      precip - vector of numeric precip values in inches
+  #    out.file - string for pdf filename (and path) where figure is sent
   #
   # output:
   # No output in R environment. Figure is sent to pdf file at location sepcified
   # in out.file vairable
 
   # temerpory assignments for function development
-  dte.stms <- df.storms.peak[ , c("begin", "end")]
-  dte.flows  <- df.mflow$dates
-  obs.flow   <- df.mflow$Measured
-  mod.flow   <- df.mflow$Modelled
-  obs.bflow  <- df.hysep88.8.obs$BaseQ
-  mod.bflow  <- df.hysep88.8.mod$BaseQ
-  storms.peak <- df.storms.peak
-  storms.vol <- df.storms.vol
-  obs.pflow  <- storms.peak$Measured
-  mod.pflow  <- storms.peak$Modelled
-  obs.vflow  <- storms.vol$Measured
-  mod.vflow  <- storms.vol$Modelled
-  precip     <- df.daily.precip$daily.precip
-  out.file <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601/indvstrms.pdf"
+#   dte.stms <- df.storms.peak[ , c("begin", "end")]
+#   dte.flows  <- df.mflow$dates
+#   obs.flow   <- df.mflow$Measured
+#   mod.flow   <- df.mflow$Modelled
+#   obs.bflow  <- df.hysep88.8.obs$BaseQ
+#   mod.bflow  <- df.hysep88.8.mod$BaseQ
+#   storms.peak <- df.storms.peak
+#   storms.vol <- df.storms.vol
+#   obs.pflow  <- storms.peak$Measured
+#   mod.pflow  <- storms.peak$Modelled
+#   obs.vflow  <- storms.vol$Measured
+#   mod.vflow  <- storms.vol$Modelled
+#   precip     <- df.daily.precip$daily.precip
+#   out.file <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601/indvstrms.pdf"
   
   
     
