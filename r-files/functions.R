@@ -91,7 +91,8 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
                                 mod.flow   = mod.flow,
                                 obs.bflow  = obs.bflow,
                                 mod.bflow  = mod.bflow,
-                                peak.flow  = peak.flow,
+                                storms.peak  = storms.peak,
+                                storms.vol = storms.vol, 
                                 precip     = precip,
                                 out.file  = "strmInvdPlots.pdf") {
   
@@ -123,8 +124,11 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
   obs.bflow  <- df.hysep88.8.obs$BaseQ
   mod.bflow  <- df.hysep88.8.mod$BaseQ
   storms.peak <- df.storms.peak
+  storms.vol <- df.storms.vol
   obs.pflow  <- storms.peak$Measured
   mod.pflow  <- storms.peak$Modelled
+  obs.vflow  <- storms.vol$Measured
+  mod.vflow  <- storms.vol$Modelled
   precip     <- df.daily.precip$daily.precip
   out.file <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601/indvstrms.pdf"
   
@@ -158,10 +162,8 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
     tmp.mod.flow   <- mod.flow[lng.begin.ex:lng.end.ex]
     tmp.obs.bflow  <- obs.bflow[lng.begin.ex:lng.end.ex]
     tmp.mod.bflow  <- mod.bflow[lng.begin.ex:lng.end.ex]
-    tmp.obs.pflow  <- obs.pflow[ii]
-    tmp.mod.pflow  <- mod.pflow[ii]
-    tmp.dte.obs.pflow <- min(tmp.dte.stm.ts[df.mflow$Measured[lng.begin:lng.end] == tmp.obs.pflow])
-    tmp.dte.mod.pflow <- min(tmp.dte.stm.ts[df.mflow$Modelled[lng.begin:lng.end] == tmp.mod.pflow])
+    tmp.dte.obs.pflow <- min(tmp.dte.stm.ts[df.mflow$Measured[lng.begin:lng.end] == storms.peak$Measured[ii]])
+    tmp.dte.mod.pflow <- min(tmp.dte.stm.ts[df.mflow$Modelled[lng.begin:lng.end] == storms.peak$Modelled[ii]])
     tmp.precip     <- df.daily.precip$daily.precip[lng.begin.ex:lng.end.ex]
     
 
@@ -193,8 +195,12 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
     title(xlab = "", ylab = "", 
           main = paste0("storm num ", strm.nums[ii],
           "  Season = ", storms.peak$season[ii],
-          "  Obs Flow-zone = ", storms.peak$obs.flw.zn[ii],
-          "  Mod Flow-zone = ", storms.peak$mod.flw.zn[ii]),
+          "\nObs Flow-zone = ", storms.peak$obs.flw.zn[ii],
+          "  Mod Flow-zone = ", storms.peak$mod.flw.zn[ii],
+          "\nObs peak flow = ", sprintf(fmt = "%-.2f cfs", storms.peak$Measured[ii]),
+          " Mod peak flow = ", sprintf(fmt = "%-.2f cfs", storms.peak$Modelled[ii]),
+          "  Obs storm vol = ", sprintf(fmt = "%-.2E ac-ft", storms.vol$Measured[ii]),
+          " Mod storm vol = ", sprintf(fmt = "%-.2E ac-ft", storms.vol$Modelled[ii])),
           outer = TRUE, line = 3)
     
     # plot vertical lines for each precip obs
@@ -221,9 +227,9 @@ storms_plot_to_file <- function(dte.stms = dte.stms,
     
 
     # points for peaks ploted over storm polygon and flow data
-      points(x = tmp.dte.obs.pflow, y = tmp.obs.pflow, col = "blue", 
+      points(x = tmp.dte.obs.pflow, y = storms.peak$Measured[ii], col = "blue", 
              pch = 2, cex = 1.1)
-      points(x = tmp.dte.mod.pflow, y = tmp.mod.pflow, col = "red", 
+      points(x = tmp.dte.mod.pflow, y = storms.peak$Modelled[ii], col = "red", 
              pch = 2, cex = 1.1)
 
     # add grid lines in plot for dates
