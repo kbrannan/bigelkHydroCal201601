@@ -310,6 +310,8 @@ df.mtime.all <- melt(list(obs = df.mtime.obs,
 
 df.mtime.all$L1 <- factor(df.mtime.all$L1, levels = c("obs", "mod", "eq"))
 
+reshape(df.mtime.all, idvar = "L1", direction = "wide")
+
 ## plot mtime and related data
 p.mtime00 <- ggplot(data = df.mtime.all,
                     title = "flow duration curves") + 
@@ -342,6 +344,12 @@ p.mtime00 <- p.mtime00 +
                           as.character(df.mtime.all$variable) == "ymax", "value"]
     ))
 plot(p.mtime00)
+
+table(p.mtime00$y, p.mtime00$L1)
+
+
+df.sum.mtime <- data.frame(reshape(df.mtime.all[df.mtime.all$variable == "y", ][, -2], 
+          idvar = "x", timevar = "L1", direction = "wide"))
 
 ## get mvol_ann
 chr.yrs <- unique(format(dte.flows, "%Y"))
