@@ -144,12 +144,27 @@ p.mlog.bar.wt.rs.sn <-
   geom_boxplot()
 plot(p.mlog.bar.wt.rs.sn)
 
+## summary table of weight x residuals by season
+df.sum.by.year.mlog.res.sn <- 
+  summaryBy(WeightxResidual ~ season, data = df.mlog,
+            FUN = c(mean, sd, median, min, max, length))
+names(df.sum.by.year.mlog.res.sn) <- 
+  c("season", "mean", "sd", "median", "min", "max", "n")
+
+
 ## boxplot of weight x residuals by ldc flow zone
 p.mlog.bar.wt.rs.fz <- 
   ggplot(data = df.mlog, 
          aes(x=flw.zn, y = WeightxResidual, title = "weight x residuals by ldc flow-zone for log10 of daily flow (mlog)")) + 
   xlab("Flow-Zone") + geom_boxplot()
 plot(p.mlog.bar.wt.rs.fz)
+
+## summary table of weight x residuals by ldc flow zone
+df.sum.by.year.mlog.res.fz <- 
+  summaryBy(WeightxResidual ~ flw.zn, data = df.mlog,
+            FUN = c(mean, sd, median, min, max, length))
+names(df.sum.by.year.mlog.res.fz) <- 
+  c("flw.zn", "mean", "sd", "median", "min", "max", "n")
 
 
 ## get mflow time-series
