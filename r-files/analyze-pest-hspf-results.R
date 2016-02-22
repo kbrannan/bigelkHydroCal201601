@@ -202,6 +202,15 @@ p.mflow.bar.wt.rs.all <-
   xlab("") + geom_boxplot()
 plot(p.mflow.bar.wt.rs.all)
 
+## summary table of weight x residuals
+df.sum.mflow.res <- data.frame(
+  mean = mean(df.mflow$WeightxResidual),
+  sd = sd(df.mflow$WeightxResidual),
+  median = median(df.mflow$WeightxResidual),
+  min = min(df.mflow$WeightxResidual),
+  max = max(df.mflow$WeightxResidual),
+  n = length(df.mflow$WeightxResidual))
+
 ## boxplot of weight x residuals by year
 p.mflow.bar.wt.rs.yr <- 
   ggplot(data = df.mflow,
@@ -209,6 +218,13 @@ p.mflow.bar.wt.rs.yr <-
              title = "weight x residuals by year for daily flow (mflow)")) + 
   geom_boxplot()
 plot(p.mflow.bar.wt.rs.yr)
+
+## summary table of weight x residuals by year
+df.sum.by.year.mflow.res.yr <- 
+  summaryBy(WeightxResidual ~ year, data = df.mflow,
+            FUN = c(mean, sd, median, min, max, length))
+names(df.sum.by.year.mflow.res.yr) <- 
+  c("year", "mean", "sd", "median", "min", "max", "n")
 
 ## boxplot of weight x residuals by season
 p.mflow.bar.wt.rs.sn <- 
@@ -218,6 +234,13 @@ p.mflow.bar.wt.rs.sn <-
   geom_boxplot()
 plot(p.mflow.bar.wt.rs.sn)
 
+## summary table of weight x residuals by season
+df.sum.by.year.mflow.res.sn <- 
+  summaryBy(WeightxResidual ~ season, data = df.mflow,
+            FUN = c(mean, sd, median, min, max, length))
+names(df.sum.by.year.mflow.res.sn) <- 
+  c("year", "mean", "sd", "median", "min", "max", "n")
+
 ## boxplot of weight x residuals by ldc flow zone
 p.mflow.bar.wt.rs.fz <- 
   ggplot(data = df.mflow,
@@ -225,6 +248,13 @@ p.mflow.bar.wt.rs.fz <-
              title = "weight x residuals by ldc flow-zone for daily flow (mflow)")) + 
   xlab("Flow-Zone") + geom_boxplot()
 plot(p.mflow.bar.wt.rs.fz)
+
+## summary table of weight x residuals by ldc flow zone
+df.sum.by.year.mflow.res.fz <- 
+  summaryBy(WeightxResidual ~ flw.zn, data = df.mflow,
+            FUN = c(mean, sd, median, min, max, length))
+names(df.sum.by.year.mflow.res.fz) <- 
+  c("year", "mean", "sd", "median", "min", "max", "n")
 
 ## get mtime
 df.mtime <- data.frame(
@@ -279,7 +309,6 @@ df.mtime.all <- melt(list(obs = df.mtime.obs,
                      id.vars = "x")
 
 df.mtime.all$L1 <- factor(df.mtime.all$L1, levels = c("obs", "mod", "eq"))
-
 
 ## plot mtime and related data
 p.mtime00 <- ggplot(data = df.mtime.all,
