@@ -310,8 +310,6 @@ df.mtime.all <- melt(list(obs = df.mtime.obs,
 
 df.mtime.all$L1 <- factor(df.mtime.all$L1, levels = c("obs", "mod", "eq"))
 
-reshape(df.mtime.all, idvar = "L1", direction = "wide")
-
 ## plot mtime and related data
 p.mtime00 <- ggplot(data = df.mtime.all,
                     title = "flow duration curves") + 
@@ -345,11 +343,11 @@ p.mtime00 <- p.mtime00 +
     ))
 plot(p.mtime00)
 
-table(p.mtime00$y, p.mtime00$L1)
+## create summery table of mtime data
+df.mtime.all.y <- df.mtime.all[df.mtime.all$variable == "y", ][, -2]
+df.mtime.all.y$x <- round(df.mtime.all.y$x, 2)
+df.sum.mtime <- cast(df.mtime.all.y, x~L1, value = "value")
 
-
-df.sum.mtime <- data.frame(reshape(df.mtime.all[df.mtime.all$variable == "y", ][, -2], 
-          idvar = "x", timevar = "L1", direction = "wide"))
 
 ## get mvol_ann
 chr.yrs <- unique(format(dte.flows, "%Y"))
@@ -455,6 +453,12 @@ p.mvol_wtr.bar.wt.rs.yr <-
   xlab("year") + ylab("residual (ac-ft)") +
   geom_bar(stat = "identity", fill = "blue", position=position_dodge())
 plot(p.mvol_wtr.bar.wt.rs.yr)
+
+## summary table for ann, smr and wtr
+df.sum.mvols <- cast(rbind(df.mvol_ann[, c("year", "Group", "WeightxResidual")],
+           df.mvol_wtr[, c("year", "Group", "WeightxResidual")],
+           df.mvol_smr[, c("year", "Group", "WeightxResidual")]),
+     year ~ Group, value = "WeightxResidual")
 
 ## get storms
 ## storm information
