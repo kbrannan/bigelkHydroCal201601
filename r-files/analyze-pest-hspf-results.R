@@ -566,5 +566,18 @@ p.storms <- storms_plot_to_list(dte.stms = df.storms.peak[ , c("begin", "end")],
                     precip = df.daily.precip$daily.precip
 )                    
 
+## write tables and plots to pdf file
+pdf(file = paste0(chr.dir, "/pest-hspf-hydcal-results-", 
+       strftime(Sys.time(), format = "%Y%m%d%H%M"), ".pdf"),
+    height = 8.5, width = 11, onefile = TRUE)
+## weighted residuals for weighted residuals for entire period
+grid.table(df.sum.mlog.res, show.rownames = FALSE)
+plot(p.mlog.bar.wt.rs.all)
+grid.newpage()
 
+## weighted residuals for weighted residuals by year
+grid.table(df.sum.by.year.mlog.res, show.rownames = FALSE)
+plot(p.mlog.bar.wt.rs.yr)
+
+dev.off()
 
