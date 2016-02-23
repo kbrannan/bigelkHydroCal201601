@@ -554,19 +554,6 @@ df.hysep88.8.obs <- hysep(Flow = df.mflow$Measured,
 df.hysep88.8.mod <- hysep(Flow = df.mflow$Modelled, 
                           Dates = as.Date(df.mflow$dates), da = 88.8)
 
-## plot storm info to file
-storms_plot_to_file(dte.stms = df.storms.peak[ , c("begin", "end")],
-                    dte.flows = df.mflow$dates,
-                    obs.flow = df.mflow$Measured,
-                    mod.flow = df.mflow$Modelled,
-                    obs.bflow = df.hysep88.8.obs$BaseQ,
-                    mod.bflow = df.hysep88.8.mod$BaseQ,
-                    storms.peak = df.storms.peak,
-                    storms.vol = df.storms.vol,
-                    precip = df.daily.precip$daily.precip,
-                    out.file  = "M:/Models/Bacteria/HSPF/bigelkHydroCal201601/indvstrms.pdf"
-)
-
 ## plot storm info to list
 p.storms <- storms_plot_to_list(dte.stms = df.storms.peak[ , c("begin", "end")],
                     dte.flows = df.mflow$dates,
