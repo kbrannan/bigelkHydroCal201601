@@ -460,6 +460,12 @@ df.sum.mvols <- cast(rbind(df.mvol_ann[, c("year", "Group", "WeightxResidual")],
            df.mvol_smr[, c("year", "Group", "WeightxResidual")]),
      year ~ Group, value = "WeightxResidual")
 
+
+
+
+
+
+
 ## get storms
 ## storm information
 ## get storm dates from text file Information in this file from 
@@ -560,6 +566,18 @@ storms_plot_to_file(dte.stms = df.storms.peak[ , c("begin", "end")],
                     precip = df.daily.precip$daily.precip,
                     out.file  = "M:/Models/Bacteria/HSPF/bigelkHydroCal201601/indvstrms.pdf"
 )
+
+## plot storm info to list
+p.storms <- storms_plot_to_list(dte.stms = df.storms.peak[ , c("begin", "end")],
+                    dte.flows = df.mflow$dates,
+                    obs.flow = df.mflow$Measured,
+                    mod.flow = df.mflow$Modelled,
+                    obs.bflow = df.hysep88.8.obs$BaseQ,
+                    mod.bflow = df.hysep88.8.mod$BaseQ,
+                    storms.peak = df.storms.peak,
+                    storms.vol = df.storms.vol,
+                    precip = df.daily.precip$daily.precip
+)                    
 
 
 
