@@ -6,6 +6,7 @@ library(reshape)
 require(DVstats)
 library(gridExtra)
 library(doBy)
+library(gtable)
 
 ## working path 
 chr.dir <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601"
@@ -715,8 +716,14 @@ grid.newpage()
 rm(list=ls(patter="^tmp\\."))
 
 ## storms
+maxrow = 30 
+npages = ceiling(nrow(df.storms.vol)/maxrow) 
+for (i in 1:npages) {
+  idx = seq(1+((i-1)*maxrow), i*maxrow); 
+grid.newpage(); grid.table(iris[idx, ])}; 
+
 tmp.table <- tableGrob(
-  df.storms.peak[, c("begin", "end", "Measured", "Modelled", 
+  df.storms.peak[idx, c("begin", "end", "Measured", "Modelled", 
                      "WeightxResidual", "season", "obs.exceed", "mod.exceed",
                      "mod.flw.zn", "obs.flw.zn")], show.rownames = FALSE)
 tmp.h <- grobHeight(tmp.table)
@@ -731,18 +738,32 @@ grid.newpage()
 tmp.table <- tableGrob(
   df.storms.vol[, c("begin", "end", "Measured", "Modelled", 
                      "WeightxResidual", "season", "obs.exceed", "mod.exceed",
-                     "mod.flw.zn", "obs.flw.zn")], show.rownames = FALSE)
+                     "mod.flw.zn", "obs.flw.zn")], show.rownames = FALSE,
+  gpar.coretext =gpar(fontsize=10),
+  gpar.coltext=gpar(fontsize=10, fontface='bold'),
+  y = unit(0.1, "npc"),
+  vjust = 2
+)
 tmp.h <- grobHeight(tmp.table)
 tmp.w <- grobWidth(tmp.table)
 tmp.title <- textGrob(label = "storm peak model and obs",
                       y=unit(0.5,"npc") + 0.5*tmp.h, 
                       vjust=0, gp=gpar(fontsize=20))
 tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+
+
+maxrow = 30; 
+npages = ceiling(nrow(df.storms.vol)/maxrow); 
+for (i in 1:npages) 
+  {idx = seq(1+((i-1)*maxrow), i*maxrow); 
+  grid.newpage(); grid.table(iris[idx, ])}; 
+dev.off()
+
+
 grid.draw(tmp.gt)
 rm(list=ls(patter="^tmp\\."))
 for(jj in 1:length(p.storms)) {
-  plot.new()
-  p.storms[jj]
+  replayPlot(p.storms[[jj]])
   }
 dev.off()
 
