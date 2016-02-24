@@ -700,6 +700,18 @@ plot(p.mvol_wtr.bar.wt.rs.yr)
 grid.newpage()
 rm(list=ls(patter="^tmp\\."))
 
+## mtime
+tmp.table <- tableGrob(format(data.frame(df.sum.mtime), digits = 1), show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mtime model, obs and USGS eq results",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+plot(p.mtime00)
+grid.newpage()
+rm(list=ls(patter="^tmp\\."))
 
 dev.off()
 
