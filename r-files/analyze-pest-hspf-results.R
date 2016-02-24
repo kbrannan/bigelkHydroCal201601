@@ -701,7 +701,8 @@ grid.newpage()
 rm(list=ls(patter="^tmp\\."))
 
 ## mtime
-tmp.table <- tableGrob(format(data.frame(df.sum.mtime), digits = 1), show.rownames = FALSE)
+tmp.table <- tableGrob(format(data.frame(df.sum.mtime), digits = 2, 
+                              big.mark = ","), show.rownames = FALSE)
 tmp.h <- grobHeight(tmp.table)
 tmp.w <- grobWidth(tmp.table)
 tmp.title <- textGrob(label = "mtime model, obs and USGS eq results",
@@ -713,5 +714,35 @@ plot(p.mtime00)
 grid.newpage()
 rm(list=ls(patter="^tmp\\."))
 
+## storms
+tmp.table <- tableGrob(
+  df.storms.peak[, c("begin", "end", "Measured", "Modelled", 
+                     "WeightxResidual", "season", "obs.exceed", "mod.exceed",
+                     "mod.flw.zn", "obs.flw.zn")], show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "storm peak model and obs",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+rm(list=ls(patter="^tmp\\."))
+grid.newpage()
+tmp.table <- tableGrob(
+  df.storms.vol[, c("begin", "end", "Measured", "Modelled", 
+                     "WeightxResidual", "season", "obs.exceed", "mod.exceed",
+                     "mod.flw.zn", "obs.flw.zn")], show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "storm peak model and obs",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+rm(list=ls(patter="^tmp\\."))
+for(jj in 1:length(p.storms)) {
+  plot.new()
+  p.storms[jj]
+  }
 dev.off()
 
