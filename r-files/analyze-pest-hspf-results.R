@@ -569,6 +569,7 @@ p.storms <- storms_plot_to_list(dte.stms = df.storms.peak[ , c("begin", "end")],
 ##
 ##
 ## write tables and plots to pdf file
+chr.dir <- "m:/models/bacteria/hspf/bigelkhydrocal201601"
 pdf(file = paste0(chr.dir, "/pest-hspf-hydcal-results-", 
        strftime(Sys.time(), format = "%Y%m%d%H%M"), ".pdf"),
     height = 8.5, width = 11, onefile = TRUE)
@@ -678,6 +679,24 @@ tmp.title <- textGrob(label = "mflow weighted residuals by flow zone",
 tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
 grid.draw(tmp.gt)
 plot(p.mflow.bar.wt.rs.fz)
+grid.newpage()
+rm(list=ls(patter="^tmp\\."))
+
+## mvol_ann, mvol_smr and mvol_wtr weighted residuals by year
+tmp.table <- tableGrob(df.sum.mvols, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mvols weighted residuals by year",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+plot(p.mvol_ann.bar.wt.rs.all)
+plot(p.mvol_ann.bar.wt.rs.yr)
+plot(p.mvol_smr.bar.wt.rs.all)
+plot(p.mvol_smr.bar.wt.rs.yr)
+plot(p.mvol_wtr.bar.wt.rs.all)
+plot(p.mvol_wtr.bar.wt.rs.yr)
 grid.newpage()
 rm(list=ls(patter="^tmp\\."))
 
