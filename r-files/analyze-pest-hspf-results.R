@@ -716,18 +716,39 @@ grid.newpage()
 rm(list=ls(patter="^tmp\\."))
 
 ## storms
-maxrow = 30 
-npages = ceiling(nrow(df.storms.vol)/maxrow) 
+m
+
+
+maxrow = 25; 
+npages = ceiling(nrow(df.storms.peak)/maxrow); 
 for (i in 1:npages) {
   idx = seq(1+((i-1)*maxrow), i*maxrow)
+  idx <- idx[idx <= nrow(df.storms.peak)]
   grid.newpage()
-  tmp.table <- tableGrob(
-    df.storms.peak[idx, c("begin", "end", "Measured", "Modelled", 
-                          "WeightxResidual", "season", "obs.exceed", 
-                          "mod.exceed",
-                          "mod.flw.zn", "obs.flw.zn")], show.rownames = FALSE)
-  grid.draw(tmp.table)
+  tmp.table <- tableGrob(df.storms.peak[idx, 
+                           c("begin", "end", "Measured", "Modelled", 
+                             "WeightxResidual", "season", "obs.exceed", 
+                             "mod.exceed","mod.flw.zn", "obs.flw.zn")],
+             gpar.coretext =gpar(fontsize=10),
+             gpar.coltext=gpar(fontsize=10, fontface='bold'),
+             show.rownames = FALSE)
+  tmp.h <- grobHeight(tmp.table)
+  tmp.w <- grobWidth(tmp.table)
+  if(i == 1) {
+    tmp.label <- "storm peak model and obs"  
+  } else {
+    tmp.label <- "storm peak model and obs (continued)"
+  }
+  
+  tmp.title <- textGrob(label = tmp.label,
+                        y=unit(0,"npc") + 1.1 * tmp.h, 
+                        vjust=0, gp=gpar(fontsize=20))
+  tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+  grid.draw(tmp.gt)
 }
+
+
+
 
 tmp.h <- grobHeight(tmp.table)
 tmp.w <- grobWidth(tmp.table)
@@ -755,7 +776,7 @@ tmp.title <- textGrob(label = "storm peak model and obs",
 tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
 
 
-maxrow = 25; 
+maxrow = 20; 
 npages = ceiling(nrow(df.storms.vol)/maxrow); 
 for (i in 1:npages) {
   idx = seq(1+((i-1)*maxrow), i*maxrow)
