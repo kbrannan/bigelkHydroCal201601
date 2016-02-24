@@ -716,8 +716,6 @@ grid.newpage()
 rm(list=ls(patter="^tmp\\."))
 
 ## storms
-m
-
 
 maxrow = 25; 
 npages = ceiling(nrow(df.storms.peak)/maxrow); 
