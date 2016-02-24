@@ -538,7 +538,7 @@ df.storms.vol <- cbind(df.storms.vol, df.storms.peak[ , 14:20])
 
 # get precip data
 source(file=paste0(chr.dir.stm,"/devel/get-precip-data.R"),
-       local = TRUE)
+       chdir = TRUE, local = TRUE)
 # use max precip between the two gages (src) for daily precip
 tmp.daily.precip.max.stations <- 
   summaryBy(prec.sum ~ date_org, df.daily.precip, FUN = max)
@@ -566,18 +566,121 @@ p.storms <- storms_plot_to_list(dte.stms = df.storms.peak[ , c("begin", "end")],
                     precip = df.daily.precip$daily.precip
 )                    
 
+##
+##
 ## write tables and plots to pdf file
 pdf(file = paste0(chr.dir, "/pest-hspf-hydcal-results-", 
        strftime(Sys.time(), format = "%Y%m%d%H%M"), ".pdf"),
     height = 8.5, width = 11, onefile = TRUE)
-## weighted residuals for weighted residuals for entire period
-grid.table(df.sum.mlog.res, show.rownames = FALSE)
+
+##
+## mlog
+## mlog weighted residuals for entire period
+tmp.table <- tableGrob(df.sum.mlog.res, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mlog weighted residuals for entire period",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
 plot(p.mlog.bar.wt.rs.all)
 grid.newpage()
+rm(list=ls(patter="^tmp\\."))
 
-## weighted residuals for weighted residuals by year
-grid.table(df.sum.by.year.mlog.res, show.rownames = FALSE)
+## mlog weighted residuals by year
+tmp.table <- tableGrob(df.sum.by.year.mlog.res, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mlog weighted residuals by year",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
 plot(p.mlog.bar.wt.rs.yr)
+grid.newpage()
+rm(list=ls(patter="^tmp\\."))
+
+## mlog weighted residuals by season
+tmp.table <- tableGrob(df.sum.by.year.mlog.res.sn, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mlog weighted residuals by season",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+plot(p.mlog.bar.wt.rs.sn)
+grid.newpage()
+rm(list=ls(patter="^tmp\\."))
+
+## mlog weighted residuals by flow zone
+tmp.table <- tableGrob(df.sum.by.year.mlog.res.fz, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mlog weighted residuals by flow zone",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+plot(p.mlog.bar.wt.rs.fz)
+grid.newpage()
+rm(list=ls(patter="^tmp\\."))
+
+##
+## mflow
+## mflow weighted residuals for entire period
+tmp.table <- tableGrob(df.sum.mflow.res, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mflow weighted residuals for entire period",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+plot(p.mflow.bar.wt.rs.all)
+grid.newpage()
+rm(list=ls(patter="^tmp\\."))
+
+## mflow weighted residuals by year
+tmp.table <- tableGrob(df.sum.by.year.mflow.res.yr, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mflow weighted residuals by year",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+plot(p.mflow.bar.wt.rs.yr)
+grid.newpage()
+rm(list=ls(patter="^tmp\\."))
+
+## mflow weighted residuals by season
+tmp.table <- tableGrob(df.sum.by.year.mflow.res.sn, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mflow weighted residuals by season",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+plot(p.mflow.bar.wt.rs.sn)
+grid.newpage()
+rm(list=ls(patter="^tmp\\."))
+
+## mflow weighted residuals by flow zone
+tmp.table <- tableGrob(df.sum.by.year.mflow.res.fz, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "mflow weighted residuals by flow zone",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.draw(tmp.gt)
+plot(p.mflow.bar.wt.rs.fz)
+grid.newpage()
+rm(list=ls(patter="^tmp\\."))
+
 
 dev.off()
 
