@@ -16,6 +16,7 @@ chr.dir.stm <- "M:/Models/Bacteria/HSPF/HydroCal201506/R_projs/Select_Storm_HydC
 ## load functions
 source("m:/Models/Bacteria/LDC/Calculations/Rscripts/LDC Functions.R")
 source(file=paste0(chr.dir.stm,"/devel/functions.R"))
+source(file = paste0(chr.dir, "/r-files/functions.R"))
 
 
 ## read residuals file
@@ -107,7 +108,7 @@ p.mlog.bar.wt.rs.all <-
          aes(x=factor(0), y = WeightxResidual,
              title = "weight x residuals for log10 of daily flow (mlog)")) +
   xlab("") + geom_boxplot()
-plot(p.mlog.bar.wt.rs.all)
+##plot(p.mlog.bar.wt.rs.all)
 
 ## summary table of weight x residuals
 df.sum.mlog.res <- data.frame(
@@ -128,7 +129,7 @@ p.mlog.bar.wt.rs.yr <-
          aes(x=year, y = WeightxResidual, 
              title = "weight x residuals by year for log10 of daily flow (mlog)")) + 
   geom_boxplot()
-plot(p.mlog.bar.wt.rs.yr)
+##plot(p.mlog.bar.wt.rs.yr)
 
 ## summary table of weight x residuals
 df.sum.by.year.mlog.res <- 
@@ -143,7 +144,7 @@ p.mlog.bar.wt.rs.sn <-
         aes(x=season, y = WeightxResidual, 
             title = "weight x residuals by season for log10 of daily flow (mlog)")) + 
   geom_boxplot()
-plot(p.mlog.bar.wt.rs.sn)
+##plot(p.mlog.bar.wt.rs.sn)
 
 ## summary table of weight x residuals by season
 df.sum.by.year.mlog.res.sn <- 
@@ -158,7 +159,7 @@ p.mlog.bar.wt.rs.fz <-
   ggplot(data = df.mlog, 
          aes(x=flw.zn, y = WeightxResidual, title = "weight x residuals by ldc flow-zone for log10 of daily flow (mlog)")) + 
   xlab("Flow-Zone") + geom_boxplot()
-plot(p.mlog.bar.wt.rs.fz)
+##plot(p.mlog.bar.wt.rs.fz)
 
 ## summary table of weight x residuals by ldc flow zone
 df.sum.by.year.mlog.res.fz <- 
@@ -201,7 +202,7 @@ p.mflow.bar.wt.rs.all <-
          aes(x=factor(0), y = WeightxResidual,
              title = "weight x residuals for daily flow (mflow)")) + 
   xlab("") + geom_boxplot()
-plot(p.mflow.bar.wt.rs.all)
+##plot(p.mflow.bar.wt.rs.all)
 
 ## summary table of weight x residuals
 df.sum.mflow.res <- data.frame(
@@ -218,7 +219,7 @@ p.mflow.bar.wt.rs.yr <-
          aes(x=year, y = WeightxResidual,
              title = "weight x residuals by year for daily flow (mflow)")) + 
   geom_boxplot()
-plot(p.mflow.bar.wt.rs.yr)
+##plot(p.mflow.bar.wt.rs.yr)
 
 ## summary table of weight x residuals by year
 df.sum.by.year.mflow.res.yr <- 
@@ -233,7 +234,7 @@ p.mflow.bar.wt.rs.sn <-
          aes(x=season, y = WeightxResidual, 
              title = "weight x residuals by season for daily flow (mflow)")) + 
   geom_boxplot()
-plot(p.mflow.bar.wt.rs.sn)
+##plot(p.mflow.bar.wt.rs.sn)
 
 ## summary table of weight x residuals by season
 df.sum.by.year.mflow.res.sn <- 
@@ -248,7 +249,7 @@ p.mflow.bar.wt.rs.fz <-
          aes(x=flw.zn, y = WeightxResidual,
              title = "weight x residuals by ldc flow-zone for daily flow (mflow)")) + 
   xlab("Flow-Zone") + geom_boxplot()
-plot(p.mflow.bar.wt.rs.fz)
+##plot(p.mflow.bar.wt.rs.fz)
 
 ## summary table of weight x residuals by ldc flow zone
 df.sum.by.year.mflow.res.fz <- 
@@ -342,7 +343,7 @@ p.mtime00 <- p.mtime00 +
     ymax = df.mtime.all[df.mtime.all$L1 == "eq" & 
                           as.character(df.mtime.all$variable) == "ymax", "value"]
     ))
-plot(p.mtime00)
+##plot(p.mtime00)
 
 ## create summery table of mtime data
 df.mtime.all.y <- df.mtime.all[df.mtime.all$variable == "y", ][, -2]
@@ -362,7 +363,7 @@ p.mvol_ann.bar.wt.rs.all <-
          aes(x=factor(0), y = WeightxResidual, 
              title = "weight x residuals for annual flow volume (mvol_ann)")) +
   xlab("") + geom_boxplot()
-plot(p.mvol_ann.bar.wt.rs.all)
+##plot(p.mvol_ann.bar.wt.rs.all)
 
 ## scatter plot of weight x residuals by year
 # p.mvol_ann.pnt.wt.rs.yr <- 
@@ -381,7 +382,7 @@ p.mvol_ann.bar.wt.rs.yr <-
              title = "weight x residuals by year for annual flow volume (mvol_ann)")) + 
   xlab("year") + geom_bar(stat = "identity", 
                          fill = "blue", position=position_dodge())
-plot(p.mvol_ann.bar.wt.rs.yr)
+##plot(p.mvol_ann.bar.wt.rs.yr)
 
 ## get mvol_smr
 df.mvol_smr <- data.frame(
@@ -398,7 +399,7 @@ p.mvol_smr.bar.wt.rs.all <-
          aes(x=factor(0), y = Residual, 
              title = "weight x residuals for summer flow volume (mvol_smr)")) + 
   xlab("") + geom_boxplot()
-plot(p.mvol_smr.bar.wt.rs.all)
+##plot(p.mvol_smr.bar.wt.rs.all)
 
 ## scatter plot of weight x residuals by year
 # p.mvol_smr.pnt.wt.rs.yr <- 
@@ -417,7 +418,7 @@ p.mvol_smr.bar.wt.rs.yr <-
              title = "weight x residuals by year for summer flow volume (mvol_smr)")) + 
   xlab("year") + ylab("residual (ac-ft)") +
   geom_bar(stat = "identity", fill = "blue", position=position_dodge())
-plot(p.mvol_smr.bar.wt.rs.yr)
+##plot(p.mvol_smr.bar.wt.rs.yr)
 
 ## get mvol_wtr
 df.mvol_wtr <- data.frame(
@@ -434,7 +435,7 @@ p.mvol_wtr.bar.wt.rs.all <-
          aes(x=factor(0), y = Residual, 
              title = "weight x residuals for winter flow volume (mvol_wtr)")) +
   xlab("year") + ylab("residual (ac-ft)") + geom_boxplot()
-plot(p.mvol_wtr.bar.wt.rs.all)
+##plot(p.mvol_wtr.bar.wt.rs.all)
 
 ## scatter plot of weight x residuals by year
 # p.mvol_wtr.pnt.wt.rs.yr <- 
@@ -453,13 +454,13 @@ p.mvol_wtr.bar.wt.rs.yr <-
              title = "weight x residuals by year for winter flow volume (mvol_wtr)")) +
   xlab("year") + ylab("residual (ac-ft)") +
   geom_bar(stat = "identity", fill = "blue", position=position_dodge())
-plot(p.mvol_wtr.bar.wt.rs.yr)
+##plot(p.mvol_wtr.bar.wt.rs.yr)
 
 ## summary table for ann, smr and wtr
-df.sum.mvols <- cast(rbind(df.mvol_ann[, c("year", "Group", "WeightxResidual")],
+df.sum.mvols <- data.frame(cast(rbind(df.mvol_ann[, c("year", "Group", "WeightxResidual")],
            df.mvol_wtr[, c("year", "Group", "WeightxResidual")],
            df.mvol_smr[, c("year", "Group", "WeightxResidual")]),
-     year ~ Group, value = "WeightxResidual")
+     year ~ Group, value = "WeightxResidual"))
 
 
 
@@ -712,7 +713,6 @@ tmp.title <- textGrob(label = "mtime model, obs and USGS eq results",
 tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
 grid.draw(tmp.gt)
 plot(p.mtime00)
-grid.newpage()
 rm(list=ls(patter="^tmp\\."))
 
 ## storms
