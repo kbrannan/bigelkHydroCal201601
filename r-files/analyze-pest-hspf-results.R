@@ -717,84 +717,75 @@ rm(list=ls(patter="^tmp\\."))
 
 ## storms
 
-maxrow = 25; 
+## storm peaks
+maxrow = 20; 
 npages = ceiling(nrow(df.storms.peak)/maxrow); 
 for (i in 1:npages) {
   idx = seq(1+((i-1)*maxrow), i*maxrow)
   idx <- idx[idx <= nrow(df.storms.peak)]
   grid.newpage()
-  tmp.table <- tableGrob(df.storms.peak[idx, 
-                           c("begin", "end", "Measured", "Modelled", 
-                             "WeightxResidual", "season", "obs.exceed", 
-                             "mod.exceed","mod.flw.zn", "obs.flw.zn")],
-             gpar.coretext =gpar(fontsize=10),
-             gpar.coltext=gpar(fontsize=10, fontface='bold'),
-             show.rownames = FALSE)
+  
+  tmp.table <- tableGrob(
+    df.storms.peak[idx, c("begin", "end", "Measured", "Modelled", 
+                         "WeightxResidual", "season", "obs.exceed", "mod.exceed",
+                         "mod.flw.zn", "obs.flw.zn")], show.rownames = FALSE,
+    gpar.coretext =gpar(fontsize=10),
+    gpar.coltext=gpar(fontsize=10, fontface='bold'),
+    y = unit(0.1, "npc"),
+    vjust = 2
+  )
   tmp.h <- grobHeight(tmp.table)
   tmp.w <- grobWidth(tmp.table)
   if(i == 1) {
-    tmp.label <- "storm peak model and obs"  
+    tmp.label <- "storm peaks model and obs"  
   } else {
-    tmp.label <- "storm peak model and obs (continued)"
+    tmp.label <- "storm peaks model and obs (continued)"
   }
-  
   tmp.title <- textGrob(label = tmp.label,
-                        y=unit(0,"npc") + 1.1 * tmp.h, 
+                        y=unit(0.5,"npc") + 0.5*tmp.h, 
                         vjust=0, gp=gpar(fontsize=20))
-  tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+  tmp.gt <- gTree(children=gList(tmp.table, tmp.title)) 
   grid.draw(tmp.gt)
 }
-
-
-
-
-tmp.h <- grobHeight(tmp.table)
-tmp.w <- grobWidth(tmp.table)
-tmp.title <- textGrob(label = "storm peak model and obs",
-                      y=unit(0.5,"npc") + 0.5*tmp.h, 
-                      vjust=0, gp=gpar(fontsize=20))
-tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
-grid.draw(tmp.gt)
 rm(list=ls(patter="^tmp\\."))
-grid.newpage()
-tmp.table <- tableGrob(
-  df.storms.vol[, c("begin", "end", "Measured", "Modelled", 
-                     "WeightxResidual", "season", "obs.exceed", "mod.exceed",
-                     "mod.flw.zn", "obs.flw.zn")], show.rownames = FALSE,
-  gpar.coretext =gpar(fontsize=10),
-  gpar.coltext=gpar(fontsize=10, fontface='bold'),
-  y = unit(0.1, "npc"),
-  vjust = 2
-)
-tmp.h <- grobHeight(tmp.table)
-tmp.w <- grobWidth(tmp.table)
-tmp.title <- textGrob(label = "storm peak model and obs",
-                      y=unit(0.5,"npc") + 0.5*tmp.h, 
-                      vjust=0, gp=gpar(fontsize=20))
-tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
 
 
+## storm vols
 maxrow = 20; 
 npages = ceiling(nrow(df.storms.vol)/maxrow); 
 for (i in 1:npages) {
   idx = seq(1+((i-1)*maxrow), i*maxrow)
   idx <- idx[idx <= nrow(df.storms.vol)]
   grid.newpage()
-  grid.table(df.storms.vol[idx, 
-                           c("begin", "end", "Measured", "Modelled", 
-                             "WeightxResidual", "season", "obs.exceed", 
-                             "mod.exceed","mod.flw.zn", "obs.flw.zn")],
-             gpar.coretext =gpar(fontsize=10),
-             gpar.coltext=gpar(fontsize=10, fontface='bold'),
-             show.rownames = FALSE)
+
+  tmp.table <- tableGrob(
+    df.storms.vol[idx, c("begin", "end", "Measured", "Modelled", 
+                      "WeightxResidual", "season", "obs.exceed", "mod.exceed",
+                      "mod.flw.zn", "obs.flw.zn")], show.rownames = FALSE,
+    gpar.coretext =gpar(fontsize=10),
+    gpar.coltext=gpar(fontsize=10, fontface='bold'),
+    y = unit(0.1, "npc"),
+    vjust = 2
+  )
+  tmp.h <- grobHeight(tmp.table)
+  tmp.w <- grobWidth(tmp.table)
+  if(i == 1) {
+    tmp.label <- "storm vols model and obs"  
+  } else {
+    tmp.label <- "storm vols model and obs (continued)"
   }
-
-
-
-grid.draw(tmp.gt)
+  tmp.title <- textGrob(label = tmp.label,
+                        y=unit(0.5,"npc") + 0.5*tmp.h, 
+                        vjust=0, gp=gpar(fontsize=20))
+  tmp.gt <- gTree(children=gList(tmp.table, tmp.title)) 
+  grid.draw(tmp.gt)
+  
+  }
 rm(list=ls(patter="^tmp\\."))
+
 for(jj in 1:length(p.storms)) {
   replayPlot(p.storms[[jj]])
   }
+
 dev.off()
 
