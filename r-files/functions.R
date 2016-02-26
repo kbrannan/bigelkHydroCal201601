@@ -562,7 +562,7 @@ tmp.data$src <- factor(tmp.data$src,
           axis.ticks.x=element_blank(),
           plot.margin=unit(c(1,1,0,1), "lines")) + 
     geom_segment(aes(xend = date, 
-                     y = rep(0, length(tmp.dte.flows)), yend=value))
+                     y = rep(0, length(date)), yend=value))
 
  ## flow plot
   tmp.flow <- tmp.data[tmp.data$group == "flow", ]
