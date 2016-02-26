@@ -563,21 +563,18 @@ tmp.data$src <- factor(tmp.data$src,
  ## flow plot
   tmp.flow <- tmp.data[tmp.data$group == "flow", ]
 
-  p.flow <- ggplot(data = tmp.flow, 
-                   aes(x = date, y = value, color = sub.group))
+  p.flow <- ggplot(data = tmp.flow, aes(x = date, y = value, 
+                                        color = sub.group)) + 
+    geom_line(data = tmp.flow[-grep("peak", as.character(tmp.flow$sub.group))], 
+                      aes(x = date, y = value, color = sub.group)) +
+    geom_point(data = tmp.flow[grep("peak", as.character(tmp.flow$sub.group)), ],
+               aes(x = date, y = value, color = sub.group))
   # add obs flow
   p.flow <- p.flow + 
-    geom_line() + geom_point(aes(size = c(0.1, 0.1, 0.1, 0.1, 2.5, 2.5))) +
-    scale_colour_manual(name = "",
-                        labels = unique(as.character(tmp.flow$sub.group)),
-                        values = rep(c("blue","red"),3)) + 
-    scale_shape_manual(name = "",
-                        labels = unique(as.character(tmp.flow$sub.group)),
-                        values = rep(c(19,25),3)) +
-    scale_size_manual(name = "",
-                       labels = unique(as.character(tmp.flow$sub.group)),
-                       values = c(0, 0, 0, 0, 2.5, 2.5))
-    
+    scale_colour_manual(values = rep(c("blue","red"),3)) + 
+    scale_shape_manual(values = c(19,25)) +
+    scale_linetype_manual(values = c(1, 1, 2, 2))
+
   
   
   plot(p.flow)
