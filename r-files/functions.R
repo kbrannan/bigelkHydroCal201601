@@ -402,7 +402,7 @@ storms_plot_to_list <- function(dte.stms = dte.stms,
 return(my.plots)
 }
 
-storms_plot <- function(lng.stm,
+storm_plot <- function(lng.stm,
                         dte.stms = dte.stms,
                         dte.flows  = dte.flows,
                         obs.flow   = obs.flow,
@@ -455,7 +455,7 @@ storms_plot <- function(lng.stm,
   require(ggplot2, quietly = TRUE)
 
   # title for plot is current storm
-  tmp.title = paste0("storm num ", lng.stm,
+  tmp.title <- paste0("storm num ", lng.stm,
                      "  Season = ", storms.peak$season[lng.stm],
                      "\nObs Flow-zone = ", storms.peak$obs.flw.zn[lng.stm],
                      "  Mod Flow-zone = ", storms.peak$mod.flw.zn[lng.stm],
@@ -557,27 +557,20 @@ tmp.data$src <- factor(tmp.data$src,
   # precip plot
   p.precip <- ggplot(data = tmp.data[tmp.data$sub.group == "precip", ],
                          aes(x = date, y = value)) +
+    labs(title = tmp.title) +
     xlim(tmp.xlims) + 
     ylim(c(0, max(c(tmp.data$value[tmp.data$group == "precip"], 0.1)))) +
     ylab("precip in") +
     theme(axis.title.x=element_blank(),
           axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())
-  # plot vertical lines for each precip obs
-  p.precip <- p.precip + 
+          axis.ticks.x=element_blank(),
+          plot.margin=unit(c(1,1,0,1), "lines")) + 
     geom_segment(aes(xend = date, 
                      y = rep(0, length(tmp.dte.flows)), yend=value))
 
   
  ## flow plot
   tmp.flow <- tmp.data[tmp.data$group == "flow", ]
-  
-  
-  tmp.flow <- tmp.data[tmp.data$sub.group == "obs-flow" |
-                         tmp.data$sub.group == "obs-baseflow" |
-                         tmp.data$sub.group == "mod-flow" |
-                         tmp.data$sub.group == "mod-baseflow", ]
-  
   p.flow <- ggplot() + 
     geom_line(data = tmp.flow[tmp.flow$type != "peak-flow", ], 
               aes(x = date, y = value, 
@@ -589,10 +582,28 @@ tmp.data$src <- factor(tmp.data$src,
     scale_shape_manual(name = "peak-flow", values = c(1,2)) +
     scale_linetype_manual(name = "type of flow", values = c(1, 2)) +
     scale_color_manual(name = "flow source", values = c("blue", "red")) +
-    guides(color = FALSE, linetype = FALSE, shape = FALSE)
+    guides(color = FALSE, linetype = FALSE, shape = FALSE) +
+    theme(plot.margin=unit(c(0,1,1,1), "lines"))
 
-
-  grid.arrange(p.precip, p.flow, nrow = 2)
+  p.storm <- list()
+  p.storm[[1]] <- p.precip
+  p.storm[[2]] <- p.flow
   
-  return(my.plots)
+  return(p.storm)
 }
+
+storm_grid <- function(p.storm) {
+  
+  grid.thm <- theme(plot.margin=unit(c(1,1,-0.5,1),"lines"))
+  
+  g.precip <- ggplotGrob(p.storm[[1]] + grid.thm)
+  g.flow <- ggplotGrob(p.storm[[2]])
+  
+  maxWidth = grid::unit.pmax(g.precip$widths[2:5], g.flow$widths[2:5])
+  g.precip$widths[2:5] <- as.list(maxWidth)
+  g.flow$widths[2:5] <- as.list(maxWidth)
+  grid.arrange(g.precip, g.flow, ncol=1, heights = c(0.3, 1))
+
+}
+
+
