@@ -589,8 +589,10 @@ tmp.data$src <- factor(tmp.data$src,
     scale_shape_manual(name = "peak-flow", values = c(1,2)) +
     scale_linetype_manual(name = "type of flow", values = c(1, 2)) +
     scale_color_manual(name = "flow source", values = c("blue", "red")) +
-    guides(color = guide_legend(override.aes = list(size = 0)))
+    guides(color = FALSE, linetype = FALSE, shape = FALSE)
 
 
+  grid.arrange(p.precip, p.flow, nrow = 2)
+  
   return(my.plots)
 }
