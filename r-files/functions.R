@@ -427,32 +427,32 @@ storm_plot <- function(lng.stm,
   # storms.peak - data.frame for peak flow data for each storm
   #  storms.vol - data.frame for flow volume data for each storm
   #      precip - vector of numeric precip values in inches
-  #    out.file - string for pdf filename (and path) where figure is sent
   #
   # output:
-  # p.stm <- plot of storm (ggplot object)
+  # p.storm <- list of precip and flow ggplot objects
   
     
   # temporary assignments for function development
-  dte.stms <- df.storms.peak[ , c("begin", "end")]
-  dte.flows  <- df.mflow$dates
-  obs.flow   <- df.mflow$Measured
-  mod.flow   <- df.mflow$Modelled
-  obs.bflow  <- df.hysep88.8.obs$BaseQ
-  mod.bflow  <- df.hysep88.8.mod$BaseQ
-  storms.peak <- df.storms.peak
-  storms.vol <- df.storms.vol
-  obs.pflow  <- storms.peak$Measured
-  mod.pflow  <- storms.peak$Modelled
-  obs.vflow  <- storms.vol$Measured
-  mod.vflow  <- storms.vol$Modelled
-  precip     <- df.daily.precip$daily.precip
-
-  lng.stm <- 4
+#   dte.stms <- df.storms.peak[ , c("begin", "end")]
+#   dte.flows  <- df.mflow$dates
+#   obs.flow   <- df.mflow$Measured
+#   mod.flow   <- df.mflow$Modelled
+#   obs.bflow  <- df.hysep88.8.obs$BaseQ
+#   mod.bflow  <- df.hysep88.8.mod$BaseQ
+#   storms.peak <- df.storms.peak
+#   storms.vol <- df.storms.vol
+#   obs.pflow  <- storms.peak$Measured
+#   mod.pflow  <- storms.peak$Modelled
+#   obs.vflow  <- storms.vol$Measured
+#   mod.vflow  <- storms.vol$Modelled
+#   precip     <- df.daily.precip$daily.precip
+# 
+#   lng.stm <- 4
 
   
   ## load pakage
   require(ggplot2, quietly = TRUE)
+  require(gridExtra, quietly = TRUE)
 
   # title for plot is current storm
   tmp.title <- paste0("storm num ", lng.stm,
@@ -534,7 +534,6 @@ tmp.data$type <- factor(tmp.data$type,
 tmp.data$src <- factor(tmp.data$src, 
                          levels = c("obs", "mod"))
 
-  
   # calculate pars for plot
   # set y-limits for storm
   tmp.ylims <- 
@@ -551,9 +550,6 @@ tmp.data$src <- factor(tmp.data$src,
   # set x-limits for current storm
   tmp.xlims <- c(dte.flows[lng.begin.ex], dte.flows[lng.end.ex])
 
-  
-  
-    
   # precip plot
   p.precip <- ggplot(data = tmp.data[tmp.data$sub.group == "precip", ],
                          aes(x = date, y = value)) +
@@ -568,7 +564,6 @@ tmp.data$src <- factor(tmp.data$src,
     geom_segment(aes(xend = date, 
                      y = rep(0, length(tmp.dte.flows)), yend=value))
 
-  
  ## flow plot
   tmp.flow <- tmp.data[tmp.data$group == "flow", ]
   p.flow <- ggplot() + 
@@ -593,6 +588,8 @@ tmp.data$src <- factor(tmp.data$src,
 }
 
 storm_grid <- function(p.storm) {
+  ## wrapper function to grid.arrange to plot storm ggplot
+  ## objects in p.storm (precip and flow) output from storm_plot function
   
   grid.thm <- theme(plot.margin=unit(c(1,1,-0.5,1),"lines"))
   
