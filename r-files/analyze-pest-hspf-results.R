@@ -1,12 +1,12 @@
 ## analyze pest-hspf results
 
 ## load packages
-library(ggplot2)
-library(reshape)
-require(DVstats)
-library(gridExtra)
-library(doBy)
-library(gtable)
+library(ggplot2, quietly = TRUE)
+library(reshape, quietly = TRUE)
+require(DVstats, quietly = TRUE)
+library(gridExtra, quietly = TRUE)
+library(doBy, quietly = TRUE)
+library(gtable, quietly = TRUE)
 
 ## working path 
 chr.dir <- "M:/Models/Bacteria/HSPF/bigelkHydroCal201601"
@@ -565,8 +565,7 @@ p.storms <- storms_plot_to_list(dte.stms = df.storms.peak[ , c("begin", "end")],
                     mod.bflow = df.hysep88.8.mod$BaseQ,
                     storms.peak = df.storms.peak,
                     storms.vol = df.storms.vol,
-                    precip = df.daily.precip$daily.precip
-)                    
+                    precip = df.daily.precip$daily.precip)                    
 
 ##
 ##
