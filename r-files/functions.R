@@ -483,36 +483,43 @@ storms_plot <- function(lng.stm,
     data.frame(date = tmp.dates,
                value = df.daily.precip$daily.precip[lng.begin.ex:lng.end.ex],
                sub.group = "precip",
+               type = "precip",
                group = "precip",
                src = "obs"),
     data.frame(date = tmp.dates,
                value = obs.flow[lng.begin.ex:lng.end.ex],
                sub.group = "obs-flow",
+               type = "flow",
                group = "flow",
                src = "obs"),
     data.frame(date = tmp.dates,
                value = mod.flow[lng.begin.ex:lng.end.ex],
                sub.group = "mod-flow",
+               type = "flow",
                group = "flow",
                src = "mod"),
     data.frame(date = tmp.dates,
                value = obs.bflow[lng.begin.ex:lng.end.ex],
                sub.group = "obs-baseflow",
+               type = "baseflow",
                group = "flow",
                src = "obs"),
     data.frame(date = tmp.dates,
                value = mod.bflow[lng.begin.ex:lng.end.ex],
                sub.group = "mod-baseflow",
+               type = "baseflow",
                group = "flow",
                src = "mod"),
     data.frame(date = min(tmp.dte.stm.ts[df.mflow$Measured[lng.begin:lng.end] == storms.peak$Measured[lng.stm]]),
                value = storms.peak$Measured[lng.stm],
                sub.group = "obs-peak-flow",
+               type = "peak-flow",
                group = "flow",
                src = "obs"),
     data.frame(date = min(tmp.dte.stm.ts[df.mflow$Modelled[lng.begin:lng.end] == storms.peak$Modelled[lng.stm]]),
                value = storms.peak$Modelled[lng.stm],
                sub.group = "mod-peak-flow",
+               type = "peak-flow",
                group = "flow",
                src = "mod"))
 
@@ -522,6 +529,8 @@ tmp.data$sub.group <- factor(tmp.data$sub.group,
                          "obs-peak-flow", "mod-peak-flow"))
 tmp.data$group <- factor(tmp.data$group, 
                              levels = c("precip", "flow"))
+tmp.data$type <- factor(tmp.data$type,
+                        levels = c("precip", "flow", "baseflow", "peak-flow")) 
 tmp.data$src <- factor(tmp.data$src, 
                          levels = c("obs", "mod"))
 
@@ -562,76 +571,26 @@ tmp.data$src <- factor(tmp.data$src,
   
  ## flow plot
   tmp.flow <- tmp.data[tmp.data$group == "flow", ]
+  
+  
+  tmp.flow <- tmp.data[tmp.data$sub.group == "obs-flow" |
+                         tmp.data$sub.group == "obs-baseflow" |
+                         tmp.data$sub.group == "mod-flow" |
+                         tmp.data$sub.group == "mod-baseflow", ]
+  
+  p.flow <- ggplot() + 
+    geom_line(data = tmp.flow[tmp.flow$type != "peak-flow", ], 
+              aes(x = date, y = value, 
+                  breaks = sub.group, color = src, linetype = type)) +
+    geom_point(data = tmp.flow[tmp.flow$type == "peak-flow", ], 
+              aes(x = date, y = value, 
+                  breaks = sub.group, color = src, shape = src), size = 5) +
+    xlab("") + ylab("flow (cfs)") +
+    scale_shape_manual(name = "peak-flow", values = c(1,2)) +
+    scale_linetype_manual(name = "type of flow", values = c(1, 2)) +
+    scale_color_manual(name = "flow source", values = c("blue", "red")) +
+    guides(color = guide_legend(override.aes = list(size = 0)))
 
-  p.flow <- ggplot(data = tmp.flow, aes(x = date, y = value, 
-                                        color = sub.group)) + 
-    geom_line(data = tmp.flow[-grep("peak", as.character(tmp.flow$sub.group))], 
-                      aes(x = date, y = value, color = sub.group)) +
-    geom_point(data = tmp.flow[grep("peak", as.character(tmp.flow$sub.group)), ],
-               aes(x = date, y = value, color = sub.group))
-  # add obs flow
-  p.flow <- p.flow + 
-    scale_colour_manual(values = rep(c("blue","red"),3)) + 
-    scale_shape_manual(values = c(19,25)) +
-    scale_linetype_manual(values = c(1, 1, 2, 2))
 
-  
-  
-  plot(p.flow)
-  
-  p.flow <- p.flow +
-    guides(
-      shape = guide_legend(override.aes = list(shape = c(NA, NA, NA, NA, 19, 17))))
-
-  ## format legend
-  p.flow <- p.flow +
-    scale_colour_manual(name = "",
-                        labels = levels(sub.group),
-                        values = src) +
-    scale_shape_manual(labels = levels(tmp.data$group)[-1],
-                       values = c(19, 17, 19, 17, 19, 17)) +
-    scale_size_manual(labels = levels(tmp.data$group)[-1],
-                      values = c(0, 0, 3, 0, 0, 3))
-  
-  
-  
-    plot(p.flow)
-  
-      # set up plot for flow, don't plot data. Plot flow data after the storm
-    # polygons are plotted so flow lines are borders of polygons  
-    plot(x = tmp.dte.flows, y = tmp.obs.flow, type = "l", log = "y", lty = "blank",
-         xlim = tmp.xlims, ylim = tmp.ylims, xaxt = "n")
-    
-    # storm flow as a filled in polygon
-    #polygon(x = tmp.dte.flows, y = tmp.obs.flow, col = "yellow", lty = "blank")
-    
-    # flow data storm polygon
-    lines(x = tmp.dte.flows, y = tmp.obs.flow, type = "l", col = "blue")
-    lines(x = tmp.dte.flows, y = tmp.mod.flow, type = "l", col = "red")
-    
-    # base flow data storm polygon
-    lines(x = tmp.dte.flows, y = tmp.obs.bflow, type = "l", lty = "dashed", col = "blue")
-    lines(x = tmp.dte.flows, y = tmp.mod.bflow, type = "l", lty = "dashed", col = "red")
-    
-    
-    # points for peaks ploted over storm polygon and flow data
-    points(x = tmp.dte.obs.pflow, y = storms.peak$Measured[ii], col = "blue", 
-           pch = 2, cex = 1.1)
-    points(x = tmp.dte.mod.pflow, y = storms.peak$Modelled[ii], col = "red", 
-           pch = 2, cex = 1.1)
-    
-    # add grid lines in plot for dates
-    grid(nx = 30, ny = NULL)
-    
-    # format x-axis on flow plot to include day, month and year
-    axis.Date(side = 1, x = tmp.dte.flows, format = "%m-%d-%Y")
-    
-    ## store current plot in list
-    my.plots[[ii]] <- recordPlot()
-    
-    ## reset graphics
-    ##graphics.off()
-  }
-  ##  dev.off()
   return(my.plots)
 }
