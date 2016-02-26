@@ -462,12 +462,6 @@ df.sum.mvols <- data.frame(cast(rbind(df.mvol_ann[, c("year", "Group", "WeightxR
            df.mvol_smr[, c("year", "Group", "WeightxResidual")]),
      year ~ Group, value = "WeightxResidual"))
 
-
-
-
-
-
-
 ## get storms
 ## storm information
 ## get storm dates from text file Information in this file from 
@@ -557,15 +551,22 @@ df.hysep88.8.mod <- hysep(Flow = df.mflow$Modelled,
                           Dates = as.Date(df.mflow$dates), da = 88.8)
 
 ## plot storm info to list
-p.storms <- storms_plot_to_list(dte.stms = df.storms.peak[ , c("begin", "end")],
-                    dte.flows = df.mflow$dates,
-                    obs.flow = df.mflow$Measured,
-                    mod.flow = df.mflow$Modelled,
-                    obs.bflow = df.hysep88.8.obs$BaseQ,
-                    mod.bflow = df.hysep88.8.mod$BaseQ,
-                    storms.peak = df.storms.peak,
-                    storms.vol = df.storms.vol,
-                    precip = df.daily.precip$daily.precip)                    
+p.storms <- list()
+for(pp in 1:length(df.storms.peak[ , 1])) {
+  p.storms[[pp]] <- storm_plot(
+    lng.stm = pp,
+    dte.stms  = df.storms.peak[ , c("begin", "end")],
+    dte.flows = df.mflow$dates,
+    obs.flow  = df.mflow$Measured,
+    mod.flow = df.mflow$Modelled,
+    obs.bflow = df.hysep88.8.obs$BaseQ,
+    mod.bflow = df.hysep88.8.mod$BaseQ,
+    storms.peak = df.storms.peak,
+    storms.vol = df.storms.vol,
+    precip = df.daily.precip$daily.precip)
+  }
+
+                   
 
 ##
 ##
@@ -783,7 +784,7 @@ for (i in 1:npages) {
 rm(list=ls(patter="^tmp\\."))
 
 for(jj in 1:length(p.storms)) {
-  replayPlot(p.storms[[jj]])
+  storm_grid(p.storms[[jj]])
   }
 
 dev.off()
