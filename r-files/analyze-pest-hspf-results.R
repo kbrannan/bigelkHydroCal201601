@@ -785,7 +785,39 @@ rm(list=ls(patter="^tmp\\."))
 
 for(jj in 1:length(p.storms)) {
   storm_grid(p.storms[[jj]])
-  }
+}
+
+## calibration results HSPEXP table
+df.hspexp <- data.frame(flow.stat = c("Total Volume (ac-ft)",
+                                      "Summer Volume (ac-ft)",
+                                      "winter Volume (ac-ft)",
+                                      "Storm Volume (ac-ft)",
+                                      "Mean Storm Peak (cfs)",
+                                      "Baseflow Index"),
+                        obs = c(sum(df.mvol_ann$Measured),
+                                sum(df.mvol_smr$Measured),
+                                sum(df.mvol_wtr$Measured),
+                                sum(df.storms.vol$Measured),
+                                mean(df.storms.peak$Measured),
+                                sum(df.hysep88.8.obs$BaseQ)/sum(df.hysep88.8.obs$Flow)),
+                        mod = c(sum(df.mvol_ann$Modelled),
+                                sum(df.mvol_smr$Modelled),
+                                sum(df.mvol_wtr$Modelled),
+                                sum(df.storms.vol$Modelled),
+                                mean(df.storms.peak$Modelled),
+                                sum(df.hysep88.8.mod$BaseQ)/sum(df.hysep88.8.mod$Flow)))
+df.hspexp <- data.frame(df.hspexp, 
+                        percent.err = 
+                          round(100 * with(df.hspexp, (mod - obs) / obs), 2))
+tmp.table <- tableGrob(df.hspexp, show.rownames = FALSE)
+tmp.h <- grobHeight(tmp.table)
+tmp.w <- grobWidth(tmp.table)
+tmp.title <- textGrob(label = "HSPEXP-like Statistics",
+                      y=unit(0.5,"npc") + 0.5*tmp.h, 
+                      vjust=0, gp=gpar(fontsize=20))
+tmp.gt <- gTree(children=gList(tmp.table, tmp.title))
+grid.newpage()
+grid.draw(tmp.gt)
 
 dev.off()
 
